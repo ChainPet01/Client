@@ -1,0 +1,1076 @@
+<div class="modal fade show" id="look" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content xsjl-d">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close text-warning" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-0 p-md-2">
+                <div class="row row-cols-1 row-cols-lg-2 s-market-upload m-0">
+                    <div class="col text-center auction-left pt-0 pt-lg-5">
+                        <img class="img-fluid w-75" src="images/big-elf.svg" alt="" id="marketElvesDialogImg">
+                    </div>
+                    <div class="col auction-right">
+                        <h4 class="mb-4"><i>&nbsp;</i><span id="marketElvesDialogName"></span></h4>
+                        <div class="prize-shu mb-4">
+                            <li class="text-truncate pe-2"><span><s langtest="Owner">Owner</s> </span><s
+                                    id="marketElvesDialogAuthor"></s></li>
+                            <li class="text-truncate pe-2"><span><s langtest="Contract Address">Contract Address</s>
+                                </span><s id="marketElvesDialogAddress"></s></li>
+                            <li class="text-truncate pe-2"><span><s langtest="Token ID">Token ID</s>
+                                </span><s id="marketElvesDialogTokenId"></s>
+                            </li>
+                            <li class="text-truncate pe-2">
+                                <span><s langtest="Price">Price</s></span><s id="marketElvesDialogPrice"></s><img
+                                    class=" ps-2 bp-1" style="width: 26px;" src="images/cpet.png">
+                            </li>
+                        </div>
+                        <div class="looktxt-bg">
+                            <s langtest="Introduce">Introduce</s>
+                        </div>
+                        <div class="looktxt" id="marketElvesDialogIntroduce">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer text-white border-0 d-f">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-3 button-yellow py-2 py-lg-3 text-center text-uppercase" data-bs-dismiss="modal"
+                            aria-label="Close">
+                            <a href="javascript:;" onclick="buy()"><s id="marketElvesDialogBtn"
+                                    langtest="Buy">Buy</s></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--弹窗结束-->
+
+<div id="nav-market" class="container-lg-fluid mx-4">
+    <nav>
+        <div class="nav nav-tabs nav-tabs2" id="my-storage-tab" role="tablist">
+            <a class=" active" id="nft-market-elves-market-tab" data-bs-toggle="tab" href="#nft-market-elves-market"
+                role="tab" aria-controls="nft-market-elves-market" aria-selected="true"
+                onclick="onTableMarketList('elf',1)"><s langtest="Market-Market">Market</s></a>
+            <a class="" id="nft-market-elves-selling-tab" data-bs-toggle="tab" href="#nft-market-elves-selling"
+                role="tab" aria-controls="nft-market-elves-selling" aria-selected="false"
+                onclick="onTableMySell('elf',1)"><s langtest="Market-Selling">Selling</s></a>
+            <a class="" id="nft-market-elves-record-tab" data-bs-toggle="tab" href="#nft-market-elves-record" role="tab"
+                aria-controls="nft-market-elves-record" aria-selected="false" onclick="onTableLog(-1)"><s
+                    langtest="Market-Record">Record</s></a>
+        </div>
+    </nav>
+    <div class="tab-content mt-4 mt-md-5" id="my-storage-tabContent">
+        <p><a style="color: #9895C0;" href="#" data-bs-toggle="modal" data-bs-target="#text-rule-market"><s
+                    langtest="Market-Rule">Market rules>></s></a></p>
+        <div class="tab-pane fade show active" id="nft-market-elves-market" role="tabpanel"
+            aria-labelledby="nft-market-elves-market-tab">
+            <!-- market -->
+
+            <div class="col-12">
+                <div class="row s-market-upload">
+                    <!-- <div
+                            class="col-12 text-center py-4 py-lg-0 text-lg-start col-lg-auto d-lg-flex align-items-center"> -->
+                    <div class="col-6 d-flex align-items-center">
+                        <b> <s langtest="Market-Total">Total</s>&nbsp;<s id="totalMarketNumber">0</s></b>
+                    </div>
+                    <!-- <div class="col text-center text-lg-end"> -->
+                    <div class="col-6 text-end">
+                        <!-- <form class="d-inline-flex s-market-8">
+                                <input class="form-control" type="Search" placeholder="Search"
+                                    aria-label="Search">
+                                <button class="btn s-market-buttom " type="submit"><s
+                                        langtest>Search</s></button>
+                            </form> -->
+                        <div class="s-market-9"><a href="#" data-bs-toggle="modal" data-bs-target="#shelves"
+                                onclick="shelvesBtnList(event)"><span class="font_family icon-xingzhuang"></span><s
+                                    langtest="Market-Shelves">Shelves</s></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- 这里数据循环开始 -->
+            <div class="container-fluid p-0">
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-2 g-lg-5" id="goodsListIds">
+                    <!-- 数据调用内容 -->
+                </div>
+            </div>
+
+            <!-- market -->
+        </div>
+        <div class="tab-pane fade" id="nft-market-elves-selling" role="tabpanel"
+            aria-labelledby="nft-market-elves-selling-tab">
+            <!-- selling -->
+            <div class="col-12">
+                <div class="row s-market-upload">
+                    <div class="col-6 d-flex align-items-center">
+                        <b> <s langtest="Market-Total">Total</s>&nbsp;<s id="totalSellingNumber">0</s></b>
+                    </div>
+                    <div class="col-6 text-end">
+                        <div class="s-market-9"><a href="#" data-bs-toggle="modal" data-bs-target="#shelves"
+                                onclick="shelvesBtnList(event)"><span class="font_family icon-xingzhuang"></span><s
+                                    langtest="Market-Shelves">Shelves</s></a>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <!-- 这里数据循环开始 -->
+                <div class="container-fluid p-0">
+                    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-2 g-lg-5" id="myGoodsListIds">
+                        <!-- 数据调用内容 -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- selling -->
+        </div>
+        <div class="tab-pane fade" id="nft-market-elves-record" role="tabpanel"
+            aria-labelledby="nft-market-elves-record-tab">
+            <!-- record -->
+            <div class="biaoge my-5">
+                <!-- 时间段开始 -->
+                <nav>
+                    <div class="nav nav-tabs biaogehead" id="nav-tab" role="tablist">
+                        <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-24" role="tab"
+                            aria-controls="nav-home" aria-selected="true" onclick="onTableLog(24)"><s
+                                langtest="Last-24-Hours">Last 24 Hours</s></a>
+                        <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-7day" role="tab"
+                            aria-controls="nav-profile" aria-selected="false" onclick="onTableLog(168)"><s
+                                langtest="Day-7">Day 7</s></a>
+                        <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-30day" role="tab"
+                            aria-controls="nav-profile" aria-selected="false" onclick="onTableLog(720)"><s
+                                langtest="Day-30">Day 30</s></a>
+                    </div>
+                </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+                    <!-- 24小时内容开始 -->
+                    <div class="tab-pane fade show active" id="nav-24" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 align-items-center px-5 pb-5 biaogecenter">
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table1.svg" alt="">
+                                    </div>
+                                    <div class="col"><s langtest="Auction-Total-Transactions">Total
+                                            Transactions</s><span id="marketTransactionTotal1"></span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table2.svg" alt="">
+                                    </div>
+                                    <div class="col text-truncate"><s langtest="Auction-Total-Transactions-Volume">Total
+                                            Transactions Volume</s><span id="marketTransactionSum1"></span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table3.svg" alt="">
+                                    </div>
+                                    <div class="col text-truncate"><s langtest="Auction-Average-Price">Average
+                                            Price</s><span id="marketTransactionAvg1"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 7天开始 -->
+                    <div class="tab-pane fade" id="nav-7day" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 align-items-center px-5 pb-5 biaogecenter">
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table1.svg" alt="">
+                                    </div>
+                                    <div class="col"><s langtest="Auction-Total-Transactions">Total
+                                            Transactions</s><span id="marketTransactionTotal7"></span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table2.svg" alt="">
+                                    </div>
+                                    <div class="col text-truncate"><s langtest="Auction-Total-Transactions-Volume">Total
+                                            Transactions Volume</s><span id="marketTransactionSum7"></span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table3.svg" alt="">
+                                    </div>
+                                    <div class="col text-truncate"><s langtest="Auction-Average-Price">Average
+                                            Price</s><span id="marketTransactionAvg7"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 30天开始 -->
+                    <div class="tab-pane fade" id="nav-30day" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 align-items-center px-5 pb-5 biaogecenter">
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table1.svg" alt="">
+                                    </div>
+                                    <div class="col"><s langtest="Auction-Total-Transactions">Total
+                                            Transactions</s><span id="marketTransactionTotal30"></span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table2.svg" alt="">
+                                    </div>
+                                    <div class="col text-truncate"><s langtest="Auction-Total-Transactions-Volume">Total
+                                            Transactions Volume</s><span id="marketTransactionSum30"></span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table3.svg" alt="">
+                                    </div>
+                                    <div class="col text-truncate"><s langtest="Auction-Average-Price">Average
+                                            Price</s><span id="marketTransactionAvg30"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 顶部tabs -->
+            <div class="biaoge mb-5 pb-5">
+
+                <nav>
+                    <div class="nav nav-tabs biaogehead" id="nav-tab" role="tablist">
+                        <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-zuijinchengjiao"
+                            role="tab" aria-controls="nav-home" aria-selected="true" onclick="onRecent(0)"><s
+                                langtest="Recent-Transactions">Recent
+                                Transactions</s></a>
+                        <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-wodejilu" role="tab"
+                            aria-controls="nav-profile" aria-selected="false" onclick="onMyRecent(0)"><s
+                                langtest="Auction-My-Record">My
+                                Record</s></a>
+                    </div>
+                </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-zuijinchengjiao" role="tabpanel"
+                        aria-labelledby="nav-home-tab">
+                        <!-- 基本信息内容 -->
+
+                        <div class="row p-3 biaogecenter">
+                            <table class="table table-striped align-middle">
+                                <thead>
+                                    <tr class="row">
+                                        <th class="col"><s langtest="Role">Role</s></th>
+                                        <th class="col"><s langtest="Buyer">Buyer</s></th>
+                                        <th class="col"><s langtest="Seller">Seller</s></th>
+                                        <th class="col"><s langtest="Price">Price</s></th>
+                                        <th class="col"><s langtest="Time">Time</s></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="" id="marketTransactionList">
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 基本信息内容 -->
+                    </div>
+                    <div class="tab-pane fade" id="nav-wodejilu" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <!-- 出价历史内容 -->
+                        <div class="row p-3 biaogecenter">
+                            <table class="table table-striped align-middle">
+                                <thead>
+                                    <tr class="row row-cols-5">
+                                        <th scope="col"><s langtest="Role">Role</s></th>
+                                        <th scope="col"><s langtest="Buyer">Buyer</s></th>
+                                        <th scope="col"><s langtest="Seller">Seller</s></th>
+                                        <th scope="col"><s langtest="Price">Price</s></th>
+                                        <th scope="col"><s langtest="Time">Time</s></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="" id="marketMyTransactionList">
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                        <!-- 出价历史内容 -->
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- record -->
+        </div>
+    </div>
+
+    <div class="modal fade show" id="shelves" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+        style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content xsjl-d">
+
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-center text-white w-100"><s langtest="Please-Select">Please Select</s>
+                    </h5>
+                    <button type="button" class="btn-close text-warning" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body xdjl mx-3">
+                    <div class="container-fluid p-0">
+                        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4" id="shelvesDialogList">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer text-white border-0 d-f">
+                    <div class="container-fluid">
+                        <div class="row row-cols-auto justify-content-center">
+                            <!-- <div class="col"><s langtest="Price">Price</s>:</div> -->
+                            <div class="col"><s langtest="Price">Price</s>:<input class="sjsl" type="text"
+                                    placeholder="Please input price" aria-label="text" id="shelvesMarketPrice"
+                                    oninput="value=value.replace(/[^\.\d]/g,'')"><img class=" ps-2 bp-1"
+                                    style="width: 26px;" src="images/cpet.png">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-6 button-yellow py-2 py-lg-3 text-center" data-bs-dismiss="modal"
+                                aria-label="Close">
+                                <a href="javascript:;" onclick="onMarketSelect()"><s langtest="Ok">Ok</s></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <span id="s-market-data"></span>
+</div>
+
+
+
+
+<script type="text/javascript">
+    // window.onload = function()
+    {
+        $("#s-market-data").attr('pageType', 'market');
+        // onTableMarketList('elf', 1);
+
+        // isApprovedData(function (res) {
+        //     if (res.code == 200) {
+        //         $("#s-market-data").attr('walletAddress', res.data);
+        //     }
+        // });
+
+        //市场列表
+        function onTableMarketList(type, page) {
+            $("#s-market-data").attr('pageType', 'market');
+            $("#marketPage").text('')
+            marketListData(type, page, function (result) {
+                if (result.code == 200) {
+                    updateMarketElvesList(type, result);
+                } else {
+                    // cocoMessage.warning(result.message, 0);
+                    $.message({
+                        message: result.message,
+                        type: 'warning'
+                    });
+                }
+            });
+        }
+
+        function onTableMySell(type, page) {
+            $("#s-market-data").attr('pageType', 'my');
+            $("#marketPage").text('')
+            mySellListData(type, page, function (result) {
+                if (result.code == 200) {
+                    updateSellingElvesList(type, result);
+                } else {
+                    // cocoMessage.warning(result.message, 0);
+                    $.message({
+                        message: result.message,
+                        type: 'warning'
+                    });
+                }
+            })
+        }
+        var timeTable = 24;
+
+        function onTableLog(time) {
+            $("#marketPage").text('')
+            if (time == -1) {
+                time = timeTable;
+                // console.log($("#tabsContentId").height());
+            }
+            timeTable = time;
+            // console.log('onTableLog:' + time);
+            tabsContentIdHeight = $("#tabsContentId").height();
+
+            onRecent(time);
+        }
+
+        function onRecent(time) {
+            if (time == 0) time = timeTable;
+            // time = 168;//测试 7天 168小时
+            marketLogListData("elf", time, function (result) {
+                if (result == null) {
+                    $("#marketTransactionList").children().remove();
+                    // resetMiningData();
+                    // window.location.reload();
+                } else {
+                    if (result.code == 200) {
+                        updateRecordLogList(result)
+                    } else {
+                        // cocoMessage.warning(result.message, 0);
+                        $.message({
+                            message: result.message,
+                            type: 'warning'
+                        });
+                    }
+                }
+            });
+        }
+
+        function onMyRecent(time) {
+            if (time == 0) time = timeTable;
+            // time = 168;//测试 7天 168小时
+            myMarketTransactionLogData("elf", time, function (result) {
+                if (result == null) {
+                    $("#marketMyTransactionList").children().remove();
+                    // resetMiningData();
+                    // window.location.reload();
+                } else {
+                    if (result.code == 200) {
+                        updateMyRecordLogList(result)
+                    } else {
+                        // cocoMessage.warning(result.message, 0);
+                        $.message({
+                            message: result.message,
+                            type: 'warning'
+                        });
+                    }
+                }
+            });
+        }
+
+        var walletAddress = "";
+        var selectIdValue = 0;
+        var selectTokenIdValue = 0;
+
+        function shelvesBtnList(type) {
+            isOnline(function (online) { //必须要验证线上是否在线
+                var data = getCookie();
+                if (online.data && data != "") { //在线 进行赎回操作
+                    putAwayGoodsData("elf", function (result) {
+                        if (result == null) {
+                            // resetMiningData();
+                            // window.location.reload();
+                        } else {
+                            if (result.code == 200) {
+                                walletAddress = result.data.toAddress;
+                                updateMarketShelvesElvesList(result);
+                            } else {
+                                // cocoMessage.warning(result.message, 0);
+                                $.message({
+                                    message: result.message,
+                                    type: 'warning'
+                                });
+                            }
+                        }
+                    });
+                } else {
+                    $.message({
+                        message: "User not login,Please wait.",
+                        type: 'info'
+                    });
+                    setTimeout(function () {
+                        loginEthereum();
+                    }, 1000);
+                }
+            });
+        }
+        var removeTokenId = 0;
+
+        function selectMarketElves(elfId, elfTokenId, i, total) {
+            selectIdValue = elfId;
+            selectTokenIdValue = elfTokenId;
+            for (let i = 0; i < total; i++) {
+                var id = "#marketPoolSelect" + i;
+                $(id).removeClass('select-active');
+            }
+            var id = "#marketPoolSelect" + i;
+            $(id).addClass('select-active');
+            // console.log(selectIdValue)
+            $("#s-market-data").attr('selectIdValue', selectIdValue);
+            $("#s-market-data").attr('selectTokenIdValue', selectTokenIdValue);
+        }
+
+        function onMarketSelect() {
+            const inputParam = Number(document.getElementById('shelvesMarketPrice').value);
+            if (isNaN(inputParam)) {
+                // cocoMessage.warning("Invalid parameter", 0);
+                $.message({
+                    message: "Invalid parameter",
+                    type: 'warning'
+                });
+                return;
+            }
+            if (inputParam <= 0) {
+                // cocoMessage.warning("Please input price", 0);
+                $.message({
+                    message: "Please input price",
+                    type: 'warning'
+                });
+                return;
+            }
+            var wallet = $("#s-market-data").attr('walletAddress');
+            // console.log(wallet);
+            // console.log(selectIdValue)
+            // var token    $("#s-market-data").attr('selectTokenIdValue');
+            if (selectIdValue > 0) {
+                isOnline(function (online) { //必须要验证线上是否在线
+                    var data = getCookie();
+                    if (online.data && data != "") { //在线 进行赎回操作
+                        loading();
+                        approvedNFT(walletAddress, selectTokenIdValue, selectIdValue, function (res, id, tokenId) {
+                            loaded();
+                            if (res == null) { } else {
+                                sellGoods(id);
+                            }
+                        });
+                    } else {
+                        $.message({
+                            message: "User not login,Please wait.",
+                            type: 'info'
+                        });
+                        setTimeout(function () {
+                            loginEthereum();
+                        }, 1000);
+                    }
+                });
+            } else {
+                // cocoMessage.warning("Please select goods", 3000);
+                $.message({
+                    message: "Please select goods",
+                    type: 'warning'
+                });
+            }
+        }
+
+        function sellGoods(id) {
+            const inputParam = Number(document.getElementById('shelvesMarketPrice').value);
+            loading();
+            var pageType = $("#s-market-data").attr('pageType');
+            sellGoodsData('elf', id, inputParam, pageType, function (result) {
+                loaded();
+                if (result == null) {
+                    // cocoMessage.warning('unknown', 0);
+                    $.message({
+                        message: 'unknown',
+                        type: 'warning'
+                    });
+                } else {
+                    if (result.code == 200) {
+                        $.message("Shelves Succeed!");
+                        if (pageType == 'my') {
+                            updateSellingElvesList("elf", result);
+                        }
+                        else {
+                            updateMarketElvesList('elf', result);
+                        }
+                    } else {
+                        // cocoMessage.warning(result.message, 0);
+                        $.message({
+                            message: result.message,
+                            type: 'warning'
+                        });
+                    }
+                }
+            })
+        }
+
+        function buy() {
+            var btnText = $("#marketElvesDialogBtn").attr("langtest");
+            var elf = JSON.parse($("#s-market-data").attr('elves'));
+            var toAddress = $("#s-market-data").attr('toaddress');
+            isOnline(function (online) { //必须要验证线上是否在线
+                var data = getCookie();
+                if (online.data && data != "") { //在线 进行赎回操作
+                    if (btnText == 'Market-Take') {
+                        loading();
+                        var removeTokenId = $("#s-market-data").attr('removeTokenId');
+                        var pageType = $("#s-market-data").attr('pageType');
+                        removeApprovedNFT(removeTokenId, function (res, tokenId) {
+                            loaded();
+                            if (res == null) { } else {
+                                loading();
+                                sellBackGoodsData("elf", tokenId, pageType, function (result) {
+                                    loaded();
+                                    if (result.code == 200) {
+                                        $.message("Take Succeed!");
+                                        if (pageType == 'my') {
+                                            updateSellingElvesList("elf", result);
+                                        }
+                                        else {
+                                            updateMarketElvesList("elf", result);
+                                        }
+                                        // window.location.reload();
+                                    } else {
+                                        $.message({
+                                            message: result.message,
+                                            type: 'warning'
+                                        });
+                                    }
+                                })
+                            }
+                        });
+                    } else {
+                        loading();
+                        transferToken(toAddress, elf.hash, elf.price, function (res, tokenId) {
+                            loaded();
+                            if (res == null) { } else {
+                                loading();
+                                buyGoodsData("elf", res.transactionHash, res.from, tokenId, function (result) {
+                                    loaded()
+                                    if (result.code == 200) {
+                                        // cocoMessage.success("Transfer Succeed!", 3000);
+                                        $.message("Transfer Succeed!");
+                                        updateMarketElvesList("elf", result);
+                                        updateUserInfo();
+                                    } else {
+                                        // cocoMessage.warning(result.message, 3000);
+                                        $.message({
+                                            message: result.message,
+                                            type: 'warning'
+                                        });
+                                    }
+                                })
+                            }
+                        });
+                    }
+                } else {
+                    $.message({
+                        message: "User not login,Please wait.",
+                        type: 'info'
+                    });
+                    setTimeout(function () {
+                        loginEthereum();
+                    }, 1000);
+                }
+            });
+        }
+        /**
+         * 更新上架列表
+         * */
+        function updateMarketShelvesElvesList(result) {
+            $("#shelvesDialogList").children().remove();
+            var list = result.data.putList;
+            if (list != undefined && list != null) {
+                for (let i = 0; i < list.length; i++) {
+                    var look_color = '';
+                    switch (list[i].level) {
+                        case 1:
+                            look_color = 'look-white-2';
+                            break;
+                        case 2:
+                            look_color = 'look-green-2';
+                            break;
+                        case 3:
+                            look_color = 'look-pepur-2';
+                            break;
+                        case 4:
+                            look_color = 'look-orange-2';
+                            break;
+                        case 5:
+                            look_color = 'look-red-2';
+                            break;
+                        case 6:
+                            look_color = 'look-black-2';
+                            break;
+                    }
+                    var nn = get_str(list[i].nickname);
+                    var insertText = " \
+                                <div class=\"col di text-center mt-2 mb-5 mining-link\">\
+                                    <div id=\"marketPoolSelect" + i + "\">\
+                                        <a class=\"\" href=\"javaScript:\" onclick='selectMarketElves(" + list[i].id + "," + list[i].hash + "," + i + "," + list.length + ")'>\
+                                            <div class=\"zi text-truncate px-4 w-100\">" + nn + "</div>\
+                                            <div class=\"tu " + look_color + "\"><img class=\"img-fluid\" src=\"images/elves/" + list[i].name + ".gif\" alt=\"\"></div>\
+                                            <img src=\"images/xsjl-bg.svg\" alt=\"\">\
+                                        </a>\
+                                    </div>\
+                                </div>";
+                    $("#shelvesDialogList").append(insertText);
+                }
+            }
+        }
+        /**
+         * 更新出售精灵列表
+         * */
+        function updateMarketElvesList(type, result) {
+            var isShowPage = false;
+            var totalPage = Math.ceil(result.data.total / 8);
+            $("#marketPage").text('')
+            $("#marketPage").zPager({
+                totalData: result.data.total, //数据总条数
+                pageData: 8, //每页数据条数
+                pageCount: totalPage, //总页数
+                current: result.data.currPage, //当前页码数
+                htmlBox: $('#wraper'),
+                btnShow: true,
+                ajaxSetData: false,
+                currentPage: function (curPage) {
+                    if (isShowPage) {
+                        // console.log("当前页码数：" + curPage);
+                        onTableMarketList(type, curPage);
+                    }
+                    isShowPage = true;
+                }
+            });
+
+            $("#s-market-data").attr('toaddress', result.data.toAddress);
+            $("#totalMarketNumber").text(result.data.total);
+            $("#goodsListIds").children().remove();
+            var list = result.data.goodsDTOList;
+            for (let i = 0; i < list.length && i < 8; i++) {
+                var typePath = '/';
+                var hash = list[i].hash;
+                var name = list[i].name;
+                var nickname = list[i].nickname;
+                var level = list[i].level;
+                var price = list[i].price;
+                var power = list[i].power;
+                if (type == 'elf') {
+                    typePath = "elves";
+                } else {
+                    typePath = "energys";
+                }
+                var look_color = '';
+                var market_bg = "s-market-box";
+                // var market_bg = "";
+                switch (level) {
+                    case 1:
+                        look_color = 'look-white-2';
+                        // look_color = 'look-white';
+                        market_bg = 's-market-box-white';
+                        break;
+                    case 2:
+                        look_color = 'look-green-2';
+                        // look_color = 'look-green';
+                        market_bg = 's-market-box-green';
+                        break;
+                    case 3:
+                        look_color = 'look-pepur-2';
+                        // look_color = 'look-pepur';
+                        market_bg = 's-market-box-pepur';
+                        break;
+                    case 4:
+                        look_color = 'look-orange-2';
+                        // look_color = 'look-orange';
+                        market_bg = 's-market-box-orange';
+                        break;
+                    case 5:
+                        look_color = 'look-red-2';
+                        // look_color = 'look-red';
+                        market_bg = 's-market-box-red';
+                        break;
+                    case 6:
+                        look_color = 'look-black-2';
+                        // look_color = 'look-black';
+                        market_bg = 's-market-box-black';
+                        break;
+                }
+                // market_bg = "s-market-box";
+                var nn = get_str(nickname);
+                var insertText =
+                    "<div class=\"col mb-4\"> \
+                        <div class='s-market-box'> \
+                            <a href=\"#\" data-bs-toggle=\"modal\" data-bs-target=\"#look\" onclick ='marketElvesInfo(" + JSON.stringify(list[i]) + ")'> \
+                                <div class=\""+ market_bg + "\"> \
+                                    <img class=\"img-fluid  " + look_color + " p-0\" src=\"images/" + typePath + '/' + name + ".gif\" alt=\"\">\
+                                </div> \
+                                <div class=\"top-0 text-truncate pt-3 pt-md-4 text-white text-center\"><h4 style=\"color: #9AA0D1;\" ><s langtest=\"" + nickname + "\">" + nn + "</s></h4><s>#" + hash + "</s></div> \
+                                <div class=\"d-flex text-white text-truncate py-1 py-md-2 px-3\"><div><s>" + power + "X</s></div><div class=\"ms-auto ps-2\"><s>" + price + "</s><small><img class=\" ps-2 bp-1\" style=\"width: 26px;\" src=\"images/cpet.png\"> </small></div></div>\
+                            </a> \
+                        </div> \
+                    </div>"
+                $("#goodsListIds").append(insertText);
+            }
+        }
+
+        function marketElvesInfo(elves) {
+            $("#s-market-data").attr('removeTokenId', elves.hash);
+            $("#marketElvesDialogImg").removeClass("look-white-2");
+            $("#marketElvesDialogImg").removeClass("look-green-2");
+            $("#marketElvesDialogImg").removeClass("look-pepur-2");
+            $("#marketElvesDialogImg").removeClass("look-orange-2");
+            $("#marketElvesDialogImg").removeClass("look-red-2");
+            $("#marketElvesDialogImg").removeClass("look-black-2");
+            var look_color = '';
+            switch (elves.level) {
+                case 1:
+                    look_color = 'look-white-2';
+                    break;
+                case 2:
+                    look_color = 'look-green-2';
+                    break;
+                case 3:
+                    look_color = 'look-pepur-2';
+                    break;
+                case 4:
+                    look_color = 'look-orange-2';
+                    break;
+                case 5:
+                    look_color = 'look-red-2';
+                    break;
+                case 6:
+                    look_color = 'look-black-2';
+                    break;
+            }
+            var nn = get_str(elves.nickname);
+            var info = get_str(elves.nickname + " Info");
+            $("#marketElvesDialogImg").attr('src', "images/elves/" + elves.name + ".gif");
+            $("#marketElvesDialogImg").addClass(look_color);
+            $("#marketElvesDialogName").text(nn);
+            $("#marketElvesDialogAuthor").text(elves.userName);
+            $("#marketElvesDialogAddress").text(elves.address);
+            $("#marketElvesDialogTokenId").text("#" + elves.hash);
+            $("#marketElvesDialogPrice").text(elves.price);
+            // $("#marketElvesDialogIntroduce").text(elves.introduce);//
+            $("#marketElvesDialogIntroduce").text(info); //
+
+            var data = getCookie();
+            if (data != "") {
+                var tmp = JSON.parse(data).hash;
+                if (tmp == elves.userName) {
+                    var n = get_str("Market-Take");
+                    $("#marketElvesDialogBtn").text(n);
+                    $("#marketElvesDialogBtn").attr("langtest", "Market-Take");
+                } else {
+                    var n = get_str("Buy");
+                    $("#marketElvesDialogBtn").text(n);
+                    $("#marketElvesDialogBtn").attr("langtest", "Buy");
+                }
+            }
+            $("#s-market-data").attr('elves', JSON.stringify(elves));
+        }
+
+        function updateSellingElvesList(type, result) {
+            var isShowPage = false;
+            var totalPage = Math.ceil(result.data.total / result.data.pageShowMax);
+            $("#marketPage").text('')
+            $("#marketPage").zPager({
+                totalData: result.data.total, //数据总条数
+                pageData: 8, //每页数据条数
+                pageCount: totalPage, //总页数
+                current: result.data.currPage, //当前页码数
+                htmlBox: $('#wraper'),
+                btnShow: true,
+                ajaxSetData: false,
+                currentPage: function (curPage) {
+                    if (isShowPage) {
+                        // console.log("当前页码数：" + curPage);
+                        onTableMySell(type, curPage);
+                    }
+                    isShowPage = true;
+                }
+            });
+
+            $("#totalSellingNumber").text(result.data.total);
+            $("#myGoodsListIds").children().remove();
+            var list = result.data.goodsDTOList;
+            for (let i = 0; i < list.length && i < 8; i++) {
+                var typePath = '/';
+                var hash = list[i].hash;
+                var name = list[i].name;
+                var nickname = list[i].nickname;
+                var level = list[i].level;
+                var power = list[i].power;
+                var price = list[i].price;
+                if (type == 'elf') {
+                    typePath = "elves";
+                } else {
+                    typePath = "energys";
+                }
+                var look_color = '';
+                var market_bg = "s-market-box";
+                switch (level) {
+                    case 1:
+                        look_color = 'look-white-2';
+                        market_bg = 's-market-box-white';
+                        break;
+                    case 2:
+                        look_color = 'look-green-2';
+                        market_bg = 's-market-box-green';
+                        break;
+                    case 3:
+                        look_color = 'look-pepur-2';
+                        market_bg = 's-market-box-pepur';
+                        break;
+                    case 4:
+                        look_color = 'look-orange-2';
+                        market_bg = 's-market-box-orange';
+                        break;
+                    case 5:
+                        look_color = 'look-red-2';
+                        market_bg = 's-market-box-red';
+                        break;
+                    case 6:
+                        look_color = 'look-black-2';
+                        market_bg = 's-market-box-black';
+                        break;
+                }
+                var nn = get_str(nickname);
+                var insertText =
+                    "<div class=\"col mb-4\"> \
+                        <div class='s-market-box'> \
+                            <a href=\"#\" data-bs-toggle=\"modal\" data-bs-target=\"#look\" onclick ='marketElvesInfo(" + JSON.stringify(list[i]) + ")'> \
+                                <div class=\""+ market_bg + "\"> \
+                                    <img class=\"img-fluid  " + look_color + " p-0\" src=\"images/" + typePath + '/' + name + ".gif\" alt=\"\">\
+                                </div> \
+                                <div class=\"top-0 text-truncate pt-3 pt-md-4 text-white text-center\"><h4 style=\"color: #9AA0D1;\" ><s langtest=\"" + nickname + "\">" + nn + "</s></h4><s>#" + hash + "</s></div> \
+                                <div class=\"d-flex text-white text-truncate py-1 py-md-2 px-3\"><div><s>" + power + "X</s></div><div class=\"ms-auto ps-2\"><s>" + price + "</s><small><img class=\" ps-2 bp-1\" style=\"width: 26px;\" src=\"images/cpet.png\"> </small></div></div>\
+                            </a> \
+                        </div> \
+                    </div>"
+                $("#myGoodsListIds").append(insertText);
+            }
+        }
+
+        function updateRecordLogList(result) {
+            $("#marketTransactionTotal1").text(result.data.total);
+            $("#marketTransactionSum1").text(result.data.sum);
+            $("#marketTransactionAvg1").text(result.data.avg);
+            $("#marketTransactionTotal7").text(result.data.total);
+            $("#marketTransactionSum7").text(result.data.sum);
+            $("#marketTransactionAvg7").text(result.data.avg);
+            $("#marketTransactionTotal30").text(result.data.total);
+            $("#marketTransactionSum30").text(result.data.sum);
+            $("#marketTransactionAvg30").text(result.data.avg);
+            $("#marketTransactionList").children().remove();
+            var list = result.data.list;
+            if (list != null) {
+                for (let i = 0; i < list.length; i++) {
+                    var typePath = '';
+                    var suffix = ".png";
+                    if (list[i].goodsType == 'elf') {
+                        typePath = "elves";
+                        suffix = ".gif";
+                    } else {
+                        typePath = "energys";
+                        continue;
+                    }
+                    var look_color = '';
+                    switch (list[i].level) {
+                        case 1:
+                            look_color = 'look-white-2';
+                            break;
+                        case 2:
+                            look_color = 'look-green-2';
+                            break;
+                        case 3:
+                            look_color = 'look-pepur-2';
+                            break;
+                        case 4:
+                            look_color = 'look-orange-2';
+                            break;
+                        case 5:
+                            look_color = 'look-red-2';
+                            break;
+                        case 6:
+                            look_color = 'look-black-2';
+                            break;
+                    }
+                    var insertText =
+                        "<tr class=\"row row-cols-5\"> \
+                            <td class=\"col  d-flex align-items-center\"> \
+                                <img class=\"img-fluid mx-auto sarket-table-img " + look_color + "\" src=\"images/" + typePath + "/" + list[i].goodsName + suffix + "\" alt=\"\">\
+                            </td>\
+                            <td class=\"col\"><div class=\"text-truncate py-4 py-lg-5\">" + list[i].buyerUserHash + "</div></td> \
+                            <td class=\"col\"><div class=\"text-truncate py-4 py-lg-5\">" + list[i].sellerUserHash + "</div></td> \
+                            <td class=\"col\"><div class=\"text-truncate py-4 py-lg-5\">" + list[i].goodsPrice + "<img class=\" ps-2 bp-1\" style=\"width: 26px;\" src=\"images/cpet.png\"></div></td> \
+                            <td class=\"col\"><div class=\"text-truncate py-4 py-lg-5\">" + list[i].transactionTime + "</div></td> \
+                        </tr>"
+                    $("#marketTransactionList").append(insertText);
+                }
+            }
+        }
+
+        function updateMyRecordLogList(result) {
+            $("#marketTransactionTotal1").text(result.data.total);
+            $("#marketTransactionSum1").text(result.data.sum);
+            $("#marketTransactionAvg1").text(result.data.avg);
+            $("#marketTransactionTotal7").text(result.data.total);
+            $("#marketTransactionSum7").text(result.data.sum);
+            $("#marketTransactionAvg7").text(result.data.avg);
+            $("#marketTransactionTotal30").text(result.data.total);
+            $("#marketTransactionSum30").text(result.data.sum);
+            $("#marketTransactionAvg30").text(result.data.avg);
+            $("#marketMyTransactionList").children().remove();
+            var list = result.data.list;
+            if (list != null) {
+                for (let i = 0; i < list.length; i++) {
+                    var typePath = '';
+                    var suffix = ".png";
+                    if (list[i].goodsType == 'elf') {
+                        typePath = "elves";
+                        suffix = ".gif";
+                    } else {
+                        typePath = "energys";
+                        continue;
+                    }
+                    var look_color = '';
+                    switch (list[i].level) {
+                        case 1:
+                            look_color = 'look-white-2';
+                            break;
+                        case 2:
+                            look_color = 'look-green-2';
+                            break;
+                        case 3:
+                            look_color = 'look-pepur-2';
+                            break;
+                        case 4:
+                            look_color = 'look-orange-2';
+                            break;
+                        case 5:
+                            look_color = 'look-red-2';
+                            break;
+                        case 6:
+                            look_color = 'look-black-2';
+                            break;
+                    }
+                    var insertText =
+                        "<tr class=\"row row-cols-5\"> \
+                        <td class=\"col  d-flex align-items-center\"> \
+                            <img class=\"img-fluid mx-auto sarket-table-img " + look_color + "\" src=\"images/" + typePath + "/" + list[i].goodsName + suffix + "\" alt=\"\">\
+                        </td>\
+                        <td class=\"col\"><div class=\"text-truncate py-4 py-lg-5\">" + list[i].buyerUserHash + "</div></td> \
+                        <td class=\"col\"><div class=\"text-truncate py-4 py-lg-5\">" + list[i].sellerUserHash + "</div></td> \
+                        <td class=\"col\"><div class=\"text-truncate py-4 py-lg-5\">" + list[i].goodsPrice + "<img class=\" ps-2 bp-1\" style=\"width: 26px;\" src=\"images/cpet.png\"></div></td> \
+                            <td class=\"col\"><div class=\"text-truncate py-4 py-lg-5\">" + list[i].transactionTime + "</div></td> \
+                        </tr>"
+                    $("#marketMyTransactionList").append(insertText);
+                }
+            }
+        }
+    }
+</script>
+<!-- <script src="js/libs/page/js/jquery.z-pager.js" type="text/javascript" charset="utf-8"></script> -->

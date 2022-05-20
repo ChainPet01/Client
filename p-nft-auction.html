@@ -1,0 +1,885 @@
+<div id="nav-market" class="container-lg-fluid mx-4">
+    <nav>
+        <div class="nav nav-tabs nav-tabs2" id="my-storage-tab" role="tablist">
+            <a class=" active" id="nft-auction-auction-tab" data-bs-toggle="tab" href="#nft-auction-auction" role="tab"
+                aria-controls="nft-auction-auction" aria-selected="true"><s langtest="Auction-Auction">Auction</s></a>
+            <a class="" id="nft-auction-record-tab" data-bs-toggle="tab" href="#nft-auction-record" role="tab"
+                aria-controls="nft-auction-record" aria-selected="false" onclick="auctionTransactionLog(-1)"><s
+                    langtest="Auction-Record">Record</s></a>
+            <a class="" id="nft-auction-my-record-tab" data-bs-toggle="tab" href="#nft-auction-my-record" role="tab"
+                aria-controls="nft-auction-my-record" aria-selected="false" onclick="auctionMyTransactionLog(-1)"><s
+                    langtest="Auction-My-Record">My
+                    Record</s></a>
+        </div>
+    </nav>
+    <div class="tab-content mt-4 mt-md-5" id="my-storage-tabContent">
+        <div class="tab-pane fade show active" id="nft-auction-auction" role="tabpanel"
+            aria-labelledby="nft-auction-auction-tab">
+            <!-- auction -->
+            <p><a style="color: #9895C0;" href="#" data-bs-toggle="modal" data-bs-target="#text-rule-auction"><s
+                        langtest="Auction-Rule">Auction rules>></s></a>
+            </p>
+            
+            <div class="row blue-border d-auction mt-2 my-md-5 pt-3 py-md-5 mx-0 rounded-2">
+            <!-- <div class="row row-cols-1 row-cols-lg-2 s-market-paimai pt-5"> -->
+                <!-- <div class="col text-center auction-left position-relative">
+                    <div class="" id="auctionGoodsImgLight"></div>
+                    <img class="img-fluid" src="" alt="" id="auctionGoodsImg">
+                    <p class="mb-0 py-3 mt-4" id="remainingTimeAcution"></p>
+                </div> -->
+
+                <div class="col-12 col-sm-6">
+                    <div class="col text-center auction-left position-relative">
+                        <div class="" id="auctionGoodsImgLight"></div>
+                        <img class="img-fluid look-black-2 d-auctionimg" src="images/elves/BlackStegosaurusDragon.gif"
+                            alt="" id="auctionGoodsImg">
+                        <p class="mb-0 py-2 mt-4" style="font-size: 1rem;" id="remainingTimeAcution"></p>
+                    </div>
+                </div>
+
+                <div class="col auction-right px-2 px-lg-5 text-light">
+                    <h4 class="mb-4 mt-5 mt-md-0"><i>&nbsp;</i><s id="auctionName"></s></h4>
+
+                    <div class="container-fluid p-0 biaoge2">
+                        <nav>
+                            <div class="nav nav-tabs biaogehead2" id="nav-tab" role="tablist">
+                                <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home"
+                                    role="tab" aria-controls="nav-home" aria-selected="true" onclick="basicInfo()"><s
+                                        langtest="Auction-Basic-Info">Basic Info</s></a>
+                                <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile"
+                                    role="tab" aria-controls="nav-profile" aria-selected="false"
+                                    onclick="auctionHistory()"><s langtest="Auction-Bidding-History">Bidding
+                                        History</s></a>
+                            </div>
+                        </nav>
+
+                        <div class="tab-content d-auction" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                aria-labelledby="nav-home-tab">
+                                <!-- 基本信息内容 -->
+
+                                <div class="row p-3 biaogecenter">
+                                    <table class="table table-striped align-middle">
+                                        <tbody>
+                                            <tr>
+                                                <td><s langtest="Author">Author</s></td>
+                                                <td class="text-truncate table-td" id="auctionAuthor">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><s langtest="Best Bid">Best Bid</s></td>
+                                                <td class="text-truncate table-td" id="auctionBestBid">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><s langtest="Price">Price</s></td>
+                                                <td class="text-truncate table-td"><s id="auctionPrice"></s><img
+                                                        class=" ps-1 bp-1 w-30px" src="images/bnb.svg">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><s langtest="Contract Address">Contract Address</s></td>
+                                                <td class="text-truncate table-td" id="auctionContractAdderss"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><s langtest="Token ID">Token ID</s></td>
+                                                <td id="auctionTokenId"></td>
+                                            </tr>
+
+
+                                        </tbody>
+
+                                    </table>
+
+                                </div>
+
+                                <!-- 基本信息内容 -->
+                            </div>
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                aria-labelledby="nav-profile-tab">
+                                <!-- 出价历史内容 -->
+                                <div class="row g-0 p-0 p-md-3 " id="biddingHistoryList">
+
+
+                                </div>
+
+                                <!-- 出价历史内容 -->
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-6 button-yellow py-2 py-lg-3 text-center text-uppercase button-grey">
+                            <!-- 注释的是灰色按钮 -->
+                            <!-- <div class="col-6 button-grey py-2 py-lg-3 text-center text-uppercase"> -->
+
+                            <a href="javascript:;" data-bs-toggle="" data-bs-target="" id="biddingBtnId"><s
+                                    langtest="Auction-Bidding">Bidding</s></a>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- 加价 -->
+
+                    <!-- 上架销售精灵 -->
+                    <div class="modal fade show" id="jiajia" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+                        style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog  modal-dialog-scrollable modal-dialog-centered">
+                            <div class="modal-content xsjl-d">
+
+                                <div class="modal-header border-0">
+                                    <h5 class="modal-title text-center text-white w-100"
+                                        id="exampleModalScrollableTitle">
+                                    </h5>
+                                    <button type="button" class="btn-close text-warning" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body xdjl mx-3">
+                                    <div class="container ">
+                                        <img class="img-fluid" src="" alt="" id="auctionDialogGoodsImage">
+                                    </div>
+
+                                </div>
+
+                                <div class="container">
+                                    <div class="mb-3 row m-5">
+                                        <label for="staticEmail" class="col-4 col-form-label"><s
+                                                langtest="Price">Price</s>:</label>
+                                        <div class="col-8">
+                                            <label for="staticEmail" class="col-4 col-form-label"
+                                                id="auctionDialogPrice"></label>
+
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row mx-5">
+                                        <label for="inputPassword" class="col-4 col-form-label"><s
+                                                langtest="Auction-Bidding">Bidding</s>:</label>
+                                        <div class="col-8">
+                                            <input type="text" class="form-control sjsl m-0"
+                                                oninput="value=value.replace(/[^\.\d]/g,'')" id="inputtext">
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center mb-4">
+                                        <div class="col-6 button-yellow py-2 py-lg-3 text-center text-uppercase">
+                                            <a href="#" data-bs-dismiss="modal" aria-label="Close"
+                                                onclick="biddingAuction()"><s langtest="Ok">Ok</s></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- 加价 -->
+
+
+
+
+                </div>
+            </div>
+            <!-- auction -->
+        </div>
+        <div class="tab-pane fade" id="nft-auction-record" role="tabpanel" aria-labelledby="nft-auction-record-tab">
+            <!-- record -->
+            <div class="biaoge mb-5">
+                <!-- 时间段开始 -->
+                <nav>
+                    <div class="nav nav-tabs biaogehead" id="nav-tab" role="tablist">
+                        <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-24a" role="tab"
+                            aria-controls="nav-home" aria-selected="true" onclick="auctionTransactionLog(24)"><s
+                                langtest="Last-24-Hours">Last 24
+                                Hours</s></a>
+                        <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-7daya" role="tab"
+                            aria-controls="nav-profile" aria-selected="false" onclick="auctionTransactionLog(168)"><s
+                                langtest="Day-7">Day
+                                7</s></a>
+                        <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-30daya" role="tab"
+                            aria-controls="nav-profile" aria-selected="false" onclick="auctionTransactionLog(720)"><s
+                                langtest="Day-30">Day
+                                30</s></a>
+                    </div>
+                </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+                    <!-- 24小时内容开始 -->
+                    <div class="tab-pane fade show active" id="nav-24a" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 align-items-center px-5 pb-5 biaogecenter">
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table1.svg" alt=""></div>
+                                    <div class="col"><s langtest="Auction-Total-Transactions">Total
+                                            Transactions</s><span id="auctionLog24Total">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table2.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Total-Transactions-Volume">Total
+                                            Transactions
+                                            Volume</s><span id="auctionLog24Sum">0</span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table3.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Average-Price">Average
+                                            Price</s><span id="auctionLog24Avg">0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 7天开始 -->
+                    <div class="tab-pane fade" id="nav-7daya" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 align-items-center px-5 pb-5 biaogecenter">
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table1.svg" alt=""></div>
+                                    <div class="col"><s langtest="Auction-Total-Transactions">Total
+                                            Transactions</s><span id="auctionLog168Total">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table2.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Total-Transactions-Volume">Total
+                                            Transaction
+                                            Volume</s><span id="auctionLog168Sum">0</span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table3.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Average-Price">Average
+                                            Price</s><span id="auctionLog168Avg">0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 30天开始 -->
+                    <div class="tab-pane fade" id="nav-30daya" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 align-items-center px-5 pb-5 biaogecenter">
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table1.svg" alt=""></div>
+                                    <div class="col"><s langtest="Auction-Total-Transactions">Total
+                                            Transactions</s><span id="auctionLog720Total">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table2.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Total-Transactions-Volume">Total
+                                            Transaction
+                                            Volume</s><span id="auctionLog720Sum">0</span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table3.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Average-Price">Average
+                                            Price</s><span id="auctionLog720Avg">0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 时间段结束 -->
+            </div>
+            <div class="biaoge">
+                <div class="tab-pane fade show active" id="nav-zuijinchengjiao" role="tabpanel"
+                    aria-labelledby="nav-home-tab">
+                    <div class="row p-3 biaogecenter text-center">
+                        <div class="col"><s langtest="Role">Role</s></div>
+                        <div class="col"><s langtest="Buyer">Buyer</s></div>
+                        <div class="col"><s langtest="Seller">Seller</s></div>
+                        <div class="col"><s langtest="Price">Price</s></div>
+                        <div class="col"><s langtest="Time">Time</s></div>
+                    </div>
+
+                    <div id="auctionLogList" class="container-fluid overflow-auto elves">
+                        <!-- <div class="row d-flex align-items-center text-center">
+                            <div class="col text-truncate"><img class="img-fluid " src="images/elves/BlackStegosaurusDragon.gif" alt=""></div>
+                            <div class="col text-truncate">0x31bda6a24e5b10c0a8041ea8d8802785f7496cd7</div>
+                            <div class="col text-truncate">0x91589c1a1e907746495ac731f4719d8fcab78e88</div>
+                            <div class="col text-truncate">0.00008</div>
+                            <div class="col text-truncate">2021-11-29 12:39:20</div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- record -->
+        </div>
+        <div class="tab-pane fade" id="nft-auction-my-record" role="tabpanel"
+            aria-labelledby="nft-auction-my-record-tab">
+            <!-- my-record -->
+            <!-- 我的记录开始 -->
+            <div class="biaoge mb-5">
+                <!-- 时间段开始 -->
+                <nav>
+                    <div class="nav nav-tabs biaogehead" id="nav-tab" role="tablist">
+                        <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-24s" role="tab"
+                            aria-controls="nav-home" aria-selected="true" onclick="auctionMyTransactionLog(24)"><s
+                                langtest="Last-24-Hours">Last 24
+                                Hours</s></a>
+                        <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-7days" role="tab"
+                            aria-controls="nav-profile" aria-selected="false" onclick="auctionMyTransactionLog(168)"><s
+                                langtest="Day-7">Day 7</s></a>
+                        <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-30days" role="tab"
+                            aria-controls="nav-profile" aria-selected="false" onclick="auctionMyTransactionLog(720)"><s
+                                langtest="Day-30">Day 30</s></a>
+                    </div>
+                </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+                    <!-- 24小时内容开始 -->
+                    <div class="tab-pane fade show active" id="nav-24s" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 align-items-center px-5 pb-5 biaogecenter">
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table1.svg" alt=""></div>
+                                    <div class="col"><s langtest="Auction-Total-Transactions">Total
+                                            Transactions</s><span id="auctionMyLog24Total">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table2.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Total-Transactions-Volume">Total
+                                            Transactions
+                                            Volume</s><span id="auctionMyLog24Sum">0</span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table3.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Average-Price">Average
+                                            Price</s><span id="auctionMyLog24Avg">0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 7天开始 -->
+                    <div class="tab-pane fade" id="nav-7days" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 align-items-center px-5 pb-5 biaogecenter">
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table1.svg" alt=""></div>
+                                    <div class="col"><s langtest="Auction-Total-Transactions">Total
+                                            Transactions</s><span id="auctionMyLog168Total">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table2.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Total-Transactions-Volume">Total
+                                            Transaction
+                                            Volume</s><span id="auctionMyLog168Sum">0</span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table3.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Average-Price">Average
+                                            Price</s><span id="auctionMyLog168Avg">0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 30天开始 -->
+                    <div class="tab-pane fade" id="nav-30days" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 align-items-center px-5 pb-5 biaogecenter">
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table1.svg" alt=""></div>
+                                    <div class="col"><s langtest="Auction-Total-Transactions">Total
+                                            Transactions</s><span id="auctionMyLog720Total">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table2.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Total-Transactions-Volume">Total
+                                            Transaction
+                                            Volume</s><span id="auctionMyLog720Sum">0</span></div>
+                                </div>
+                            </div>
+                            <div class="col mt-5">
+                                <div class="row">
+                                    <div class="col-auto"><img src="images/table3.svg" alt=""></div>
+                                    <div class="col text-truncate"><s langtest="Auction-Average-Price">Average
+                                            Price</s><span id="auctionMyLog720Avg">0</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 时间段结束 -->
+            </div>
+
+
+            <!-- 成交记录&我的记录 -->
+            <div class="biaoge">
+                <!-- 表头开始 -->
+                <!-- <nav>
+                        <div class="nav nav-tabs biaogehead" id="nav-tab" role="tablist">
+                            <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                href="#nav-zuijinchengjiao" role="tab" aria-controls="nav-home"
+                                aria-selected="true">最近成交</a>
+                            <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                href="#nav-wodejilu" role="tab" aria-controls="nav-profile"
+                                aria-selected="false">我的记录</a>
+                        </div>
+                    </nav> -->
+                <!-- <div class="tab-content" id="nav-tabContent"> -->
+                <!-- 最近成交内容 -->
+                <div class="tab-pane fade show active" id="nav-zuijinchengjiao" role="tabpanel"
+                    aria-labelledby="nav-home-tab">
+                    <div class="row p-3 biaogecenter text-center">
+                        <div class="col"><s langtest="Role">Role</s></div>
+                        <div class="col"><s langtest="Buyer">Buyer</s></div>
+                        <div class="col"><s langtest="Seller">Seller</s></div>
+                        <div class="col"><s langtest="Price">Price</s></div>
+                        <div class="col"><s langtest="Time">Time</s></div>
+                    </div>
+
+                    <div id="auctionMyLogList" class="container-fluid overflow-auto elves">
+                        <!-- <div class="row d-flex align-items-center text-center">
+                            <div class="col text-truncate"><img class="img-fluid " src="images/elves/BlackStegosaurusDragon.gif" alt=""></div>
+                            <div class="col text-truncate">0x31bda6a24e5b10c0a8041ea8d8802785f7496cd7</div>
+                            <div class="col text-truncate">0x91589c1a1e907746495ac731f4719d8fcab78e88</div>
+                            <div class="col text-truncate">0.00008</div>
+                            <div class="col text-truncate">2021-11-29 12:39:20</div>
+                        </div> -->
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- my-record -->
+        </div>
+
+    </div>
+    <span id="s-auction-data"></span>
+</div>
+
+
+<script>
+    var _price = -1
+    var pageIndex = 0; //0 basic info 1 bidding history
+    var isStartTime = false;
+    var transactionLogTime = 24;
+    var myTransactionLogTime = 24;
+    addCookie('tabs_small_nav', "2", 30);
+
+    // basicInfo();
+    /**
+     *  竞价按钮
+     *  */
+    function biddingAuction() {
+        var bidding = Number($("#inputtext").val());
+        if (bidding > _price) {
+            isOnline(function (online) { //必须要验证线上是否在线
+                var data = getCookie();
+                if (online.data && data != "") { //在线 进行赎回操作
+                    var from = JSON.parse(data).hash;
+                    var address = $("#s-auction-data").attr('address');
+                    transferBNB(from, address, bidding, function (hash) {
+                        if (hash == null || hash == "") {
+                            // cocoMessage.warning('Unknown error!', 3000);
+                            $.message({
+                                message: 'Unknown error!',
+                                type: 'warning'
+                            });
+                            return;
+                        }
+                        $.message('Payment successful! Please wait.');
+                        loading();
+                        buyAuctionData(bidding, hash, function (result) {
+                            loaded();
+                            $.message('Congratulations, The subscription is successful!');
+                            updateAuctionBasicInfoData(result);
+                            updateUserInfo();
+                            if (pageIndex == 0) { } else {
+                                auctionHistory();
+                            }
+                        });
+                    })
+                } else {
+                    $.message({
+                        message: "User not login,Please wait.",
+                        type: 'info'
+                    });
+                    setTimeout(function () {
+                        loginEthereum();
+                    }, 1000);
+                }
+            });
+
+        } else {
+            // cocoMessage.warning('Invalid parameter!', 0);
+            $.message({
+                message: 'Invalid parameter!',
+                type: 'warning'
+            });
+        }
+    }
+    /**
+     * 基础信息
+     * */
+    function basicInfo() {
+        pageIndex = 0;
+        auctionData(function (result) {
+            updateAuctionBasicInfoData(result);
+        });
+    }
+    /**
+     * 出价历史
+     * */
+    function auctionHistory() {
+        pageIndex = 1;
+        auctionHistoryLogListData(function (result) {
+            updateAuctionBiddingHistory(result);
+        });
+    }
+    /**
+     * 交易记录
+     * */
+    function auctionTransactionLog(time) {
+        if (time == -1) {
+            time = transactionLogTime;
+        } else {
+            transactionLogTime = time;
+        }
+        auctionLogListData(time, function (result) {
+            updateAuctionRecentLog(time, result);
+        });
+    }
+    /**
+     * 我的交易记录
+     * */
+    function auctionMyTransactionLog(time) {
+        if (time == -1) {
+            time = myTransactionLogTime;
+        } else {
+            myTransactionLogTime = time;
+        }
+        myAuctionListData(time, function (result) {
+            updateMyAuctionRecentLog(time, result);
+        })
+    }
+    /**
+     * 更新我的成交记录
+     * */
+    function updateMyAuctionRecentLog(time, result) {
+        if (result.code == 200) {
+            var total = result.data.total;
+            var sum = result.data.sum;
+            var avg = result.data.avg;
+            var list = result.data.list;
+            if (time == 24) {
+                $("#auctionMyLog24Total").text(total);
+                $("#auctionMyLog24Sum").text(sum);
+                $("#auctionMyLog24Avg").text(avg);
+                // console.log($("#auctionMyLog24Total").text())
+            } else if (time == 168) {
+                $("#auctionMyLog168Total").text(total);
+                $("#auctionMyLog168Sum").text(sum);
+                $("#auctionMyLog168Avg").text(avg);
+                // console.log($("#auctionMyLog168Total").text())
+            } else if (time == 720) {
+                $("#auctionMyLog720Total").text(total);
+                $("#auctionMyLog720Sum").text(sum);
+                $("#auctionMyLog720Avg").text(avg);
+                // console.log($("#auctionMyLog720Total").text())
+            }
+            $("#auctionMyLogList").children().remove();
+            if (list != undefined && list != null) {
+                for (let i = 0; i < list.length; i++) {
+                    // images/elves/" + name + ".png"
+                    var imagePath = "";
+                    if (list[i].type == 'elf') {
+                        imagePath = "images/elves/" + list[i].name + ".gif";
+                    } else {
+                        imagePath = "images/energys/" + list[i].name + ".gif";
+                    }
+                    imagePath = imagePath.replace(/\s+/g, "%20");
+                    // var insertText = "<tr><th scope=\"row\"><img src=" + imagePath + " alt=\"\"></th><td class=\"col text-truncate table-td\">" + list[i].purchaser + "</td><td class=\"col text-truncate table-td\">" + list[i].author + "</td><td class=\"col text-truncate table-td\">" + list[i].price + "</td><td class=\"col text-truncate table-td\">" + list[i].time + "</td></tr>"
+                    var insertText = " \
+                    <div class=\"row d-flex align-items-center text-center\">\
+                            <div class=\"col text-truncate\"><img class=\"img-fluid \" src=\""+ imagePath + "\" alt=\"\"></div>\
+                            <div class=\"col text-truncate\">"+ list[i].purchaser + "</div>\
+                            <div class=\"col text-truncate\">" + list[i].author + "</div>\
+                            <div class=\"col text-truncate\">" + list[i].price + "<img class=\" ps-1 bp-1 w-30px\" src=\"images/bnb.svg\"></div>\
+                            <div class=\"col text-truncate\">" + list[i].time + "</div>\
+                    </div>";
+                    $("#auctionMyLogList").append(insertText);
+                }
+            }
+        } else {
+            // cocoMessage.warning(result.message, 3000);
+            $.message({
+                message: result.message,
+                type: 'warning'
+            });
+        }
+    }
+    /**
+     * 更新成交记录
+     * */
+    function updateAuctionRecentLog(time, result) {
+        // console.log(time, result);
+        if (result.code == 200) {
+            var total = result.data.total;
+            var sum = result.data.sum;
+            var avg = result.data.avg;
+            var list = result.data.list;
+            if (time == 24) {
+                $("#auctionLog24Total").text(total);
+                $("#auctionLog24Sum").text(sum);
+                $("#auctionLog24Avg").text(avg);
+            } else if (time == 168) {
+                $("#auctionLog168Total").text(total);
+                $("#auctionLog168Sum").text(sum);
+                $("#auctionLog168Avg").text(avg);
+            } else if (time == 720) {
+                $("#auctionLog720Total").text(total);
+                $("#auctionLog720Sum").text(sum);
+                $("#auctionLog720Avg").text(avg);
+            }
+
+            $("#auctionLogList").children().remove();
+            if (list != undefined && list != null) {
+                for (let i = 0; i < list.length; i++) {
+                    // images/elves/" + name + ".png"
+                    var imagePath = "";
+                    if (list[i].type == 'elf') {
+                        imagePath = "images/elves/" + list[i].name + ".gif";
+                    } else {
+                        imagePath = "images/energys/" + list[i].name + ".gif";
+                    }
+                    imagePath = imagePath.replace(/\s+/g, "%20");
+                    // var insertText = "<tr class=\"row row-cols-5\"><th scope=\"row g-0\"><img src=" + imagePath + " alt=\"\"></th><td class=\"col text-truncate table-td\">" + list[i].purchaser + "</td><td class=\"col text-truncate table-td\">" + list[i].author + "</td><td class=\"col text-truncate table-td\">" + list[i].price + "<img class=\" ps-1 bp-1 w-30px\" src=\"images/bnb.svg\"></td><td class=\"col text-truncate table-td\">" + list[i].time + "</td></tr>"
+                    var insertText = " \
+                    <div class=\"row d-flex align-items-center text-center\">\
+                            <div class=\"col text-truncate\"><img class=\"img-fluid \" src=\""+ imagePath + "\" alt=\"\"></div>\
+                            <div class=\"col text-truncate\">"+ list[i].purchaser + "</div>\
+                            <div class=\"col text-truncate\">" + list[i].author + "</div>\
+                            <div class=\"col text-truncate\">" + list[i].price + "<img class=\" ps-1 bp-1 w-30px\" src=\"images/bnb.svg\"></div>\
+                            <div class=\"col text-truncate\">" + list[i].time + "</div>\
+                    </div>";
+                    $("#auctionLogList").append(insertText);
+                }
+            }
+        } else {
+            // cocoMessage.warning(result.message, 3000);
+            $.message({
+                message: result.message,
+                type: 'warning'
+            });
+        }
+    }
+    /**
+     * 更新出价历史页面
+     * */
+    function updateAuctionBiddingHistory(result) {
+        if (result.code == 200) {
+            if (result.data != undefined && result.data != null) {
+                $("#biddingHistoryList").children().remove();
+                for (let i = 0; i < result.data.length; i++) {
+                    var name = result.data[i].biddingName;
+                    var price = result.data[i].price;
+                    var time = result.data[i].time;
+                    // <div class="row g-0 row-cols-3">
+                    //                                 <div class="col-4 text-truncate">0x4a2b29190479bbc2f88233e8c74e46b73246021f</div>
+                    //                                 <div class="col-3 text-truncate">0.226 bnb</div>
+                    //                                 <div class="col-4 text-truncate">2021-10-25 02:25:53</div>
+                    //                             </div>
+                    var insertText = "<div class=\"row p-2 text-white g-0 row-cols-3\"><div class=\"col-4 text-truncate\">" + name + "</div><div class=\"col-4 text-truncate text-center\">" + price + " <img class=\" ps-1 bp-1 w-30px\" src=\"images/bnb.svg\"></div><div class=\"col-4 text-truncate\">" + time + "</div></div>"
+
+                    $("#biddingHistoryList").append(insertText);
+                }
+            }
+        } else {
+            // cocoMessage.warning(result.message, 3000);
+            $.message({
+                message: result.message,
+                type: 'warning'
+            });
+        }
+    }
+    /**
+     * 更新基础信息页面数据
+     * */
+    function updateAuctionBasicInfoData(result) {
+        if (result.code == 200) {
+            var name = result.data.name;
+            var nickname = result.data.nickname;
+            if (name == null) { //没有物品在竞拍 
+                $("#auctionName").text('');
+                $("#auctionAuthor").text('');
+                $("#auctionBestBid").text('');
+                $("#auctionPrice").text('');
+                $("#auctionContractAdderss").text('');
+                $("#auctionTokenId").text('');
+                // var text = get_str("Auction has not started")
+                // $("#remainingTimeAcution").text(text);
+                // $("#remainingTimeAcution").attr("langtest", text);
+                $("#exampleModalScrollableTitle").text('');
+
+                var rt = get_str('Remaining time');
+                $("#remainingTimeAcution").text(rt + ' : 00:00:00');
+                $("#remainingTimeAcution").attr("langtest", 'Remaining time : 00:00:00');
+
+                $("#biddingBtnId").parent().removeClass("button-yellow")
+                $("#biddingBtnId").parent().addClass("button-grey")
+                $("#biddingBtnId").attr("data-bs-toggle", "");
+                $("#biddingBtnId").attr("data-bs-target", "");
+            } else {
+                var type = result.data.type;
+                var sellUser = result.data.sellUserName;
+                var buyUser = result.data.buyUserName;
+                var price = result.data.price;
+                var remainingTime = result.data.remainingTime;
+                var lastTime = result.data.lastTime;
+                var contractAdderss = result.data.contractAddress;
+                var tokenId = result.data.hash;
+
+                $("#s-auction-data").attr('address', result.data.address);
+
+                _price = price;
+
+                var nn = get_str(nickname);
+                $("#auctionName").text(nn);
+                $("#auctionName").attr("langtest", nickname);
+                $("#auctionAuthor").text(sellUser);
+                $("#auctionBestBid").text(buyUser);
+                $("#auctionPrice").text(price);
+                $("#auctionContractAdderss").text(contractAdderss);
+                $("#auctionTokenId").text("#"+tokenId);
+                var rt = get_str('Remaining time');
+                if (result.data.remainingTime <= 0) {
+                    $("#remainingTimeAcution").text(rt + ' : 00:00:00');
+                    $("#remainingTimeAcution").attr("langtest", 'Remaining time : 00:00:00');
+
+                    $("#biddingBtnId").parent().removeClass("button-yellow")
+                    $("#biddingBtnId").parent().addClass("button-grey")
+                    $("#biddingBtnId").attr("data-bs-toggle", "");
+                    $("#biddingBtnId").attr("data-bs-target", "");
+                } else {
+                    $("#biddingBtnId").parent().removeClass("button-grey")
+                    $("#biddingBtnId").parent().addClass("button-yellow")
+                    $("#biddingBtnId").attr("data-bs-toggle", "modal");
+                    $("#biddingBtnId").attr("data-bs-target", "#jiajia");
+
+                    $("#remainingTimeAcution").attr("langtest", 'Remaining time');
+                    var chestMaxtime = result.data.remainingTime / 1000; //换算成秒
+                    if (!isStartTime) {
+                        if (chestMaxtime > 0) {
+                            CountDown(chestMaxtime, function (time, currTime) {
+                                chestMaxtime = currTime;
+                                $("#remainingTimeAcution").text(rt + ' : ' + time);
+                                // $("#remainingTimeAcution").attr("langtest", rt);
+                            });
+                            if (window.auctionInterval != undefined && window.auctionInterval != null) {
+                                clearInterval(window.auctionInterval);
+                            }
+                            window.auctionInterval = setInterval(function () {
+                                var rt = get_str('Remaining time');
+                                CountDown(chestMaxtime, function (time, currTime) {
+                                    chestMaxtime = currTime;
+                                    $("#remainingTimeAcution").text(rt + ' : ' + time);
+                                    // $("#remainingTimeAcution").attr("langtest", rt);
+                                });
+                            }, 1000);
+                        }
+                        isStartTime = true;
+                    }
+                }
+                $("#exampleModalScrollableTitle").text(name);
+                $("#auctionDialogPrice").text(price);
+
+                $("#auctionGoodsImgLight").removeClass("light");
+                $("#auctionGoodsImg").removeClass('look-white-2');
+                $("#auctionGoodsImg").removeClass("look-green-2");
+                $("#auctionGoodsImg").removeClass("look-pepur-2");
+                $("#auctionGoodsImg").removeClass("look-orange-2");
+                $("#auctionGoodsImg").removeClass("look-red-2");
+                $("#auctionGoodsImg").removeClass("look-black-2");
+                $("#auctionDialogGoodsImage").removeClass('look-white-2');
+                $("#auctionDialogGoodsImage").removeClass("look-green-2");
+                $("#auctionDialogGoodsImage").removeClass("look-pepur-2");
+                $("#auctionDialogGoodsImage").removeClass("look-orange-2");
+                $("#auctionDialogGoodsImage").removeClass("look-red-2");
+                $("#auctionDialogGoodsImage").removeClass("look-black-2");
+                if (type == 'elf') {
+                    var level = result.data.level;
+                    var look_color = '';
+                    switch (level) {
+                        case 1:
+                            look_color = 'look-white-2';
+                            break;
+                        case 2:
+                            look_color = 'look-green-2';
+                            break;
+                        case 3:
+                            look_color = 'look-pepur-2';
+                            break;
+                        case 4:
+                            look_color = 'look-orange-2';
+                            break;
+                        case 5:
+                            look_color = 'look-red-2';
+                            break;
+                        case 6:
+                            look_color = 'look-black-2';
+                            break;
+                    }
+                    $("#auctionGoodsImg").attr("src", "images/elves/" + name + ".gif");
+                    $("#auctionGoodsImg").addClass(look_color);
+                    $("#auctionDialogGoodsImage").attr("src", "images/elves/" + name + ".gif");
+                    $("#auctionDialogGoodsImage").addClass(look_color);
+
+                    $("#auctionGoodsImgLight").addClass("light");
+
+
+                } else {
+                    $("#auctionGoodsImg").attr("src", "images/energys/" + name + "2.png");
+                    $("#auctionDialogGoodsImage").attr("src", "images/elves/" + name + "2.png");
+                }
+
+            }
+
+        } else {
+            // cocoMessage.warning(result.message, 3000);
+            $.message({
+                message: result.message,
+                type: 'warning'
+            });
+        }
+    }
+</script>

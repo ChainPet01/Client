@@ -1,0 +1,315 @@
+<div id="nav-market" class="container-lg-fluid mx-4">
+    <div class="row">
+        <div class="col">
+            <h5 class="market-2-1 pb-4 text-uppercase"><s langtest="ORDINARY-BOX-PRESALE">ordinary box presale</s></h5>
+            <!-- tabs开始 -->
+            <ul class="nav nav-pills tabs-spirit mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item me-3" role="presentation">
+                    <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab"
+                        aria-controls="pills-home" aria-selected="true" onclick="switchTable('ordinary_elf')"><s
+                            langtest="ELVES-BOX">ELVES
+                            BOX</s></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" href="#pills-profile" role="tab"
+                        aria-controls="pills-profile" aria-selected="false" onclick="switchTable('ordinary_energy')"><s
+                            langtest="GEMS-BOX">GEMS BOX</s></a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <!-- 精灵宝箱预售 -->
+                    <div class="row row-cols-1 row-cols-md-2 align-items-end">
+                        <div class="col col-xxl-4">
+                            <div class="nav-right-box">
+                                <h4 class="text-uppercase"><s langtest="ELVES-BOX-PRESALE">elves box presale</s></h4>
+                                <span><s langtest="Box-Elves-Presale-Info">Can spawn various levels of elves</s></span>
+                                <img class="img-fluid" src="images/ordinary-elves-box.png" alt="">
+                                <p class="text-center py-3" id="remainingTime"><s>Remaining time : 00:00:00</s></p>
+                            </div>
+                        </div>
+                        <div class="col col-xxl-8">
+                            <div class="row row-cols-1">
+                                <div class="col col-xl-5 text-truncate market-2-9-11 text-truncate">
+                                    <s langtest="Price">Price</s>: <em id="priceOrdinary"></em><img class=" ps-2 bp-1"
+                                        style="width: 30px;" src="images/bnb.svg">
+                                    <p><a style="color: #9895C0;" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#text-rule-subscription-debris"><s
+                                                langtest="Subscribe-Rule">Subscribe
+                                                rules>></s></a></p>
+                                </div>
+                                <div class="col col-xl-7  text-right text-uppercase">
+                                    <div class="row g-0">
+                                        <div class="col button-yellow py-2 py-lg-3 text-center">
+                                            <a href="javascript:;" onclick="gotoBuyChest()" id="subscribeId"><s
+                                                    langtest="Subscribe">subscribe</s></a>
+                                        </div>
+                                        <div class="col-auto px-2"></div>
+                                        <div class="col button-blue py-2 py-lg-3 text-center">
+                                            <a href="#page-nft-market-elves" onclick="openpage(KEY_ELVES)"><s
+                                                    langtest="Go-To-Market">go to market</s></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-0 market-2-14-18">
+                                <div class="col">
+                                    <s langtest="Presale-My-Box">my box</s><br>
+                                    <span id="myChestNumber"></span>
+                                </div>
+                                <div class="col">
+                                    <s langtest="Presale-My-Subscription">my subscription</s><br>
+                                    <span id="myPreSaleChestNumber"></span> <small><s langtest="Presale-multiple">(It
+                                            is
+                                            multiple)</s></small>
+                                </div>
+                            </div>
+
+                            <div class="row g-0 market-2-14-18">
+                                <div class="col">
+                                    <s langtest="Presale-Subscribe-Total">subscribe total</s><br>
+                                    <span id="currNumber"></span>
+                                </div>
+                                <div class="col">
+                                    <s langtest="Presale-Total">box total</s><br>
+                                    <span id="totalNumber"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 精灵宝箱预售 -->
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                    <!-- 碎片宝箱预售 -->
+                    <div class="row row-cols-1 row-cols-md-2 align-items-end">
+                        <div class="col col-xxl-4">
+                            <div class="nav-right-box">
+                                <h4 class="text-uppercase"><s langtest="GEMS-BOX-PRESALE">gems box presale</s></h4>
+                                <span><s langtest="Box-Gems-Presale-Info">Can spawn various levels of gems</s></span>
+                                <img class="img-fluid" src="images/ordinary-debris-box.png" alt="">
+                                <p class="text-center py-3" id="remainingTime2"><s>Remaining time : 00:00:00</s></p>
+                            </div>
+                        </div>
+                        <div class="col col-xxl-8">
+                            <div class="row g-0 row-cols-1">
+                                <div class="col col-xl-5 market-2-9-11">
+                                    <s langtest="Price">price</s>: <em id="price2Ordinary"><s langtest></s></em><img
+                                        class=" ps-2 bp-1" style="width: 30px;" src="images/bnb.svg">
+                                    <p><a style="color: #9895C0;" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#text-rule-subscription-elves"><s
+                                                langtest="Subscribe-Rule">Subscribe
+                                                rules>></s></a></p>
+                                </div>
+                                <div class="col col-xl-7  text-right text-uppercase">
+                                    <div class="row g-0">
+                                        <div class="col button-yellow py-2 py-lg-3 text-center">
+                                            <a href="javascript:;" onclick="gotoBuyChest()" id="subscribeId"><s
+                                                    langtest="Subscribe">subscribe</s></a>
+                                        </div>
+                                        <div class="col-auto px-2"></div>
+                                        <div class="col button-blue py-2 py-lg-3 text-center">
+                                            <a href="#page-nft-market-gems" onclick="openpage(KEY_GEMS)"><s
+                                                    langtest="Go-To-Market">go to market</s></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-0 market-2-14-18">
+                                <div class="col">
+                                    <s langtest="Presale-My-Box">my box</s><br>
+                                    <span id="myChestNumber2"></span>
+                                </div>
+                                <div class="col">
+                                    <s langtest="Presale-My-Subscription">my subscription</s><br>
+                                    <span id="myPreSaleChestNumber2"></span> <small><s langtest="Presale-multiple">(It
+                                            is multiple)</s></small>
+                                </div>
+                            </div>
+
+                            <div class="row g-0 market-2-14-18">
+                                <div class="col">
+                                    <s langtest="Presale-Subscribe-Total">subscribe total</s><br>
+                                    <span id="currNumber2"></span>
+                                </div>
+                                <div class="col">
+                                    <s langtest="Presale-Total">box total</s><br>
+                                    <span id="totalNumber2"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 碎片宝箱预售 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    {
+        var currPage = 'ordinary_elf'
+        //打开页面执行一次
+        // switchTable(currPage);
+        function requestOrdinaryData() {
+            switchTable('ordinary_elf');
+        }
+        //切换table
+        var submitSwitchTable = false;
+        function switchTable(currPage) {
+            this.currPage = currPage;
+            var rt = get_str('Remaining time');
+            $("#remainingTime").text(rt + ' : 00:00:00');
+            $("#remainingTime2").text(rt + ' : 00:00:00');
+            $("#remainingTime").attr("langtest", 'Remaining time : 00:00:00');
+            $("#remainingTime2").attr("langtest", 'Remaining time : 00:00:00');
+            chestsSaleData(currPage, function (result) {
+                if (result.code == 200) {
+                    updateChestsSaleData(currPage, result);
+                } else {
+                    // cocoMessage.warning(result.message, 0);
+                    $.message({
+                        message: result.message,
+                        type: 'warning'
+                    });
+                }
+            });
+        }
+        var submitGotoBuyChest = false;
+        function gotoBuyChest() {
+            if (submitGotoBuyChest) {//检测连点
+                // cocoMessage.warning("Too soon!", 0);
+                $.message({
+                    message: "Too soon!",
+                    type: 'warning'
+                });
+                return true;
+            }
+            submitGotoBuyChest = true;
+            setTimeout(function () {
+                submitGotoBuyChest = false;
+            }, 2000);
+            //正式开始
+            isOnline(function (online) { //必须要验证线上是否在线
+                var data = getCookie();
+                if (online.data && data != "") { //在线 进行赎回操作
+                    buyChestData(this.currPage, function (result) {
+                        if (result.code == 200) {
+                            var from = JSON.parse(data).hash;
+                            var to = result.data;
+                            var price = 0;
+                            if (this.currPage == 'ordinary_elf') {
+                                price = Number($("#priceOrdinary").text());
+                            }
+                            else {
+                                price = Number($("#price2Ordinary").text());
+                            }
+                            if (isNaN(price) || price <= 0) {
+                                // cocoMessage.warning("Invalid price!", 0);
+                                $.message({
+                                    message: "Invalid price",
+                                    type: 'warning'
+                                });
+                            }
+                            else {
+                                transferBNB(from, to, price, function (hash) {
+                                    if (hash == null || hash == "") {
+                                        // cocoMessage.warning('Unknown error!', 0);
+                                        $.message({
+                                            message: "Unknown error",
+                                            type: 'warning'
+                                        });
+                                        return;
+                                    }
+                                    $.message('Payment successful! Please wait.');
+                                    queryChestData(this.currPage, hash, function (r) {
+                                        // clearInterval(window.chestsSaleInterval);
+                                        if (r.code == 200) {
+                                            updateChestsSaleData(this.currPage, r);
+                                            $.message('Congratulations, The subscription is successful!');
+                                            updateUserInfo();
+                                        }
+                                        else {
+                                            // cocoMessage.warning(r.message, 0);
+                                            $.message({
+                                                message: r.message,
+                                                type: 'warning'
+                                            });
+                                        }
+                                    });
+                                });
+                            }
+                        }
+                        else {
+                            // cocoMessage.warning(result.message, 0);
+                            $.message({
+                                message: result.message,
+                                type: 'warning'
+                            });
+                        }
+                    });
+                }
+                else {
+                    $.message({
+                        message: "User not login,Please wait.",
+                        type: 'info'
+                    });
+                    setTimeout(function () {
+                        loginEthereum();
+                    }, 1000);
+                }
+            });
+        }
+        function updateChestsSaleData(currPage, result) {
+            if (currPage == 'ordinary_elf') {
+                $("#currNumber").text(result.data.currNumber);
+                $("#myChestNumber").text(result.data.myChest);
+                $("#priceOrdinary").text(result.data.price);
+                $("#totalNumber").text(result.data.totalNumber);
+                $("#myPreSaleChestNumber").text(result.data.myNumber);
+
+                var rt = get_str('Remaining time');
+                var chestMaxtime = result.data.remainingTime / 1000; //换算成秒
+                if (chestMaxtime > 0) {
+                    clearInterval(window.chestsSaleInterval);
+                    $("#remainingTime").attr("langtest", 'Remaining time');
+                    CountDown(chestMaxtime, function (time, currTime) {
+                        chestMaxtime = currTime;
+                        $("#remainingTime").text(rt + ' : ' + time);
+                    });
+                    window.chestsSaleInterval = setInterval(function () {
+                        CountDown(chestMaxtime, function (time, currTime) {
+                            chestMaxtime = currTime;
+                            $("#remainingTime").text(rt + ' : ' + time);
+                        });
+                    }, 1000);
+                }
+            } else {
+                var rt = get_str('Remaining time');
+                $("#currNumber2").text(result.data.currNumber);
+                $("#myChestNumber2").text(result.data.myChest);
+                $("#price2Ordinary").text(result.data.price);
+                $("#totalNumber2").text(result.data.totalNumber);
+                $("#myPreSaleChestNumber2").text(result.data.myNumber);
+
+                var chestMaxtime = result.data.remainingTime / 1000; //换算成秒
+                if (chestMaxtime > 0) {
+                    clearInterval(window.chestsSaleInterval2);
+                    $("#remainingTime2").attr("langtest", 'Remaining time');
+                    CountDown(chestMaxtime, function (time, currTime) {
+                        chestMaxtime = currTime;
+                        $("#remainingTime2").text(rt + ' : ' + time);
+                    });
+                    window.chestsSaleInterval2 = setInterval(function () {
+                        CountDown(chestMaxtime, function (time, currTime) {
+                            chestMaxtime = currTime;
+                            $("#remainingTime2").text(rt + ' : ' + time);
+                        });
+                    }, 1000);
+                }
+            }
+        }
+    }
+</script>

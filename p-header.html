@@ -1,0 +1,408 @@
+<header class="header position-fixed w-100" style="z-index: 1000;">
+  <!-- pc-header -->
+  <div class="container-fluid px-5 py-2 d-none d-sm-block">
+    <div class="row d-flex align-items-center text-white">
+      <div class="col"><img style="width: 140px;" src="images/logo.svg" alt=""></div>
+
+      <div class="col-auto">
+        <!-- <a class="btn btn-outline-light rounded-pill px-4 ms-4" href="#"><span class="font_family icon-shouji pe-2"></span>Chain PET App</a>
+        <a class="btn btn-outline-light rounded-pill px-4 ms-4" href="#"><span class="font_family icon-meiyuan pe-2"></span>Buy Chain PET</a> -->
+        <div class="d-flex align-items-center topiocn align-items-center text-white ps-3">
+          <div class="pe-3"><span class="pe-2"><img src="images/bnb.svg" alt=""></span><s id="headerBnbCountPcId">0</s>
+          </div>
+          <div class="pe-3"><span class="pe-2"><img src="images/cpet.png" alt=""></span><s
+              id="headerCpetCountPcId">0</s></div>
+          <div class="pe-3"><span class="pe-2"><img src="images/ka4.png" alt=""></span><s id="headerCardCountPcId">0</s>
+          </div>
+          <div class="pe-3"><span class="pe-2"><img src="images/role.png" alt=""></span><s
+              id="headerRoleCountPcId">0</s></div>
+          <div class="pe-3"><span class="pe-2"><img src="images/Seq_B0X_3.png" alt=""></span><s
+              id="headerBoxCountPcId">0</s></div>
+          <!-- <a class="look" href="#" data-bs-toggle="modal" data-bs-target="#switch-account-dialog">
+            测试钱包弹窗
+         </a> -->
+          <div class="pe-3"> <a class="btn btn-primary rounded-pill px-4 ms-4 look" onclick="" data-bs-toggle=''
+              data-bs-target=''><span class="font_family icon-huiyuan pe-2"></span><s
+                id="headerBtnWallet">Wallet</s></a></div>
+          <div class="pe-3"> <a class="dropdown-toggle ms-4 text-white" type="buttons" id="languagedown-pc"
+              data-bs-toggle="dropdown" aria-expanded="false">Language</a>
+            <div class="dropdown-menu" aria-labelledby="languagedown">
+              <li><a class="dropdown-item" href="javascript:;" id="enBtn">English</a></li>
+              <li><a class="dropdown-item" href="javascript:;" id="frBtn">France</a></li>
+              <li><a class="dropdown-item" href="javascript:;" id="zhBtn">繁体中文</a></li>
+              <li><a class="dropdown-item" href="javascript:;" id="jpBtn">日本語</a></li>
+              <li><a class="dropdown-item" href="javascript:;" id="koBtn">한국어</a></li>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- mb-header -->
+  <div class="container-fluid d-sm-none text-white d-flex align-items-center justify-content-between py-3">
+    <a class="text-white" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+      aria-controls="offcanvasExample">
+      <span class="h2 font_family icon-erji-caidanguanli"></span>
+    </a>
+    <img style="width: 60px;" src="images/logo.png" alt="">
+    <a class="btn btn-primary rounded-pill px-4 py-0 look" onclick="" data-bs-toggle='' data-bs-target=''><span
+        class="font_family icon-huiyuan pe-2"></span><s id="headerBtnWallet-Mob">Wallet</s></a>
+    <a class="dropdown-toggle text-white" type="buttons" id="languagedown-mob" data-bs-toggle="dropdown"
+      aria-expanded="false">Language</a>
+    <div class="dropdown-menu" aria-labelledby="languagedown">
+      <li><a class="dropdown-item " href="javascript:;" id="enBtn2">English</a></li>
+      <li><a class="dropdown-item" href="javascript:;" id="frBtn2">France</a></li>
+      <li><a class="dropdown-item" href="javascript:;" id="zhBtn2">繁体中文</a></li>
+      <li><a class="dropdown-item" href="javascript:;" id="jpBtn2">日本語</a></li>
+      <li><a class="dropdown-item" href="javascript:;" id="koBtn2">한국어</a></li>
+    </div>
+  </div>
+  <div class="w-100"></div>
+  <!-- 顶部图标 -->
+  <div class="d-flex align-items-center topiocn py-3 text-white ps-3 d-sm-none">
+    <div class="pe-3"><span class="pe-2"><img src="images/bnb.svg" alt=""></span><s id="headerBnbCountId">0</s></div>
+    <div class="pe-3"><span class="pe-2"><img src="images/cpet.png" alt=""></span><s id="headerCpetCountId">0</s></div>
+    <div class="pe-3"><span class="pe-2"><img src="images/ka4.png" alt=""></span><s id="headerCardCountId">0</s></div>
+    <div class="pe-3"><span class="pe-2"><img src="images/role.png" alt=""></span><s id="headerRoleCountId">0</s></div>
+    <div class="pe-3"><span class="pe-2"><img src="images/Seq_B0X_3.png" alt=""></span><s id="headerBoxCountId">0</s>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+    style="background: #2B274D;">
+    <div class="offcanvas-header">
+      <img class="mx-auto" style="width: 80px;" src="images/logo-white.png" alt="">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="leftnav">
+        <div class="d-flex flex-column ps-4">
+          <div><a data-bs-dismiss="offcanvas" class="nav-link" href="#page-index" onclick="openpage('Home')"
+              id="id-nav-mob-home"><span class="pe-2 font_family icon-shouye1"></span><s
+                langtest="Nav-Home">Home</s></a>
+          </div>
+          <div><a data-bs-dismiss="offcanvas" class="nav-link"
+              href="https://pancakeswap.finance/swap?inputCurrency=0xad326fd5bc8b962063ba51ff142086b4aa1987ec"><span
+                class="pe-2 font_family icon-jinbi"></span><s langtest="Nav-Buy-CPET">Buy
+                CPET</s></a></div>
+          <div>
+            <div>
+              <div><a data-bs-dismiss="offcanvas" class="nav-link" href="#page-recommendations"
+                  onclick="openpage('Recommendations')" id="id-nav-mob-recommendations"><span
+                    class="pe-2 font_family icon-huiyuan"></span><s langtest="Nav-Invited-competition">Invited competition</s><small><img class="ps-2 bp-1" style="width: 35px;"
+                      src="images/flame.png"></small></a>
+              </div>
+              <a class="accordion-left-nav nav-link collapsed" type="buttons" data-bs-toggle="collapse"
+                data-bs-target="#collapse-Boxes" aria-expanded="false" aria-controls="collapse-Boxes">
+                <span class="pe-2 font_family icon-shichang1"></span><s langtest="Nav-Box">Boxes</s>
+              </a>
+              <div class="collapsing pt-2" id="collapse-Boxes">
+                <ul>
+                  <li><a data-bs-dismiss="offcanvas" class="nav-links" href="#page-box-ordinary"
+                      onclick="openpage('Ordinary')" id="id-nav-mob-ordinary"><s
+                        langtest="Nav-Ordinary">Ordinary</s></a>
+                  </li>
+                  <li><a data-bs-dismiss="offcanvas" class="nav-links" href="#page-box-precious"
+                      onclick="openpage('Precious')" id="id-nav-mob-precious"><s
+                        langtest="Nav-Precious">Precious</s></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <!-- <a class="nav-link  accordion-left-nav" data-bs-toggle="collapse" href="#collapse-Nft-market" role="button" aria-expanded="false" aria-controls="collapse-Nft-market"><span class="pe-2 font_family icon-shichang"></span><s langtest="Nav-Market">NFT Market</s></a> -->
+              <a class="accordion-left-nav nav-link collapsed" type="buttons" data-bs-toggle="collapse"
+                data-bs-target="#collapse-Nft-market" aria-expanded="false" aria-controls="collapse-Nft-market"><span
+                  class="pe-2 font_family icon-shichang"></span><s langtest="Nav-Market">NFT Market</s></a>
+              <div class="collapse pt-2" id="collapse-Nft-market">
+                <ul>
+                  <li><a data-bs-dismiss="offcanvas" class="nav-links" href="#page-nft-market-elves"
+                      onclick="openpage('Elves')" id="id-nav-mob-elves"><s langtest="Nav-Elves">Elves</s></a></li>
+                  <li><a data-bs-dismiss="offcanvas" class="nav-links" href="#page-nft-market-gems"
+                      onclick="openpage('Gems')" id="id-nav-mob-gems"><s langtest="Nav-Gems">Gems</s></a></li>
+                </ul>
+              </div>
+            </div>
+            <div><a data-bs-dismiss="offcanvas" class="nav-link" href="#page-nft-auction" onclick="openpage('Auction')"
+                id="id-nav-mob-auction"><span class="pe-2 font_family icon-sifapaimai"></span><s
+                  langtest="Nav-Auction">NFT
+                  Auction</s></a></div>
+            <div><a data-bs-dismiss="offcanvas" class="nav-link" href="#page-nft-mining" onclick="openpage('Mining')"
+                id="id-nav-mob-mining"><span class="pe-2 font_family icon-meiyuan"></span><s langtest="Nav-Mining">NFT
+                  Mining</s></a></div>
+            <div>
+              <!-- <a class="nav-link  accordion-left-nav" data-bs-toggle="collapse" href="#collapse-games" role="button" aria-expanded="false" aria-controls="collapse-games"><span class="pe-2 font_family icon-youxi"></span><s langtest="Nav-Games">Games</s></a> -->
+              <a class="accordion-left-nav nav-link collapsed" type="buttons" data-bs-toggle="collapse"
+                data-bs-target="#collapse-games" aria-expanded="false" aria-controls="collapse-games"><span
+                  class="pe-2 font_family icon-youxi"></span><s langtest="Nav-Games">Games</s></a>
+              <div class="collapse pt-2" id="collapse-games">
+                <ul>
+                  <li><a data-bs-dismiss="offcanvas" class="nav-links" href="https://spaceelves.chainpet.com"><s
+                        langtest="Nav-Game1">Space Elves (beta 1.0)</s></a></li>
+                  <li><a data-bs-dismiss="offcanvas" class="nav-links" href="javascript:;" style="color: darkgray;"><s
+                        langtest="Nav-Game2">Forest Maze</s></a></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <!-- <a class="nav-link  accordion-left-nav" data-bs-toggle="collapse" href="#collapse-my" role="button" aria-expanded="false" aria-controls="collapse-my"><span class="pe-2 font_family icon-huiyuan"></span><s
+                  langtest="Nav-My">My</s></a> -->
+              <a class="accordion-left-nav nav-link collapsed" type="buttons" data-bs-toggle="collapse"
+                data-bs-target="#collapse-my" aria-expanded="false" aria-controls="collapse-my"><span
+                  class="pe-2 font_family icon-huiyuan"></span><s langtest="Nav-My">My</s></a>
+
+              <div class="collapse pt-2" id="collapse-my">
+                <ul>
+                  <li><a data-bs-dismiss="offcanvas" class="nav-links" href="#page-my-box" onclick="openpage('MyBox')"
+                      id="id-nav-mob-my-box"><s langtest="Nav-My-Box">My box</s></a></li>
+                  <li><a data-bs-dismiss="offcanvas" class="nav-links" href="#page-my-storage"
+                      onclick="openpage('Storage')" id="id-nav-mob-storage"><s langtest="Nav-Storage">Storage</s></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div><a data-bs-dismiss="offcanvas" class="nav-link" href="http://web.chainpet.com"><span
+                  class="pe-2 font_family icon-shequ"></span><s langtest="Nav-Community">Community</s></a></div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+
+<!-- 账号弹出层 -->
+<div class="modal fade show" id="switch-account-dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content xsjl-d">
+
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-center text-white w-100"><s langtest="Switch-Accounts-Title">Switch Account</s>
+        </h5>
+        <button type="button" class="btn-close text-warning" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body xdjl mx-3 mb-4">
+        <div class="container-fluid">
+          <div class="row">
+            <div>
+              <ol class="text-center">
+                <h5><s langtest="Switch-Accounts">Are you sure you want to switch accounts?</s></h5>
+              </ol>
+              <div class="modal-footer text-white border-0 d-f">
+                <div class="container-fluid">
+                  <div class="row justify-content-center">
+                    <div class="col-4 button-yellow py-2 py-lg-3 text-center">
+                      <a href="javascript:;" data-bs-dismiss="modal" aria-label="Close" onclick="loginEthereum()"><s
+                          langtest="Ok">Ok</s></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#enBtn").bind("click", function () {
+    setLanguage("en");
+  });
+  $("#zhBtn").bind("click", function () {
+    setLanguage("zh");
+  });
+
+  $("#frBtn").bind("click", function () {
+    setLanguage("fr");
+  });
+  $("#jpBtn").bind("click", function () {
+    setLanguage("jp");
+  });
+  $("#koBtn").bind("click", function () {
+    setLanguage("ko");
+  });
+  $("#enBtn2").bind("click", function () {
+    setLanguage("en");
+  });
+
+  $("#zhBtn2").bind("click", function () {
+    setLanguage("zh");
+  });
+  $("#frBtn2").bind("click", function () {
+    setLanguage("fr");
+  });
+  $("#jpBtn2").bind("click", function () {
+    setLanguage("jp");
+  });
+  $("#koBtn2").bind("click", function () {
+    setLanguage("ko");
+  });
+
+  showHeader();
+  headerLoaded = true;
+  function showHeader() {
+    {
+      var data = getCookie();
+      if (data == "") {
+      }
+      else {
+        var isApproved = false;
+        if ($("#s-market-data").attr("walletAddress") == null || typeof $("#s-market-data").attr("walletAddress") == "undefined") {
+          isApproved = true;
+        }
+        if ($("#s-market-gem-data").attr("walletAddress") == null || typeof $("#s-market-gem-data").attr("walletAddress") == "undefined") {
+          isApproved = true;
+        }
+        if ($("#s-me-data").attr("walletAddress") == null || typeof $("#s-me-data").attr("walletAddress") == "undefined") {
+          isApproved = true;
+        }
+        if (isApproved) {
+          isApprovedData(function (res) {
+            if (res != null) {
+              if (res.code == 200) {
+                $("#s-market-data").attr('walletAddress', res.data);
+                $("#s-market-gem-data").attr('walletAddress', res.data);
+                $("#s-me-data").attr('walletAddress', res.data);
+              }
+            }
+          });
+        }
+      }
+    }
+
+    if (typeof window.ethereum !== 'undefined') {
+      ethereum.request({
+        method: 'eth_accounts'
+      })
+        .then((accounts) => {
+          if (accounts.length == 0) {
+            addCookie('plausarLoginInfo', '');
+            resetData();
+            // } else {
+            //   if ($("#headerBtnWallet").text() == 'Wallet' || $("#headerBtnWallet-Mob").text() == 'Wallet') {
+            //     loginEthereumAuto()
+            //   }
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+      //监听账号切换
+      ethereum.on('accountsChanged', function (accounts) {
+        var isReload = false;
+        if (accounts.length == 0) {
+          addCookie('plausarLoginInfo', '');
+        }
+        var data = getCookie();
+        if (data == "") {
+          isReload = true;
+          resetData();
+        } else {
+          var tmp = JSON.parse(data).hash;
+          if (tmp != accounts[0]) {
+            isReload = true;
+          }
+          $("#headerBtnWallet").parent().attr('data-bs-toggle', 'modal');
+          $("#headerBtnWallet").parent().attr('data-bs-target', '#switch-account-dialog');
+
+          $("#headerBtnWallet-Mob").parent().attr('data-bs-toggle', 'modal');
+          $("#headerBtnWallet-Mob").parent().attr('data-bs-target', '#switch-account-dialog');
+        }
+        if (isReload && accounts.length != 0) {
+          // console.log(accounts);
+          loginData(accounts[0]);
+        }
+      });
+    }
+    {
+      var data = getCookie();
+      if (data == "") {
+        resetData();
+      } else {
+        var tmp = JSON.parse(data).hash;
+        var strHash = tmp.substr(0, 4) + "****" + tmp.substr(tmp.length - 4, 4); //tmp.replace(/(\W{4})\W{34}(\W{4})/g,"$1****$2");
+        $("#headerBtnWallet").text(strHash)
+        $("#headerBtnWallet").parent().attr('onclick', ''); //data-bs-toggle="modal" data-bs-target="#text-rule-mining"
+        $("#headerBtnWallet").parent().attr('data-bs-toggle', 'modal');
+        $("#headerBtnWallet").parent().attr('data-bs-target', '#switch-account-dialog');
+
+        $("#headerBtnWallet-Mob").text(strHash)
+        $("#headerBtnWallet-Mob").parent().attr('onclick', ''); //data-bs-toggle="modal" data-bs-target="#text-rule-mining
+
+        $("#headerBtnWallet-Mob").parent().attr('data-bs-toggle', 'modal');
+        $("#headerBtnWallet-Mob").parent().attr('data-bs-target', '#switch-account-dialog');
+      }
+    }
+    updateUserInfo();
+    navTabs('tabs_nav', getCookie('tabs_nav'));
+  }
+
+  function updateUserInfo() {
+    var data = getCookie();
+    if (data == "") {
+      resetData();
+    }
+    else {
+      userInof(function (res) {
+        if (res.code == 200) {
+          $("#headerBoxCountId").text(res.data.boxCount);
+          $("#headerRoleCountId").text(res.data.elvesCount);
+          $("#headerCardCountId").text(res.data.gemsCount);
+          $("#headerCpetCountId").text(res.data.cpetCount);
+          $("#headerBnbCountId").text(res.data.bnbCount);
+
+          $("#headerBoxCountPcId").text(res.data.boxCount);
+          $("#headerRoleCountPcId").text(res.data.elvesCount);
+          $("#headerCardCountPcId").text(res.data.gemsCount);
+          $("#headerCpetCountPcId").text(res.data.cpetCount);
+          $("#headerBnbCountPcId").text(res.data.bnbCount);
+        }
+        else {
+          resetData();
+        }
+      });
+    }
+  }
+  function resetData() {
+    $("#headerBoxCountId").text(0);
+    $("#headerRoleCountId").text(0);
+    $("#headerCardCountId").text(0);
+    $("#headerCpetCountId").text(0);
+    $("#headerBnbCountId").text(0);
+
+    $("#headerBoxCountPcId").text(0);
+    $("#headerRoleCountPcId").text(0);
+    $("#headerCardCountPcId").text(0);
+    $("#headerCpetCountPcId").text(0);
+    $("#headerBnbCountPcId").text(0);
+
+    $("#headerBtnWallet").text('Wallet');
+    $("#headerBtnWallet").parent().attr('onclick', 'loginEthereum()');
+    $("#headerBtnWallet").parent().attr('data-bs-toggle', '');
+    $("#headerBtnWallet").parent().attr('data-bs-target', '');
+
+    $("#headerBtnWallet-Mob").text('Wallet');
+    $("#headerBtnWallet-Mob").parent().attr('onclick', 'loginEthereum()');
+    $("#headerBtnWallet-Mob").parent().attr('data-bs-toggle', '');
+    $("#headerBtnWallet-Mob").parent().attr('data-bs-target', '');
+  }
+  function navTabs(elementId, id) {
+    if (id == '') id = '1';
+    var e = document.getElementById(elementId);
+    if (e == null) return;
+    //获取div下面所有的a标签（返回节点对象）
+    var myNav = e.getElementsByTagName('a');
+    var nId = Number(id);
+    myNav[nId].className = "nav-active nav-link";
+  }
+</script>

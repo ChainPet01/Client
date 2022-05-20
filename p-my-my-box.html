@@ -1,0 +1,348 @@
+<div id="nav-market" class="container-lg-fluid mx-4">
+    <nav>
+        <div class="nav nav-tabs nav-tabs2" id="my-storage-tab" role="tablist">
+            <a class=" active" id="my-box-elves-box-tab" data-bs-toggle="tab" href="#my-box-elves-box" role="tab"
+                aria-controls="my-box-elves-box" aria-selected="true" onclick="myChest('elf')"><s
+                    langtest="ELVES-BOX">ELVES BOX</s></a>
+            <a class="" id="my-box-gems-box-tab" data-bs-toggle="tab" href="#my-box-gems-box" role="tab"
+                aria-controls="my-box-gems-box" aria-selected="false" onclick="myChest('energy')"><s
+                    langtest="GEMS-BOX">GEMS BOX</s></a>
+        </div>
+    </nav>
+    <div class="tab-content mt-5" id="my-storage-tabContent">
+        <div class="tab-pane fade show active" id="my-box-elves-box" role="tabpanel"
+            aria-labelledby="my-box-elves-box-tab">
+            <!-- elves box -->
+            <div class="row row-cols-1 row-cols-sm-3 g-3">
+                <div class="col">
+                    <div class="nav-right-box">
+                        <h4 class="text-truncate text-uppercase"><s langtest="Home-Ordinary-Elves-Box">ordinary elves
+                                box</s></h4>
+                        <img class="img-fluid mx-auto d-block" src="images/ordinary-elves-box.png" alt="">
+                        <p class="text-center py-3"><s langtest="Amount">Amount</s>&nbsp;&nbsp;<b class="d-inline"
+                                id="ordinaryQuantityElf"><s langtest>0</s></b></p>
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-6 button-blue py-2 py-lg-3 text-center">
+                            <a href="javascript:;" id="ordinaryElfOpenBtn" onclick="openChest('ordinary_elf')"><s
+                                    langtest="Open">Open</s></a>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col">
+                    <div class="nav-right-box">
+                        <h4 class="text-truncate text-uppercase"><s langtest="Home-Precious-Elves-Box">precious elves
+                                box</s></h4>
+                        <span class="d-none d-lg-block text-truncate"><s langtest="My-Box-Info">There is a chance to get
+                                a rare card</s></span>
+                        <img class="img-fluid mx-auto d-block" src="images/precious-elves-box.png" alt="">
+
+                        <p class="text-center pp py-3"><s langtest="Amount">Amount</s>&nbsp;&nbsp;<b class="d-inline"
+                                id="preciousQuantityElf"><s>0</s></b>
+                        </p>
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-6 button-yellow py-2 py-lg-3 text-center">
+                            <a href="javascript:;" id="preciousElfOpenBtn" onclick="openChest('precious_elf')"><s
+                                    langtest="Open">Open</s></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- elves box -->
+        </div>
+        <div class="tab-pane fade" id="my-box-gems-box" role="tabpanel" aria-labelledby="my-box-gems-box-tab">
+            <!-- gems box -->
+            <div class="row row-cols-1 row-cols-sm-3 g-3">
+                <div class="col">
+                    <div class="nav-right-box">
+                        <h4 class="text-truncate text-uppercase"><s langtest="Home-Ordinary-Gems-Box">ordinary gems
+                                box</s></h4>
+                        <img class="img-fluid mx-auto d-block" src="images/ordinary-debris-box.png" alt="">
+                        <p class="text-center py-3"><s langtest="Amount">Amount</s>&nbsp;&nbsp;<b class="d-inline"
+                                id="ordinaryQuantityEnergy"><s>0</s></b></p>
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-6 button-blue py-2 py-lg-3 text-center">
+                            <a href="javascript:;" id="ordinaryEnergyOpenBtn" onclick="openChest('ordinary_energy')"><s
+                                    langtest="Open">Open</s></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="nav-right-box">
+                        <h4 class="text-truncate text-uppercase"><s langtest="Home-Precious-Gems-Box">precious gems
+                                box</s></h4>
+                        <span class="d-none d-lg-block text-truncate"><s langtest="My-Box-Info">There is a chance to get
+                                a rare card</s></span>
+                        <img class="img-fluid mx-auto d-block" src="images/precious-debris-box.png" alt="">
+
+                        <p class="text-center pp py-3"><s langtest="Amount">Amount</s>&nbsp;&nbsp;<b class="d-inline"
+                                id="preciousQuantityEnergy"><s>0</s></b>
+                        </p>
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-6 button-yellow py-2 py-lg-3 text-center">
+                            <a href="javascript:;" id="preciousEnergyOpenBtn" onclick="openChest('precious_energy')"><s
+                                    langtest="Open">Open</s></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- gems box -->
+        </div>
+    </div>
+    <!-- 上架销售精灵 -->
+    <div class="modal fade show" id="open-box" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content openChest  border-0">
+
+
+
+                <div class="modal-body mx-3">
+                    <div class="container-fluid">
+                        <div class="row position-relative">
+
+                            <div class="w-100" id="openChestBtnAniBox">
+                                <img class="img-fluid" src="" alt="" id="openChestAniImgBox">
+                            </div>
+
+                            <div class="position-absolute video-top text-white">
+                                <!-- <div class="animate__animated animate__bounceIn text-center" id="shelvesDialogList"> -->
+                                <div class="text-center" id="openChestBgAniBox">
+                                    <img class="img-fluid" src="" alt="" id="openChestImgBox">
+                                </div>
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-4" id="openBoxSkipBtnIdBox" style="visibility: hidden;">
+                        <div class="col-6 mx-auto button-yellow py-2 py-lg-3 text-center" data-bs-dismiss="modal"
+                            aria-label="Close">
+                            <a href="javascript:;" onclick="openpage(KEY_STORAGE)"><s langtest="Storage">Storage</s></a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-4" id="openBoxOkBtnIdBox" style="visibility: hidden;">
+                        <div class="col-6 mx-auto button-yellow py-2 py-lg-3 text-center" data-bs-dismiss="modal"
+                            aria-label="Close">
+                            <a href="javascript:;"><s langtest="Close">Close</s></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    // addCookie('tabs_small_nav', "0", 30);
+
+    // myChest("elf");
+
+    // var cardList = null;
+    function myChest(type) {
+        myChestData(type, function (data) {
+            if (data == "") {
+                $("#ordinaryQuantityElf").text("0");
+                $("#preciousQuantityElf").text("0");
+                $("#ordinaryQuantityEnergy").text("0");
+                $("#preciousQuantityEnergy").text("0");
+            } else {
+                // console.log(data);
+                // var user = JSON.parse(data);
+                // var chest = JSON.parse(user.chest);
+                updateChestData(type, data);
+
+                // addCookie('plausarLoginInfo', data, 5);
+            }
+        });
+    }
+    function clearChestOpenChestDialog() {
+        $("#ordinaryElfOpenBtn").attr('data-bs-toggle', '');
+        $("#ordinaryElfOpenBtn").attr('data-bs-target', '');
+
+        $("#preciousElfOpenBtn").attr('data-bs-toggle', '');
+        $("#preciousElfOpenBtn").attr('data-bs-target', '');
+
+        $("#ordinaryEnergyOpenBtn").attr('data-bs-toggle', '');
+        $("#ordinaryEnergyOpenBtn").attr('data-bs-target', '');
+
+        $("#preciousEnergyOpenBtn").attr('data-bs-toggle', '');
+        $("#preciousEnergyOpenBtn").attr('data-bs-target', '');
+    }
+    function clearChestAnimateBox() {
+        $("#openChestBgAniBox").removeClass('animate__animated');//清除属性和class
+        $("#openChestBgAniBox").removeClass('animate__bounceIn');
+    }
+    function openVideoPlayEndedBox(cardList) {
+        var openBoxSkipBtnIdBox = document.getElementById("openBoxSkipBtnIdBox");
+        if (cardList.length <= 0 && openBoxSkipBtnIdBox.style.visibility == "hidden") {
+            openBoxSkipBtnIdBox.style.visibility = "visible";
+        }
+        if (cardList != null && cardList.length > 0) {
+            // var count = cardList.length;
+            clearChestAnimateBox();
+
+            setTimeout(function () {
+                $("#openChestImgBox").attr("src", "");
+                openChestAnimateBox(cardList, 0);//先执行一个
+
+                setTimeout(function () {
+                    cardList.shift();//弹出第一个
+                    openVideoPlayEndedBox(cardList);
+                }, 800);
+            }, 500);
+        }
+        else {
+        }
+    }
+    function openChestAnimateBox(cards, i) {
+        var elf = cards[i];
+        var type = 'elves';
+        if (elf.goodsType == 'energy') {
+            type = 'energys';
+            $("#openChestImgBox").attr("src", "images/" + type + "/" + elf.name + "2.png");
+        } else {
+            $("#openChestImgBox").attr("src", "images/" + type + "/" + elf.name + ".gif");
+        }
+        $("#openChestBgAniBox").addClass('animate__animated');
+        $("#openChestBgAniBox").addClass('animate__bounceIn');
+    }
+
+    var submitOpenChest = false;
+    function openChest(type) {
+        $("#openChestAniImgBox").attr("src", "");
+        $("#openChestImgBox").attr("src", "");
+        {
+            document.getElementById("openBoxSkipBtnIdBox").style.visibility = "hidden";
+            document.getElementById("openBoxOkBtnIdBox").style.visibility = "hidden";
+        }
+
+        clearChestAnimateBox();
+
+        if (submitOpenChest) {//检测连点
+            // cocoMessage.warning("Too soon!", 0);
+            $.message({
+                message: "Too soon!",
+                type: 'warning'
+            });
+            return true;
+        }
+        submitOpenChest = true;
+        setTimeout(function () {
+            submitOpenChest = false;
+        }, 2000);
+        //正式开始
+        isOnline(function (online) { //必须要验证线上是否在线
+            var data = getCookie();
+            if (online.data && data != "") { //在线 进行赎回操作
+                loading();
+                openChestData(type, function (result) {
+                    loaded();
+                    if (result == null) {
+                        clearChestOpenChestDialog();
+                    }
+                    else {
+                        if (result.code == 200) {
+                            if (result.data.length > 0) {
+                                if (type == "ordinary_elf") {
+                                    $("#openChestAniImgBox").attr("src", "images/chest/open-ordinary-elf.webp");
+                                }
+                                else if (type == "precious_elf") {
+                                    $("#openChestAniImgBox").attr("src", "images/chest/open-precious-elf.webp");
+                                }
+                                else if (type == "ordinary_energy") {
+                                    $("#openChestAniImgBox").attr("src", "images/chest/open-ordinary-energy.webp");
+                                }
+                                else {
+                                    $("#openChestAniImgBox").attr("src", "images/chest/open-precious-energy.webp");
+                                }
+                            }
+                            if (/elf/.test(type)) {
+                                myChest("elf");
+                            }
+                            else {
+                                myChest("energy");
+                            }
+
+                            if (result.data.length <= 0) {
+                                // cocoMessage.warning("Mint fail!", 3000);
+                                $.message({
+                                    message: "result.message",
+                                    type: 'warning'
+                                });
+                                document.getElementById("openBoxOkBtnIdBox").style.visibility = "visible";
+                            }
+                            else {
+                                setTimeout(function () {
+                                    openVideoPlayEndedBox(result.data);
+                                }, '850');
+                            }
+                        } else {
+                            document.getElementById("openBoxOkBtnIdBox").style.visibility = "visible";
+                            clearChestOpenChestDialog();
+                            // cocoMessage.warning(result.message, 3000);
+                            $.message({
+                                message: result.message,
+                                type: 'warning'
+                            });
+                        }
+                    }
+                });
+            }
+            else {
+                    $.message({
+                        message:"User not login,Please wait.",
+                        type:'info'
+                    });
+                setTimeout(function () {
+                    loginEthereum();
+                }, 1000);
+            }
+        });
+    }
+
+    function updateChestData(type, result) {
+        if (result == null) return;
+        var ordinaryChestCount = result.data.ordinaryChestCount;
+        var preciousChestCount = result.data.preciousChestCount;
+        if (type == "elf") {
+            if (ordinaryChestCount > 0) {
+                $("#ordinaryElfOpenBtn").attr('data-bs-toggle', 'modal');
+                $("#ordinaryElfOpenBtn").attr('data-bs-target', '#open-box');
+            }
+            if (preciousChestCount > 0) {
+                $("#preciousElfOpenBtn").attr('data-bs-toggle', 'modal');
+                $("#preciousElfOpenBtn").attr('data-bs-target', '#open-box');
+            }
+            $("#ordinaryQuantityElf").text(ordinaryChestCount);
+            $("#preciousQuantityElf").text(preciousChestCount);
+        }
+        else {
+            if (ordinaryChestCount > 0) {
+                $("#ordinaryEnergyOpenBtn").attr('data-bs-toggle', 'modal');
+                $("#ordinaryEnergyOpenBtn").attr('data-bs-target', '#open-box');
+            }
+            if (preciousChestCount > 0) {
+                $("#preciousEnergyOpenBtn").attr('data-bs-toggle', 'modal');
+                $("#preciousEnergyOpenBtn").attr('data-bs-target', '#open-box');
+            }
+            $("#ordinaryQuantityEnergy").text(ordinaryChestCount);
+            $("#preciousQuantityEnergy").text(preciousChestCount);
+        }
+    }
+</script>
+
+</html>

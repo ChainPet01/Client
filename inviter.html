@@ -1,0 +1,25 @@
+<head>
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/chain.js"></script>
+</head>
+<script language="javascript">
+	function GetRequest() {
+		var urlParams = location.search.substr(1);
+		var theRequest = new Object();
+		strs = urlParams.split("&");
+		for (var i = 0; i < strs.length; i++) {
+			theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+		}
+		$.getJSON("/api/user/inviter/" + theRequest['id'], function (result) {
+			// console.log(result);//{"code": 200,    "message": "Succeed",    "data": "https://chainpet.com"}
+			// if (env == ENV_PROD) {
+			// 	window.location.href = 'http://www.chainpet.com/'
+			// } else {
+			// 	window.location.href = 'http://localhost/plusar/client2.0/'
+			// }
+			window.location.href = result.data
+		});
+		//return theRequest;
+	}
+	GetRequest();
+</script>

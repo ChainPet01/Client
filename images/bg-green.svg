@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 191 198.4" style="enable-background:new 0 0 191 198.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:url(#green_1_);}
+</style>
+<g id="页面-1">
+	<g id="桌面端-HD" transform="translate(-286.000000, -200.000000)">
+		
+			<linearGradient id="green_1_" gradientUnits="userSpaceOnUse" x1="-675.4372" y1="2699.6438" x2="-675.4372" y2="2698.8306" gradientTransform="matrix(191 0 0 -244 129390 658913.125)">
+			<stop  offset="0" style="stop-color:#C2CED9"/>
+			<stop  offset="1" style="stop-color:#8E9FB1"/>
+		</linearGradient>
+		<path id="green" class="st0" d="M298,200h167c6.6,0,12,4.4,12,9.8v178.9c0,5.4-5.4,9.8-12,9.8H298c-6.6,0-12-4.4-12-9.8V209.8
+			C286,204.4,291.4,200,298,200z"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFT Market</title>
+  <script src="js/libs/jquery.min.js"></script>
+  <!-- <script src="js/libs/coco-message.js"></script> -->
+  <!-- Bootstrap 的 CSS 文件 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/fancybox.css" rel="stylesheet" />
+  <script src="js/header.js"></script>
+  <script src="js/shop.js"></script>
+  <!-- <tr>
+                    <td><img src="images/1.svg" alt=""></td>
+                    <td>宇智波带土</td>
+                    <td>1283</td>
+                  </tr> -->
+
+</head>
+
+<body class="bg-purple">
+  <!-- 导航 -->
+  <div id="page-header"></div>
+
+  <!-- 二级导航 -->
+  <div id="page-navsmall"></div>
+
+  <div id="nav-market" class="container">
+
+    <div id="nav-s-rank" class="row pt-5 mb-5">
+
+      <div class="col-12 col-md-6">
+        <div class="rank">
+
+          <div class="container-fluid p-0 rank-biaoge">
+            <h6 class="rank-biaoge-tiele">
+              <s langtest>Elves Total Rank</s>
+            </h6>
+            <div class="row px-3 rank-biaoge-content">
+              <table class="table table-striped align-middle text-center">
+                <thead>
+                  <tr>
+                    <th scope="col"><s langtest>Rank</s></th>
+                    <th scope="col"><s langtest>Hash</s></th>
+                    <th scope="col"><s langtest>Total</s></th>
+                  </tr>
+                </thead>
+                <tbody id="elfRankList">
+
+                </tbody>
+
+              </table>
+
+            </div>
+          </div>
+
+          <!-- pages start-->
+          <!-- <div class="pages d-flex px-5 justify-content-center ">
+            <div class="color"><a href="#">&lt;</a></div>
+            <div><a href="#">2</a></div>
+            <div>…</div>
+            <div><a href="#">4</a></div>
+            <div><a href="#">5</a></div>
+            <div class="active">6</div>
+            <div><a href="#">7</a></div>
+            <div>…</div>
+            <div><a href="#">100</a></div>
+            <div class="color"><a href="#">&gt;</a></div>
+          </div> -->
+          <!-- pages end -->
+
+        </div>
+      </div>
+      <div class="col-12 col-md-6 mt-5 mt-md-0">
+        <div class="rank">
+
+          <div class="container-fluid p-0 rank-biaoge">
+            <h6 class="rank-biaoge-tiele">
+              <s langtest>Award Rank</s>
+            </h6>
+            <div class="row px-3 rank-biaoge-content">
+              <table class="table table-striped align-middle text-center">
+                <thead>
+                  <tr>
+                    <th scope="col"><s langtest>Rank</s></th>
+                    <th scope="col"><s langtest>Hash</s></th>
+                    <th scope="col"><s langtest>Total</s></th>
+                  </tr>
+                </thead>
+                <tbody id="awardRankList">
+
+
+                </tbody>
+
+              </table>
+
+            </div>
+          </div>
+
+          <!-- pages start-->
+          <!-- <div class="pages d-flex px-5 justify-content-center ">
+            <div class="color"><a href="#">&lt;</a></div>
+            <div><a href="#">2</a></div>
+            <div>…</div>
+            <div><a href="#">4</a></div>
+            <div><a href="#">5</a></div>
+            <div class="active">6</div>
+            <div><a href="#">7</a></div>
+            <div>…</div>
+            <div><a href="#">100</a></div>
+            <div class="color"><a href="#">&gt;</a></div>
+          </div> -->
+          <!-- pages end -->
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <!-- 包含 Popper 的 Bootstrap 集成包 -->
+  <script src="js/libs/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/libs/fancybox.umd.js"></script>
+</body>
+
+<script>
+  // addCookie('tabs_small_nav', "3", 30);
+
+  rankingData(function (result) {
+    if (result.code == 200) {
+      var elfRank = result.data.elfRank;
+      var awardRank = result.data.awardRank;
+
+      for (let i = 0; i < elfRank.length; i++) {
+        var rankIndex = '';
+        if (elfRank[i].rank <= 3) {
+          rankIndex = "<img src='images/" + elfRank[i].rank + ".svg' alt=''>";
+        }
+        else {
+          rankIndex = elfRank[i].rank;
+        }
+        var insertText = "<tr><td class=\"col text-truncate table-td\">" + rankIndex + "</td><td class=\"col text-truncate table-td\">" + elfRank[i].name + "</td> <td class=\"col text-truncate table-td\">" + elfRank[i].total + "</td></tr>";
+        $("#elfRankList").append(insertText);
+      }
+
+      for (let i = 0; i < awardRank.length; i++) {
+        var rankIndex = '';
+        if (awardRank[i].rank <= 3) {
+          rankIndex = "<img src='images/" + awardRank[i].rank + ".svg' alt=''>";
+        }
+        else {
+          rankIndex = awardRank[i].rank;
+        }
+        var insertText = "<tr><td class=\"col text-truncate table-td\">" + rankIndex + "</td><td class=\"col text-truncate table-td\">" + awardRank[i].name + "</td> <td class=\"col text-truncate table-td\">" + awardRank[i].total + "</td></tr>";
+        $("#awardRankList").append(insertText);
+      }
+    }
+    else {
+      // cocoMessage.warning(result.message, 0);
+      $.message({
+        message: result.message,
+        type: 'warning'
+      });
+    }
+  });
+</script>
+
+</html>

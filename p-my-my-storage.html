@@ -1,0 +1,921 @@
+<div id="nav-market" class="container-lg-fluid mx-4">
+    <nav>
+        <div class="nav nav-tabs nav-tabs2" id="my-storage-tab" role="tablist">
+            <a class=" active" id="storage-my-tab" data-bs-toggle="tab" href="#storage-my" role="tab"
+                aria-controls="storage-my" aria-selected="true" onclick="my()"><s langtest="My">My</s></a>
+            <a class="" id="storage-invitation-tab" data-bs-toggle="tab" href="#storage-invitation" role="tab"
+                aria-controls="storage-invitation" aria-selected="false" onclick="invitation()"><s
+                    langtest="Invitation">Invitation</s></a>
+            <a class="" id="storage-handbook-tab" data-bs-toggle="tab" href="#storage-handbook" role="tab"
+                aria-controls="storage-handbook" aria-selected="false" onclick="handbook()"><s
+                    langtest="Illustrated">Illustrated</s></a>
+        </div>
+    </nav>
+    <div class="tab-content mt-5" id="my-storage-tabContent">
+        <div class="tab-pane fade show active" id="storage-my" role="tabpanel" aria-labelledby="storage-my-tab">
+            <!-- my -->
+            <div class="row">
+                <div class="col-12 col-lg-6 mb-5">
+                    <!-- 分隔符 -->
+                    <div class="container-fluid p-0 base-map">
+                        <h6 class="rank-biaoge-tiele s-me-pai">
+                            <s langtest="Nav-Elves">Elves</s>
+                        </h6>
+                        <div class="row row-cols-2 row-cols-md-3 px-3 mx-md-2 rank-biaoge-content overflow-auto elves"
+                            id="myElvesList">
+
+
+
+                            <!-- <div class="col mb-4 look-white">
+                                <a class="look" href="#" data-bs-toggle="modal" data-bs-target="#box-looks">
+                                <img class="img-fluid " src="images/elves/White parrot dragon.gif" alt="">
+                                <p class="mb-0 text-truncate text-center text-white">White Psittacosaurus</p>
+                            </a>
+                            </div>
+
+                            <div class="col mb-4 look-white">
+                                <a class="look" href="#" data-bs-toggle="modal" data-bs-target="#box-looks">
+                                <img class="img-fluid " src="images/elves/White parrot dragon.gif" alt="">
+                                <p class="mb-0 text-truncate text-center text-white">White Psittacosaurus</p>
+                            </a>
+                            </div>
+
+                            <div class="col mb-4 look-white">
+                                <a class="look" href="#" data-bs-toggle="modal" data-bs-target="#box-looks">
+                                <img class="img-fluid " src="images/elves/White parrot dragon.gif" alt="">
+                                <p class="mb-0 text-truncate text-center text-white">White Psittacosaurus</p>
+                            </a>
+                            </div>
+
+                            <div class="col mb-4 look-white">
+                                <a class="look" href="#" data-bs-toggle="modal" data-bs-target="#box-looks">
+                                <img class="img-fluid " src="images/elves/White parrot dragon.gif" alt="">
+                                <p class="mb-0 text-truncate text-center text-white">White Psittacosaurus</p>
+                            </a>
+                            </div>                        -->
+                        </div>
+                        <div class="w100 base-map-border border-bottom-0"></div>
+
+                        <div class="row g-0 justify-content-center s-me-bottom py-4">
+                            <div class="col-4 button-blue py-2 py-lg-3 text-center text-uppercase">
+                                <a href="#page-nft-market-elves" onclick="openpage('Elves')" id="id-nav-pc-elves"><s
+                                        langtest="Go-To-Market">go to market</s></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 弹出 -->
+
+                </div>
+
+
+
+
+
+
+                <div class="modal fade show" id="box-looks" tabindex="-1" aria-labelledby="box-looks"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+                        <div class="modal-content xsjl-d">
+
+                            <div class="modal-header border-0">
+                                <button type="button" class="btn-close text-warning" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body p-0 p-md-2">
+                                <div class="row row-cols-1 row-cols-lg-2 s-market-upload m-0">
+                                    <div class="col text-center auction-left pt-0 pt-lg-5">
+                                        <img class="img-fluid w-75" src="images/big-elf.svg" alt=""
+                                            id="storageDialogImg">
+                                    </div>
+                                    <div class="col auction-right">
+                                        <h4 class="mb-4"><i>&nbsp;</i><span id="storageDialogName"></span></h4>
+                                        <div class="prize-shu mb-4">
+                                            <li class="text-truncate pe-2"><span><s langtest="Owner">Owner</s> </span><s
+                                                    id="storageDialogAuthor"></s></li>
+                                            <li class="text-truncate pe-2"><span><s langtest="Contract Address">Contract
+                                                        Address</s>
+                                                </span>
+                                                <s id="storageDialogAddress"></s>
+                                            </li>
+                                            <li class="border-0 text-truncate pe-2"><span><s langtest="Token ID">Token
+                                                        ID</s>
+                                                </span><s id="storageDialogTokenId"></s>
+                                            </li>
+                                        </div>
+                                        <div class="looktxt-bg">
+                                            <s langtest="Introduce">Introduce</s>
+                                        </div>
+                                        <div class="looktxt" id="storageDialogIntroduce">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer text-white border-0 d-f">
+                                <div class="container-fluid">
+                                    <div class="row justify-content-center">
+                                        <div class="col-3 button-yellow py-2 py-lg-3 text-center text-uppercase">
+                                            <a href="javascript:;" data-bs-dismiss="modal" aria-label="Close"><s
+                                                    langtest="Ok">Ok</s></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="container-fluid p-0 base-map">
+                        <div class="row g-0 rank-biaoge-tiele">
+
+                            <!-- <h6 class="rank-biaoge-tiele s-me-pai">
+                            <s langtest="Nav-Elves">Elves</s>
+                        </h6> -->
+                            <div class="col"></div>
+                            <h6 class="col-auto s-me-pai">
+                                <s langtest="Nav-Gems">Gems</s>
+                            </h6>
+
+                            <div class="col text-center text-md-end text-truncate s-me-pai">
+                                <small class="px-4 d-sm-none"> <a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#text-rule-synthesis"><s langtest="Gems-Rule">Gems
+                                            Rules>></s></a></small>
+                                <small class="px-4 d-none d-sm-block"> <a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#text-rule-synthesis"><s langtest="Gems-Rule">Gems
+                                            Rules>></s></a></small>
+                            </div>
+
+                        </div>
+
+                        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 row-cols-lg-3 mt-4 col-10 mx-auto  rank-biaoge-content text-center "
+                            style="min-height: 450px;">
+                            <div class="col mb-5 position-relative"><img class="img-fluid"
+                                    src="images/energys/White fragments.png" alt="">
+                                <div class="position-absolute pt-2 text-white start-50 translate-middle-x"
+                                    id="whiteFragmentsCountNumber">
+                                    <s>x0</s>
+                                </div>
+                            </div>
+                            <div class="col mb-5 position-relative"><img class="img-fluid"
+                                    src="images/energys/Green fragments.png" alt="">
+                                <div class="position-absolute pt-2 text-white start-50 translate-middle-x"
+                                    id="greenFragmentsCountNumber">
+                                    <s>x0</s>
+                                </div>
+                            </div>
+                            <div class="col mb-5 position-relative"><img class="img-fluid"
+                                    src="images/energys/Purple fragments.png" alt="">
+                                <div class="position-absolute pt-2 text-white start-50 translate-middle-x"
+                                    id="purpleFragmentsCountNumber">
+                                    <s>x0</s>
+                                </div>
+                            </div>
+                            <div class="col mb-5 position-relative"><img class="img-fluid"
+                                    src="images/energys/Orange fragments.png" alt="">
+                                <div class="position-absolute pt-2 text-white start-50 translate-middle-x"
+                                    id="orangeFragmentsCountNumber">
+                                    <s>x0</s>
+                                </div>
+                            </div>
+                            <div class="col mb-5 position-relative"><img class="img-fluid"
+                                    src="images/energys/Red fragments.png" alt="">
+                                <div class="position-absolute pt-2 text-white start-50 translate-middle-x"
+                                    id="redFragmentsCountNumber">
+                                    <s>x0</s>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="w100 base-map-border border-bottom-0"></div>
+                        <div class="row g-0 justify-content-center s-me-bottom py-4">
+                            <div class="col-4 button-blue py-2 py-lg-3 text-center me-2 text-uppercase">
+                                <a href="#page-nft-market-gems" onclick="openpage('Gems')" id="id-nav-pc-gems"><s
+                                        langtest="Go-To-Market">go to market</s></a>
+                            </div>
+                            <div class="col-4 button-yellow py-2 py-lg-3 text-center text-uppercase">
+                                <a href="javascript:;" onclick="randomFragments()" id="randomFragmentsOpenBtn"><s
+                                        langtest="Synthesis">Synthesis</s></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- my -->
+        </div>
+        <div class="tab-pane fade" id="storage-invitation" role="tabpanel" aria-labelledby="storage-invitation-tab">
+            <p><a style="color: #9895C0;" href="#" data-bs-toggle="modal" data-bs-target="#text-rule-inviter"><s
+                        langtest="Invite-Rule">Invite rules>></s></a></p>
+            <!-- 邀请的信息 -->
+            <div class="biaoge my-5">
+                <div class="tab-pane fade show active" id="nav-24" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 align-items-center px-5 pb-5 biaogecenter">
+                        <div class="col mt-5">
+                            <div class="row">
+                                <!-- <div class="col-auto"><img src="images/bnb.svg" alt=""></div> -->
+                                <div class="col text-truncate">
+                                    <div class="row-cols-4">
+                                        <s class="py-2" langtest="Invitation-Cumulative-Reward">Cumulative Reward</s>
+                                        <span id="invitation-cumulative-reward-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt-5">
+                            <div class="row">
+                                <!-- <div class="col-auto"><img src="images/table3.svg" alt=""></div> -->
+                                <div class="col text-truncate">
+                                    <div class="row-cols-4">
+                                        <s class="py-2" langtest="Invitation-Total-Invitees">Total Invitees</s>
+                                        <span id="invitation-total-invitees-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt-5">
+                            <div class="row">
+                                <!-- <div class="col-auto"><img src="images/table3.svg" alt=""></div> -->
+                                <div class="col text-truncate">
+                                    <div class="row-cols-4">
+                                        <s class="py-2" langtest="Invitation-Directly-Invitees">Directly Invitees</s>
+                                        <span id="invitation-directly-invitees-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt-5">
+                            <div class="row">
+                                <!-- <div class="col-auto"><img src="images/table3.svg" alt=""></div> -->
+                                <div class="col text-truncate">
+                                    <div class="row-cols-4">
+                                        <s class="py-2" langtest="Invitation-Indirect-Invitees">Indirect Invitees</s>
+                                        <span id="invitation-indirect-invitess-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="biaoge my-5">
+                <div class="tab-pane fade show active" id="nav-24" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 align-items-center px-5 pb-5 biaogecenter">
+                        <div class="col mt-5">
+                            <div class="row">
+                                <div class="col-auto"><img src="images/bnb.svg" alt=""></div>
+                                <div class="col text-truncate">
+                                    <!--pc上显示的按钮-->
+                                    <div class="row-cols-4 d-none d-sm-block">
+                                        <s class="py-2" langtest="Invitation-Total-Reward">Reward</s>
+                                        <span id="invitation-award-value">0</span>
+                                        <div class="button-yellow py-2 text-center ow-cols-2">
+                                            <a href="javascript:;" onclick="receiveInviterAward()"><s
+                                                    langtest="harvest">harvest</s></a>
+                                        </div>
+                                    </div>
+                                    <!--手机上显示的按钮-->
+                                    <div class="row-cols-2 d-sm-none">
+                                        <s class="py-2" langtest="Invitation-Total-Reward">Reward</s>
+                                        <span id="invitation-award-value-mob">0</span>
+                                        <div class="button-yellow py-2 text-center ow-cols-2">
+                                            <a href="javascript:;" onclick="receiveInviterAward()"><s
+                                                    langtest="harvest">harvest</s></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt-5">
+                            <div class="row">
+                                <div class="col-auto"><img src="images/table1.svg" alt=""></div>
+                                <div class="col text-truncate">
+                                    <!--pc上显示的按钮-->
+                                    <div class="row-cols-4 d-none d-sm-block">
+                                        <s class="py-2" langtest="Invitation-URL">Invitation URL</s>
+                                        <span id="invitation-text"
+                                            style="width: auto;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">https://</span>
+                                        <textarea id="invitation-input"></textarea>
+                                        <div class="button-yellow py-2 text-center ow-cols-2">
+                                            <a href="javascript:;" onclick="copyText()"><s langtest="Copy">Copy</s></a>
+                                        </div>
+                                    </div>
+                                    <!--手机上显示的按钮-->
+                                    <div class="row-cols-2 d-sm-none">
+                                        <s class="py-2" langtest="Invitation-URL">Invitation URL</s>
+                                        <span id="invitation-text-mob"
+                                            style="width: auto;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">https://</span>
+                                        <textarea id="invitation-input-mob"></textarea>
+                                        <div class="button-yellow py-2 text-center ow-cols-2">
+                                            <a href="javascript:;" onclick="copyText()"><s langtest="Copy">Copy</s></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row p-3 biaogecenter">
+                <table class="table table-striped align-middle">
+                    <thead>
+                        <tr class="row row-cols-4">
+                            <th scope="col"><s langtest="ID">ID</s></th>
+                            <th scope="col"><s langtest="Reward">Reward</s></th>
+                            <th scope="col"><s langtest="Time">Time</s></th>
+                            <th scope="col"><s langtest="State">State</s></th>
+                        </tr>
+                    </thead>
+                    <tbody id="invitation-award-list">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="storage-handbook" role="tabpanel" aria-labelledby="storage-handbook-tab">
+            <!-- handbook -->
+            <div class="row row-cols-1">
+                <div class="col">
+                    <div class="container-fluid p-0 rank-biaoge mb-4">
+                        <h6 class="rank-biaoge-tiele s-me-pai text-start ps-2">
+                            <s langtest="Parrot Dragon">Parrot Dragon</s>
+                            <!-- <small class="zi"> 54/200></small> -->
+                        </h6>
+                        <div
+                            class="row m-0 m-md-4 row-cols-2 row-cols-md-5 look-lef-bg pt-4 pt-md-0   rank-biaoge-content text-center">
+                            <div class="col mb-4 look-white"><img class="img-fluid "
+                                    src="images/elves/White parrot dragon.gif" alt="">
+                                <p class="mb-0 text-truncate "><s langtest="White Parrot Dragon">White Parrot Dragon</s>
+                                </p>
+                            </div>
+                            <div class="col mb-4 look-green"><img class="img-fluid"
+                                    src="images/elves/Green parrot dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Green Parrot Dragon">Green Parrot Dragon</s>
+                                </p>
+                            </div>
+                            <div class="col mb-4 look-pepur"><img class="img-fluid"
+                                    src="images/elves/Purple parrot dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Purple Parrot Dragon">Purple Parrot
+                                        Dragon</s></p>
+                            </div>
+                            <div class="col mb-4 look-orange"><img class="img-fluid"
+                                    src="images/elves/Orange parrot dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Orange Parrot Dragon">Orange Parrot
+                                        Dragon</s></p>
+                            </div>
+                            <div class="col mb-4 look-red"><img class="img-fluid"
+                                    src="images/elves/Red parrot dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Red Parrot Dragon">Red Parrot Dragon</s></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 一排卡册结束 -->
+                    <div class="container-fluid p-0 rank-biaoge mb-4">
+                        <h6 class="rank-biaoge-tiele s-me-pai text-start ps-2">
+                            <s langtest="Rock Ankylosaurus">Rock Ankylosaurus</s>
+                            <!-- <small class="zi"> 54/200></small> -->
+                        </h6>
+                        <div
+                            class="row m-0 m-md-4 row-cols-2 row-cols-md-5 look-lef-bg pt-4 pt-md-0 rank-biaoge-content text-center">
+                            <div class="col mb-4 look-white"><img class="img-fluid"
+                                    src="images/elves/White armor dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="White Rock Ankylosaurus">White Rock
+                                        Ankylosaurus</s></p>
+                            </div>
+                            <div class="col mb-4 look-green"><img class="img-fluid"
+                                    src="images/elves/Green armor dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Green Rock Ankylosaurus">Green Rock
+                                        Ankylosaurus</s></p>
+                            </div>
+                            <div class="col mb-4  look-pepur"><img class="img-fluid"
+                                    src="images/elves/Purple armor dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Purple Rock Ankylosaurus">Purple Rock
+                                        Ankylosaurus</s></p>
+                            </div>
+                            <div class="col mb-4 look-orange"><img class="img-fluid"
+                                    src="images/elves/Orange armor dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Orange Rock Ankylosaurus">Orange Rock
+                                        Ankylosaurus</s></p>
+                            </div>
+                            <div class="col mb-4 look-red"><img class="img-fluid"
+                                    src="images/elves/Red armor dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Red Rock Ankylosaurus">Red Rock
+                                        Ankylosaurus</s></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 一排卡册结束 -->
+                    <div class="container-fluid p-0 rank-biaoge mb-4">
+                        <h6 class="rank-biaoge-tiele s-me-pai text-start ps-2">
+                            <s langtest="Purple Scorpion">Purple Scorpion</s>
+                            <!-- <small class="zi"> 54/200></small> -->
+                        </h6>
+                        <div
+                            class="row m-0 m-md-4 row-cols-2 row-cols-md-5 look-lef-bg pt-4 pt-md-0  rank-biaoge-content text-center">
+                            <div class="col mb-4 look-white"><img class="img-fluid"
+                                    src="images/elves/White scorpion dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="White Purple Scorpion">White Purple
+                                        Scorpion</s></p>
+                            </div>
+                            <div class="col mb-4 look-green"><img class="img-fluid"
+                                    src="images/elves/Green scorpion dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Green Purple Scorpion">Green Purple
+                                        Scorpion</s></p>
+                            </div>
+                            <div class="col mb-4  look-pepur"><img class="img-fluid"
+                                    src="images/elves/Purple scorpion dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Purple Purple Scorpion">Purple Purple
+                                        Scorpion</s></p>
+                            </div>
+                            <div class="col mb-4 look-orange"><img class="img-fluid"
+                                    src="images/elves/Orange scorpion dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Orange Purple Scorpion">Orange Purple
+                                        Scorpion</s></p>
+                            </div>
+                            <div class="col mb-4 look-red"><img class="img-fluid"
+                                    src="images/elves/Red scorpion dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Red Purple Scorpion">Red Purple Scorpion</s>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 一排卡册结束 -->
+
+
+
+
+                </div>
+
+                <div class="col">
+                    <div class="container-fluid p-0 rank-biaoge mb-4">
+                        <h6 class="rank-biaoge-tiele s-me-pai text-start ps-2">
+                            <s langtest="One-eye Prophet">One-eye Prophet</s>
+                            <!-- <small class="zi"> 54/200></small> -->
+                        </h6>
+                        <div
+                            class="row m-0 m-md-4 row-cols-2 row-cols-md-5 look-lef-bg pt-4 pt-md-0  rank-biaoge-content text-center">
+                            <div class="col mb-4 look-white"><img class="img-fluid"
+                                    src="images/elves/White tick dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="White One-eye Prophet">White One-eye
+                                        Prophet</s></p>
+                            </div>
+                            <div class="col mb-4 look-green"><img class="img-fluid"
+                                    src="images/elves/Green tick dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Green One-eye Prophet">Green One-eye
+                                        Prophet</s></p>
+                            </div>
+                            <div class="col mb-4 look-pepur"><img class="img-fluid"
+                                    src="images/elves/Purple tick dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Purple One-eye Prophet">Purple One-eye
+                                        Prophet</s></p>
+                            </div>
+                            <div class="col mb-4 look-orange"><img class="img-fluid"
+                                    src="images/elves/Orange tick dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Orange One-eye Prophet">Orange One-eye
+                                        Prophet</s></p>
+                            </div>
+                            <div class="col mb-4 look-red"><img class="img-fluid" src="images/elves/Red tick dragon.gif"
+                                    alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Red One-eye Prophet">Red One-eye Prophet</s>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 一排卡册结束 -->
+                    <div class="container-fluid p-0 rank-biaoge mb-4">
+                        <h6 class="rank-biaoge-tiele s-me-pai text-start ps-2">
+                            <s langtest="Blue Shark">Blue Shark</s>
+                            <!-- <small class="zi"> 54/200></small> -->
+                        </h6>
+                        <div
+                            class="row m-0 m-md-4 row-cols-2 row-cols-md-5 look-lef-bg pt-4 pt-md-0  rank-biaoge-content text-center">
+                            <div class="col mb-4 look-white"><img class="img-fluid"
+                                    src="images/elves/White manta dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="White Blue Shark">White Blue Shark"</s></p>
+                            </div>
+                            <div class="col mb-4 look-green"><img class="img-fluid"
+                                    src="images/elves/Green manta dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Green Blue Shark">Green Blue Shark"</s></p>
+                            </div>
+                            <div class="col mb-4 look-pepur"><img class="img-fluid"
+                                    src="images/elves/Purple manta dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Purple Blue Shark">Purple Blue Shark"</s></p>
+                            </div>
+                            <div class="col mb-4 look-orange"><img class="img-fluid"
+                                    src="images/elves/Orange manta dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Orange Blue Shark">Orange Blue Shark"</s></p>
+                            </div>
+                            <div class="col mb-4  look-red"><img class="img-fluid"
+                                    src="images/elves/Red manta dragon.gif" alt="">
+                                <p class="mb-0 text-truncate"><s langtest="Red Blue Shark">Red Blue Shark"</s></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 一排卡册结束 -->
+
+                </div>
+            </div>
+            <!-- handbook -->
+        </div>
+    </div>
+    <span id="s-me-data"></span>
+</div>
+
+<script>
+    var tag = 0;
+    // isApprovedData(function (res) {
+    //     if (res.code == 200) {
+    //         $("#s-me-data").attr('walletAddress', res.data);
+    //     }
+    // });
+    // console.log(tag);
+    // my();
+    // invitation();
+    var elves = null;
+
+    function my() {
+        myData(function (result) {
+            if (result == null) {
+                resetStorageMyData();
+                // window.location.reload();
+            } else {
+                if (result.code == 200) {
+                    updateFragmentsData(result.data);
+                    updateElvesData(result.data);
+                } else {
+                    // cocoMessage.warning(result.message, 3000);
+                    $.message({
+                        message: result.message,
+                        type: 'warning'
+                    });
+                }
+            }
+        });
+    }
+    function updateFragmentsData(result) {
+        var whiteFragmentsCount = result.whiteFragments.length;
+        var greenFragmentsCount = result.greenFragments.length;
+        var purpleFragmentsCount = result.purpleFragments.length;
+        var orangeFragmentsCount = result.orangeFragments.length;
+        var redFragmentsCount = result.redFragments.length;
+
+        // $("#s-me-data").attr('walletAddress', JSON.stringify(result.data.walletAddress));
+        $("#s-me-data").attr('whiteFragments', JSON.stringify(result.whiteFragments));
+        $("#s-me-data").attr('greenFragments', JSON.stringify(result.greenFragments));
+        $("#s-me-data").attr('purpleFragments', JSON.stringify(result.purpleFragments));
+        $("#s-me-data").attr('orangeFragments', JSON.stringify(result.orangeFragments));
+        $("#s-me-data").attr('redFragments', JSON.stringify(result.redFragments));
+
+        $("#whiteFragmentsCountNumber").text("x" + whiteFragmentsCount);
+        $("#greenFragmentsCountNumber").text("x" + greenFragmentsCount);
+        $("#purpleFragmentsCountNumber").text("x" + purpleFragmentsCount);
+        $("#orangeFragmentsCountNumber").text("x" + orangeFragmentsCount);
+        $("#redFragmentsCountNumber").text("x" + redFragmentsCount);
+
+        if (whiteFragmentsCount > 0 && greenFragmentsCount > 0 && purpleFragmentsCount > 0 && orangeFragmentsCount > 0 && redFragmentsCount > 0) {
+            $("#openChestAniImg").attr("src", "");
+            $("#randomFragmentsOpenBtn").attr('data-bs-toggle', 'modal');
+            $("#randomFragmentsOpenBtn").attr('data-bs-target', '#open');
+        }
+
+    }
+
+    function updateElvesData(result) {
+        elves = result.myElves;
+
+        $("#myElvesList").children().remove();
+        for (var i = 0; i < elves.length; i++) {
+            var name = elves[i].name;
+            var nickname = elves[i].nickname;
+            var hash = elves[i].hash;
+            var level = elves[i].level;
+            //   look-green look-pepur look-orange look-red
+            var look_color = '';
+            switch (level) {
+                case 1:
+                    look_color = 'look-white';
+                    break;
+                case 2:
+                    look_color = 'look-green';
+                    break;
+                case 3:
+                    look_color = 'look-pepur';
+                    break;
+                case 4:
+                    look_color = 'look-orange';
+                    break;
+                case 5:
+                    look_color = 'look-red';
+                    break;
+                case 6:
+                    look_color = 'look-black';
+                    break;
+            }
+            // <div class="col mb-4 look-white">
+            //                     <a class="look" href="#" data-bs-toggle="modal" data-bs-target="#box-looks">
+            //                     <img class="img-fluid " src="images/elves/White parrot dragon.gif" alt="">
+            //                     <p class="mb-0 text-truncate text-center text-white">White Psittacosaurus</p>
+            //                 </a>
+            //                 </div>
+            var nn = get_str(nickname);
+            var insertText =
+                "<div class=\"col mb-4 " + look_color + "\"> \
+                <div class=\"mb-0 text-truncate text-center text-white\"><s langtest=\""+ nickname + "\">" + nn + "</s></div> \
+                <a class=\"look\" href=\"#\" data-bs-toggle=\"modal\" data-bs-target=\"#box-looks\" onclick='elvesInfo("+ JSON.stringify(elves[i]) + ")'> \
+                    <img class=\"img-fluid\" src=\"images/elves/" + name + ".gif\" alt=\"\"> \
+                    <p class=\"mb-0 text-truncate text-center text-white\"><s>#" + hash + "</s></p> \
+                </a> \
+            </div>";
+            //             var insertText = " \
+            // <tr class='row align-items-center me-spirit'> \
+            //     <td class='col p-0'><img class ='img-fluid p-0 " + look_color + "' src='images/elves/" + name + ".gif' alt=''> \
+            //         <td class ='col text-truncate'>" + nickname + "</td>\
+            //         <td class ='col'>" + level + "</td> \
+            //         <td class ='col'><a class ='look' href='#' data-bs-toggle='modal' data-bs-target='#look' onclick='elvesInfo(" + JSON.stringify(elves[i]) + ")'>detail</a></td>\
+            //     </tr>";
+            $("#myElvesList").append(insertText);
+        }
+    }
+
+    function elvesInfo(elf) {
+        $("#storageDialogImg").removeClass("look-white-2");
+        $("#storageDialogImg").removeClass("look-green-2");
+        $("#storageDialogImg").removeClass("look-pepur-2");
+        $("#storageDialogImg").removeClass("look-orange-2");
+        $("#storageDialogImg").removeClass("look-red-2");
+        $("#storageDialogImg").removeClass("look-black-2");
+        var look_color = '';
+        switch (elf.level) {
+            case 1:
+                look_color = 'look-white-2';
+                break;
+            case 2:
+                look_color = 'look-green-2';
+                break;
+            case 3:
+                look_color = 'look-pepur-2';
+                break;
+            case 4:
+                look_color = 'look-orange-2';
+                break;
+            case 5:
+                look_color = 'look-red-2';
+                break;
+            case 6:
+                look_color = 'look-black-2';
+                break;
+        }
+        $("#storageDialogImg").attr('src', "images/elves/" + elf.name + ".gif");
+        $("#storageDialogImg").addClass(look_color);
+        var nn = get_str(elf.nickname);
+        $("#storageDialogName").text(nn);
+        $("#storageDialogName").attr("langtest", elf.nickname);
+        $("#storageDialogAuthor").text(elf.user);
+        $("#storageDialogAddress").text(elf.address);
+        $("#storageDialogTokenId").text("#" + elf.hash);
+        var strIntroduce = get_str(elf.nickname + " Info");
+        $("#storageDialogIntroduce").text(strIntroduce);
+        $("#storageDialogIntroduce").attr("langtest", elf.nickname + " Info");
+    }
+
+    function handbook() { //请求是否有套
+    }
+
+    function randomFragments() {
+        //     setTimeout(function () {
+        //         $("#openChestAniImg").attr("src", "images/chest/open-ordinary-elf.webp");
+        //         setTimeout(function () {
+        //             // console.log(result.data);
+        //             // openVideoPlayEnded(result.data.elves);
+        //         }, '850');
+        //     }, '850');
+
+        var wallet = $("#s-me-data").attr('walletAddress');
+        var whiteFragments = JSON.parse($("#s-me-data").attr('whiteFragments'));
+        var greenFragments = JSON.parse($("#s-me-data").attr('greenFragments'));
+        var purpleFragments = JSON.parse($("#s-me-data").attr('purpleFragments'));
+        var orangeFragments = JSON.parse($("#s-me-data").attr('orangeFragments'));
+        var redFragments = JSON.parse($("#s-me-data").attr('redFragments'));
+        if (whiteFragments.length > 0 && greenFragments.length > 0 && purpleFragments.length > 0 && orangeFragments.length > 0 && redFragments.length > 0) {
+            isOnline(function (online) { //必须要验证线上是否在线
+                var data = getCookie();
+                if (online.data && data != "") { //在线 进行赎回操作
+                    if (wallet != undefined && wallet != "") {
+                        approvedAll(wallet, function (r) {
+                            approvedData(r.transactionHash, function (res) { //授权
+                                if (res == null) { } else {
+                                    if (res.code == 200) {
+                                        synthesis();
+                                    }
+                                }
+                            })
+                        });
+                    } else { //已经授权，直接合成
+                        synthesis();
+                    }
+                } else {
+                    $.message({
+                        message: "User not login,Please wait.",
+                        type: 'info'
+                    });
+                    setTimeout(function () {
+                        loginEthereum();
+                    }, 1000);
+                }
+            });
+        } else {
+            // cocoMessage.warning("Lack of gem", 3000);
+            $.message({
+                message: "Lack of gems",
+                type: 'warning'
+            });
+        }
+    }
+
+    function synthesis() {
+        var openBoxOkBtnId = document.getElementById("openBoxOkBtnId");
+        if (openBoxOkBtnId != null) {
+            openBoxOkBtnId.style.visibility = "hidden";
+        }
+        synthesisData(function (result) { //合成
+            if (result == null) {
+                resetStorageMyData();
+            } else {
+                if (result.code == 200) {
+                    updateFragmentsData(result.data.myDTO);
+                    updateElvesData(result.data.myDTO);
+
+                    $("#openChestAniImg").attr("src", "images/chest/open-ordinary-elf.webp");
+                    setTimeout(function () {
+                        openVideoPlayEnded(result.data.elves);
+                    }, '850');
+                    updateUserInfo();
+                } else {
+                    $.message({
+                        message: result.message,
+                        type: 'warning'
+                    });
+                }
+            }
+            if (openBoxOkBtnId != null) {
+                openBoxOkBtnId.style.visibility = "visible";
+            }
+        });
+    }
+
+    function openVideoPlayEnded(cardList) {
+        if (cardList != null && cardList.length > 0) {
+            var count = cardList.length;
+            clearChestAnimate();
+
+            setTimeout(function () {
+                $("#openChestImg").attr("src", "");
+                openChestAnimate(cardList, 0); //先执行一个
+
+                cardList.shift(); //弹出第一个
+                setTimeout(function () {
+                    openVideoPlayEnded(cardList);
+                }, '800');
+            }, '400');
+        }
+    }
+
+    function openChestAnimate(cards, i) {
+        var elf = cards[i];
+        $("#openChestImg").attr("src", "images/elves/" + elf.name + ".gif");
+
+        $("#openChestBgAni").addClass('animate__animated');
+        $("#openChestBgAni").addClass('animate__bounceIn');
+    }
+
+    function clearChestAnimate() {
+        $("#openChestBgAni").removeClass('animate__animated'); //清除属性和class
+        $("#openChestBgAni").removeClass('animate__bounceIn');
+    }
+
+    function resetStorageMyData() {
+        $("#whiteFragmentsCountNumber").text("x0");
+        $("#greenFragmentsCountNumber").text("x0");
+        $("#purpleFragmentsCountNumber").text("x0");
+        $("#orangeFragmentsCountNumber").text("x0");
+        $("#redFragmentsCountNumber").text("x0");
+        $("#myElvesList").children().remove();
+    }
+    function copyText() {
+        var text = document.getElementById("invitation-text").innerText;
+        var input = document.getElementById("invitation-input");
+        var input_mob = document.getElementById("invitation-input-mob");
+        input.value = text; // 修改文本框的内容
+        input_mob.value = text; // 修改文本框的内容
+        input.select(); // 选中文本
+        input_mob.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        $.message('Copy success!');
+    }
+
+    function invitation() {
+        invitationData(function (result) {
+            if (result == null) {
+                resetInvitationData();
+            } else {
+                if (result.code == 200) {
+                    updateInvitationData(result.data);
+                } else {
+                    // cocoMessage.warning(result.message, 3000);
+                    $.message({
+                        message: result.message,
+                        type: 'warning'
+                    });
+                }
+            }
+        });
+    }
+
+    function resetInvitationData() {
+        $("#invitation-cumulative-reward-value").text("0");
+        $("#invitation-total-invitees-value").text("0");
+        $("#invitation-directly-invitees-value").text("0");
+        $("#invitation-indirect-invitess-value").text("0");
+        $("#invitation-award-value").text("0");
+        $("#invitation-text").text("https://");
+        $("#invitation-award-value-mob").text("0");
+        $("#invitation-text-mob").text("https://");
+        $("#invitation-award-list").children().remove();
+    }
+    function updateInvitationData(result) {
+        $("#invitation-cumulative-reward-value").text(result.cumulativeRewards);
+        $("#invitation-total-invitees-value").text(result.invitee);
+        $("#invitation-directly-invitees-value").text(result.directInvitees);
+        $("#invitation-indirect-invitess-value").text(result.indirectInvitees);
+        $("#invitation-award-value").text(result.award);
+        $("#invitation-award-value-mob").text(result.award);
+        {
+            var tmp = result.url.split("inviter");
+            var url = location.origin + location.pathname + "inviter" + tmp[1];
+            $("#invitation-text").text(url);
+            $("#invitation-text-mob").text(url);
+        }
+        $("#invitation-award-list").children().remove();
+        var inviterAwards = result.inviterAwardDTOs;
+        for (var i = 0; i < inviterAwards.length; i++) {
+            var status = inviterAwards[i].status ? "received" : "available"
+            var insertText =
+                "<tr class=\"row row-cols-4\"> \
+                    <td class=\"col\"><div class=\"text-truncate py-4\">"+ inviterAwards[i].id + "</div></td> \
+                    <td class=\"col\"><div class=\"text-truncate py-4\"><small><img class=\"ps-2 bp-1\" style=\"width: 26px;\" src=\"images/bnb.svg\"></small>"+ inviterAwards[i].award + "</div></td> \
+                    <td class=\"col\"><div class=\"text-truncate py-4\">"+ inviterAwards[i].time + "</div></td> \
+                    <td class=\"col\"><div class=\"text-truncate py-4\"><s langtest=\""+ status + "\"</s>" + get_str(status) + "</div></td> \
+                </tr>";
+            $("#invitation-award-list").append(insertText);
+        }
+    }
+    function receiveInviterAward() {
+        var v = Number.parseFloat($("#invitation-award-value").text());
+        if (isNaN(v) || v <= 0) {
+            $.message({
+                message: "You don't have enough award.",
+                type: 'warning'
+            });
+        } else {
+            invitationHarvest(function (result) {
+                if (result == null) {
+                    resetInvitationData();
+                } else {
+                    if (result.code == 200) {
+                        updateInvitationData(result.data);
+                        updateUserInfo();//更新一下顶部数据
+                        $.message('success!');
+                    } else {
+                        // cocoMessage.warning(result.message, 3000);
+                        $.message({
+                            message: result.message,
+                            type: 'warning'
+                        });
+                    }
+                }
+            });
+        }
+    }
+
+</script>
+<style type="text/css">
+    #invitation-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -10;
+    }
+
+    #invitation-input-mob {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -10;
+    }
+</style>

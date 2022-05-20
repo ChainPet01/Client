@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Market</title>
+    <script src="js/libs/jquery.min.js"></script>
+    <!-- Bootstrap 的 CSS 文件 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 导航 -->
+    <div id="page-header"></div>
+
+    <!-- 二级导航 -->
+    <div id="page-navsmall"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-auto border">
+                <div class="nav-left">
+                    <ul>
+                        <li><a href="s-market">精灵</a></li>
+                        <li><a href="s-market2">碎片</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col border">
+                <div class="row">
+                    
+                    <div class="subnav">
+                        <a href="#">市场</a>
+                        <a href="#">出售中</a>
+                        <a href="#">交易记录</a>
+
+                    </div>
+                    <div>
+                        <span>总数1000 </span>
+                        
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                          </form>
+
+                          <a href="#">上架销售</a>
+                    </div>
+
+                    <!-- 卡片循环 -->
+                    <div class="col-3">
+                        <a href="#">
+                            <h4>普通精灵宝箱</h4>
+                            <img src="#" alt="">
+                            <p>LV34</p>
+                            <span>10 bnb</span>
+                        </a>
+                    </div>
+                   
+                </div>
+                <!-- 分页样式 -->
+                <div>分页调用</div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 弹出层 -->
+
+    <!-- 选择出售精灵卡片 -->
+    <div class="row">
+        <h2>选择要出售的精灵</h2>
+        <!-- 出售精灵卡片循环 -->
+        <div class="col-2">
+            <img src="#" alt="">
+            <span>名字</span>
+        </div>
+
+        <form class="d-flex">
+            上架数量<input class="form-control me-2" type="search" placeholder="Please input number" aria-label="Please input number">
+            上架单价<input class="form-control me-2" type="search" placeholder="Please input price" aria-label="Please input price">
+            <button class="btn btn-outline-success" type="submit">确定上架</button>
+        </form>
+    </div>
+
+    <!-- 出售精灵卡片详情 -->
+
+    <div class="row">
+        <div class="col-6">
+            <img src="#" alt="">
+        </div>
+
+        <div class="col-6">
+            <h3>严甲龙<small>X3</small></h3>
+            <div>
+                参数表格
+
+            </div>
+
+            <div>精灵介绍</div>
+        </div>
+        <button>购买</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 包含 Popper 的 Bootstrap 集成包 -->
+    <script src="js/libs/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        var tooltipTriggerList = Array.prototype.slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+    </script>
+    <script>
+        var popoverTriggerList = Array.prototype.slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+    </script>
+
+    <script>
+        var myToastEl = document.getElementById('myToast')
+myToastEl.addEventListener('hidden.bs.toast', function () {
+  // do something...
+})
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,654 @@
+<!-- <div class="d-sm-none mb-header"></div> -->
+<div class="container-lg-fluid mx-4">
+    <!-- Banner -->
+    <div class="row">
+        <div id="banner" class="carousel slide banner pb-0 pb-md-5 " data-bs-ride="carousel">
+            <div data-bs-target="#banner" data-bs-slide-to="0" class="active"></div>
+            <div class="carousel-inner rounded-2 blue-border overflow-hidden">
+                <div class="carousel-item active">
+                    <a class="look" data-bs-toggle="modal" data-bs-target="#p-invite-rules-looks">
+                        <!-- <a class="look" data-bs-toggle="modal" data-bs-target="#p-invite-rhythmic-dialog-looks"> -->
+                        <div class="d banner-title-recommendations">
+                            <s langtest="Invite-Rule">Invite rules>></s><br>
+                        </div>
+                        <img src="images/banner_inviter_1.jpg" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 邀請弹窗 -->
+    <div class="modal fade show" id="p-invite-invitation-url-looks" tabindex="-1"
+        aria-labelledby="p-invite-invitation-url-looks" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content xsjl-d">
+                <div class="modal-header border-0">
+                    <h3 class="modal-title text-center text-white w-100" id="exampleModalScrollableTitle"><s
+                            langtest="Invitation-Dialog-Friend">Invite friends</s>
+                    </h3>
+                </div>
+                <!--pc上显示的按钮-->
+                <div class="d-none d-sm-block">
+                    <div class="row row-cols-4 row-cols-sm-4 row-cols-md-4 ">
+                        <div class="modal-body xdjl mb-4" style="margin-left: 2rem;">
+                            <span style="font-size: 1rem;" id="Invitation-Rhythmic-URL-Value"></span>
+                            <textarea id="Invitation-Rhythmic-URL-Input"></textarea>
+                        </div>
+                        <div style="margin-right: 1rem; margin-top: 0.4rem;">
+                            <div class="button-yellow py-2 text-center ow-cols-2">
+                                <a href="javascript:;" onclick="copyTextRhythmic()"><s langtest="Copy">Copy</s></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--手机上显示的按钮-->
+                <div class="d-sm-none">
+                    <div class="row row-cols-4 row-cols-sm-4 row-cols-md-4 ">
+                        <div class="modal-body xdjl mb-4" style="margin-left: 2rem;">
+                            <span id="Invitation-Rhythmic-URL-Mob-Value"></span>
+                            <textarea id="Invitation-Rhythmic-URL-Input-Mob"></textarea>
+                        </div>
+                        <div style="margin-right: 1rem; margin-top: 0.4rem;">
+                            <div class="button-yellow py-2 text-center ow-cols-2">
+                                <a href="javascript:;" onclick="copyTextRhythmic()"><s langtest="Copy">Copy</s></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 規則弹窗 -->
+    <div class="modal fade show" id="p-invite-rules-looks" tabindex="-1" aria-labelledby="p-invite-rules-looks"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content xsjl-d">
+
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-center text-white w-100" id="exampleModalScrollableTitle"><s
+                            langtest="rule">rule</s>
+                    </h5>
+                </div>
+                <div class="modal-body" style="overflow-y: hidden; padding-bottom: 5rem;">
+                    <img style="border-radius: 10px;" src="images/banner_inviter_2.jpg" class="img-fluid">
+                </div>
+
+                <div class="modal-body xdjl mx-3 mb-4">
+                    <!-- <img src="images/banner_inviter_2.jpg" class="img-fluid"> -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div>
+                                <h2 class="text-center"><s langtest="Invitation-Dialog-Title-1">ChainPet Invitational
+                                        Contest</s></h2>
+                                <s langtest="Invitation-Dialog-Content-1">To listen to the community, to expand the
+                                    community, and to give back to our existing players, we are holding our first
+                                    ChainPet Invitational Competition.During the event, ChainPet players will be
+                                    rewarded with a substantial spending rebate by inviting other new players to join
+                                    the game and make purchases!</s>
+                                <br>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-2">Time: May 8 ~ June 5</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-3">Rule: invite new players to join during the
+                                    event, and you can participate by spending.The activity lasts for one month, divided
+                                    into weekly list, monthly total list.Rewards are ranked by the number of invitations
+                                    players receive.</s>
+                                <br>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-4">*All interested users can participate in the
+                                    invitation-ranking contest</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-5">*New player: Wallet hasn't been logged into
+                                    ChainPet before</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-6">*Valid Users: Purchase elves blind boxes to
+                                    participate in the game during the campaign period</s>
+                                <br>
+                                <br>
+                                <h4 class="text-center"><s langtest="Invitation-Dialog-Title-2">Weekly Ranking
+                                        awards</s></h4>
+                                <s langtest="Invitation-Dialog-Content-7">NO. 1&nbsp;30 percent of the amount of money
+                                    valid invited</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-8">NO.2: 25 percent of the amount of money valid
+                                    invited</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-9">NO.3: 15 percent of the amount of money valid
+                                    invited</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-10">NO.4~NO.10: 10 percent of the amount of money
+                                    valid invited</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-11">NO.10~NO.50: 8 percent of the amount of money
+                                    valid invited</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-12">NO.50~NO.100: 5 percent of the amount of
+                                    money valid invited</s>
+                                <br>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-14">*for example:</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-15">1. Player A invites 10 new users in the first
+                                    week, spends 10BNB effectively, ranks first in the first week, and gets
+                                    10BNB*30%=3BNB</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-16">2. Player A invites 10 new users in week 1
+                                    and 10 new users in week 2.These 20 users spend 20BNB effectively in week 2, and
+                                    player A is rewarded 20BNB*25%=5BNB for ranking second</s>
+                                <br>
+                                <br>
+                                <h4 class="text-center"><s langtest="Invitation-Dialog-Title-3">Monthly ranking rewards
+                                        mystery gifts</s></h4>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-17">In this competition, the top users in the
+                                    monthly invitation will have a mysterious prize!Please check the event announcement
+                                    for details.</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-18">In the invitational mechanics of the game
+                                    itself, the first level invitational gets 5% and the second level invitational gets
+                                    2%.</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-19">This reward does not overlap with the event
+                                    reward, so for the duration of the event, the first level invitation can receive up
+                                    to 35% of the consumption rebate reward!</s>
+                                <br>
+                                <s langtest="Invitation-Dialog-Content-13">Lucky list: During the contest, any player
+                                    who has a valid invitation will be counted as ChainPet lucky player and will receive
+                                    a secret gift!</s>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-title text-center text-white w-100 mb-4" id="exampleModalScrollableTitle">
+                    <div class="row row-cols-3 row-cols-sm-3 row-cols-md-3">
+                        <div class="col"></div>
+                        <div class="button-yellow col py-2 text-center ow-cols-2" data-bs-dismiss="modal"
+                            aria-label="Close">
+                            <a href="javascript:;" data-bs-dismiss="modal" aria-label="Close"><s
+                                    langtest="Invitation-Participation">Participation>></s></a>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+                <!-- <div class="button-yellow modal-title text-center text-white w-100 mb-4" id="exampleModalScrollableTitle">
+                    <a href="javascript:;"><s
+                        langtest="Invitation-Participation" data-bs-dismiss="modal"
+                        aria-label="Close">Participation>></s></a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="biaoge my-5">
+        <div class="tab-pane fade show active" id="nav-24" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 align-items-center px-5 pb-5 biaogecenter">
+                <div class="col mt-5">
+                    <div class="row">
+                        <div class="col text-truncate">
+                            <div class="row-cols-4">
+                                <s class="py-2" langtest="Invitation-Total">Total Invitees</s>
+                                <span id="invitation-total-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-5">
+                    <div class="row">
+                        <div class="col text-truncate">
+                            <div class="row-cols-4">
+                                <s class="py-2" langtest="Invitation-Valid">Total Valid Invitees</s>
+                                <span id="invitation-valid-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-5">
+                    <div class="row">
+                        <div class="col text-truncate">
+                            <div class="row-cols-4">
+                                <s class="py-2" langtest="Invitation-Consumption">Weekly Valid Consumption</s>
+                                <span id="invitation-consumption-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-5">
+                    <div class="row">
+                        <div class="col text-truncate">
+                            <div class="row-cols-4">
+                                <s class="py-2" langtest="Invitation-Estimated-Reward">Weekend Estimated Reward</s>
+                                <span id="invitation-estimated-reward-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col mt-5">
+                    <div class="row">
+                        <div class="button-yellow py-2 text-center ow-cols-2">
+                            <a data-bs-toggle="modal" data-bs-target="#p-invite-invitation-url-looks"
+                                href="javascript:;"><s langtest="Invitation-Invite">invite</s></a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="biaoge my-5">
+        <div class="tab-pane fade show active" id="nav-24" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 align-items-center px-5 pb-5 biaogecenter">
+                <div class="col mt-5">
+                    <div class="row row-cols-3 row-cols-sm-3 row-cols-md-3">
+                        <div></div>
+                        <div class="row">
+                            <div class="col-auto"><img src="images/bnb.svg" alt=""></div>
+                            <div class="col text-truncate">
+                                <s class="py-2" langtest="Invitation-Total-Reward">Reward</s>
+                                <span id="invitation-total-value">0</span>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="col mt-5">
+                    <div class="row row-cols-3 row-cols-sm-3 row-cols-md-3">
+                        <div></div>
+                        <div class="button-yellow py-2 text-center ow-cols-2">
+                            <a href="javascript:;"><s langtest="harvest">harvest</s></a>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+                <div class="row align-items-center px-5 pb-5 biaogecenter d-sm-none d-sm-block">
+                    <div class="col mt-5">
+                        <div class="row">
+                            <div class="col-auto"><img src="images/bnb.svg" alt=""></div>
+                            <div class="col text-truncate">
+                                <s class="py-2" langtest="Invitation-Total-Reward">Reward</s>
+                                <span id="invitation-total-value">0</span>
+                            </div>
+                            <div class="button-yellow py-2 text-center ow-cols-2">
+                                <a href="javascript:;"><s langtest="harvest">harvest</s></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div> -->
+    <div class="biaoge my-5">
+        <div class="tab-pane fade show active" id="nav-24" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 align-items-center px-5 pb-5 biaogecenter">
+                <div class="col mt-5">
+                    <div class="row">
+                        <div class="col-auto"><img src="images/bnb.svg" alt=""></div>
+                        <div class="col text-truncate">
+                            <!--pc上显示的按钮-->
+                            <div class="row-cols-4 d-none d-sm-block">
+                                <s class="py-2" langtest="Invitation-Total-Reward">Reward</s>
+                                <span id="invitation-rhythmic-award-value">0</span>
+                                <div class="button-yellow py-2 text-center ow-cols-2">
+                                    <a href="javascript:;" onclick="receiveInviterRhythmicAward()"><s
+                                            langtest="harvest">harvest</s></a>
+                                </div>
+                            </div>
+                            <!--手机上显示的按钮-->
+                            <div class="row-cols-2 d-sm-none">
+                                <s class="py-2" langtest="Invitation-Total-Reward">Reward</s>
+                                <span id="invitation-rhythmic-award-value-mob">0</span>
+                                <div class="button-yellow py-2 text-center ow-cols-2">
+                                    <a href="javascript:;" onclick="receiveInviterRhythmicAward()"><s
+                                            langtest="harvest">harvest</s></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-5">
+                    <div class="row">
+                        <div class="col-auto"><img src="images/table1.svg" alt=""></div>
+                        <div class="col text-truncate">
+                            <!--pc上显示的按钮-->
+                            <div class="row-cols-4 d-none d-sm-block">
+                                <s class="py-2" langtest="Invitation-Dialog-Friend">Invite friends</s>
+                                <span
+                                    style="width: auto;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">&nbsp;</span>
+                                <div class="button-yellow py-2 text-center ow-cols-2">
+                                    <a data-bs-toggle="modal" data-bs-target="#p-invite-invitation-url-looks"
+                                        href="javascript:;"><s langtest="Invitation-Invite">invite</s></a>
+                                </div>
+                            </div>
+                            <!--手机上显示的按钮-->
+                            <div class="row-cols-2 d-sm-none">
+                                <s class="py-2" langtest="Invitation-Dialog-Friend">Invite friends</s>
+                                <span
+                                    style="width: auto;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">&nbsp;</span>
+                                <div class="button-yellow py-2 text-center ow-cols-2">
+                                    <a data-bs-toggle="modal" data-bs-target="#p-invite-invitation-url-looks"
+                                        href="javascript:;"><s langtest="Invitation-Invite">invite</s></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="tab-pane fade show active" id="storage-my" role="tabpanel" aria-labelledby="storage-my-tab">
+        <!-- my -->
+        <div class="row">
+            <div class="col-12 col-lg-6 mb-5">
+                <!-- 分隔符 -->
+                <div class="container-fluid p-0 base-map">
+
+                    <div class="row g-0 rank-biaoge-tiele">
+                        <div class="col"></div>
+                        <h6 class="col-auto s-me-pai text-center mx-auto" style="text-align:center;">
+                            <!-- <h6 class="rank-biaoge-tiele s-me-pai"> -->
+                            <s langtest="Invitation-Weekly-leaderboard">Weekly leaderboard</s>
+                        </h6>
+                        <form class="col s-me-pai">
+                            <select name="selectList" id="Invitation-Weekly-leaderboard-time-list-value">
+
+                            </select>
+                        </form>
+                    </div>
+                    <div class="row p-3 biaogecenter">
+                        <table class="table table-striped align-middle">
+                            <thead>
+                                <tr class="row-cols-lg-3">
+                                    <th scope="col"><s langtest="Rank">Rank</s></th>
+                                    <th scope="col"><s langtest="Wallet">Wallet</s></th>
+                                    <th scope="col"><s langtest="Valid-number-of-invitees">Valid number of invitees</s>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="Invitation-Weekly-leaderboard-list-value">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="container-fluid p-0 base-map">
+                    <!-- <h6 class="rank-biaoge-tiele s-me-pai">
+                        <s langtest="Nav-Elves">Monthly leaderboard</s>
+                    </h6> -->
+                    <div class="row g-0 rank-biaoge-tiele">
+                        <div class="col"></div>
+                        <h6 class="col-auto s-me-pai text-center" style="text-align:center;">
+                            <!-- <h6 class="rank-biaoge-tiele s-me-pai"> -->
+                            <s langtest="Invitation-Monthly-leaderboard">Monthly leaderboard</s>
+                        </h6>
+                        <div class="col"></div>
+                    </div>
+
+                    <div class="row p-3 biaogecenter">
+                        <table class="table table-striped align-middle">
+                            <thead>
+                                <tr class="row-cols-lg-3">
+                                    <th scope="col"><s langtest="Rank">Rank</s></th>
+                                    <th scope="col"><s langtest="Wallet">Wallet</s></th>
+                                    <th scope="col"><s langtest="Valid-number-of-invitees">Valid number of invitees</s>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="Invitation-Monthly-leaderboard-list-value">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- my -->
+    </div>
+</div>
+
+
+<div id="page-footer"></div>
+<!-- 包含 Popper 的 Bootstrap 集成包 -->
+<script>
+    // requestRecommendationsData();
+    $("#Invitation-Weekly-leaderboard-time-list-value").change(function (data) {
+        var obj = document.getElementById('Invitation-Weekly-leaderboard-time-list-value');
+        // var  index=obj.selectedIndex;  //序号，取当前选中选项的序号
+        var value = obj.value;  //序号，取当前选中选项的序号
+        // console.log("value=%s", value);
+        invitationRhythmicRankData(value, function (result) {
+            if (result == null) {
+                // resetRecommendationsData();
+            } else {
+                if (result.code == 200) {
+                    updateRecommendationsRankData(result.data);
+                }
+            }
+        });
+    });
+    function requestRecommendationsData() {
+        invitationRhythmicData(function (result) {
+            if (result == null) {
+                resetRecommendationsData();
+            } else {
+                if (result.code == 200) {
+                    updateRecommendationsData(result.data);
+                }
+            }
+        });
+    }
+    function resetRecommendationsData() {
+        $("#invitation-total-value").text("0");
+        $("#invitation-valid-value").text("0");
+        $("#invitation-consumption-value").text("0");
+        $("#invitation-estimated-reward-value").text("0");
+        $("#invitation-rhythmic-award-value").text("0");
+        $("#invitation-rhythmic-award-value-mob").text("0");
+        $("#Invitation-Rhythmic-URL-Value").text("");
+        $("#Invitation-Rhythmic-URL-Mob-Value").text("");
+        $("#Invitation-Weekly-leaderboard-time-list-value").children().remove();
+        $("#Invitation-Weekly-leaderboard-list-value").children().remove();
+        // $("#Invitation-Monthly-leaderboard-list-value").children().remove();
+    }
+    function updateRecommendationsData(data) {
+        resetRecommendationsData();
+
+        $("#invitation-total-value").text(data.total);
+        $("#invitation-valid-value").text(data.valid);
+        $("#invitation-consumption-value").text(data.consumption);
+        $("#invitation-estimated-reward-value").text(data.estimatedReward);
+        $("#invitation-rhythmic-award-value").text(data.reward);
+        $("#invitation-rhythmic-award-value-mob").text(data.reward);
+        if (data.url == "") {
+            // $("#Invitation-Rhythmic-URL-Value").text("Sorry, you are not logged in.");
+            // $("#Invitation-Rhythmic-URL-Mob-Value").text("Sorry, you are not logged in.");
+            $.message({
+                message: "Sorry, you are not logged in.",
+                type: 'warning'
+            });
+        }
+        else {
+            var tmp = data.url.split("inviter_rhythmic");
+            var url = location.origin + location.pathname + "inviter_rhythmic" + tmp[1];
+            $("#Invitation-Rhythmic-URL-Value").text(url);
+            $("#Invitation-Rhythmic-URL-Mob-Value").text(url);
+        }
+
+        var weeklyTime = data.weeklyTime;
+        for (var i = 0; i < weeklyTime.length; i++) {
+            if (weeklyTime[i].curr) {
+                var insertText = "<option value=\"" + weeklyTime[i].tmp + "\" selected=\"selected\">" + weeklyTime[i].tmp + "</option>";
+                $("#Invitation-Weekly-leaderboard-time-list-value").append(insertText);
+            }
+            else {
+                var insertText = "<option value=\"" + weeklyTime[i].tmp + "\">" + weeklyTime[i].tmp + "</option>";
+                $("#Invitation-Weekly-leaderboard-time-list-value").append(insertText);
+            }
+        }
+        updateRecommendationsRankData(data.weekly);
+        updateRecommendationsMonthlyRankData(data.monthly);
+    }
+
+    function updateRecommendationsRankData(data) {
+        $("#Invitation-Weekly-leaderboard-list-value").children().remove();
+        var weekly = data;
+        if (weekly.length <= 0) {
+            updateLocalRecommendationsRankData("weekly");
+        }
+        else {
+            for (var i = 0; i < weekly.length; i++) {
+                var wallet = weekly[i].wallet.substr(0, 4) + "****" + weekly[i].wallet.substr(weekly[i].wallet.length - 4, 4);
+                var insertText =
+                    "<tr class=\"row-cols-3\"> \
+                        <td class=\"col\"><div class=\"text-truncate py-4\">"+ weekly[i].rank + "</div></td> \
+                        <td class=\"col\"><div class=\"text-truncate py-4\">"+ wallet + "</div></td> \
+                        <td class=\"col\"><div class=\"text-truncate py-4\">"+ weekly[i].valid + "</div></td> \
+                    </tr>";
+                $("#Invitation-Weekly-leaderboard-list-value").append(insertText);
+            }
+        }
+    }
+    function updateRecommendationsMonthlyRankData(data) {
+        $("#Invitation-Monthly-leaderboard-list-value").children().remove();
+        var monthly = data;
+        if (monthly.length <= 0) {
+            updateLocalRecommendationsRankData("monthly");
+        }
+        else {
+            for (var i = 0; i < monthly.length; i++) {
+                var wallet = monthly[i].wallet.substr(0, 4) + "****" + monthly[i].wallet.substr(monthly[i].wallet.length - 4, 4);
+                var insertText =
+                    "<tr class=\"row-cols-3\"> \
+                        <td class=\"col\"><div class=\"text-truncate py-4\">"+ monthly[i].rank + "</div></td> \
+                        <td class=\"col\"><div class=\"text-truncate py-4\">"+ wallet + "</div></td> \
+                        <td class=\"col\"><div class=\"text-truncate py-4\">"+ monthly[i].valid + "</div></td> \
+                    </tr>";
+
+                $("#Invitation-Monthly-leaderboard-list-value").append(insertText);
+            }
+        }
+    }
+    function updateLocalRecommendationsRankData(type) {
+        if (type == "weekly") {
+            $("#Invitation-Weekly-leaderboard-list-value").children().remove();
+        }
+        else {
+            $("#Invitation-Monthly-leaderboard-list-value").children().remove();
+        }
+        var t1 = ["5496", "d4a6", "5dc6", "749b", "2499", "5002", "acb5", "8527", "9add", "a59c", "a659", "31c6", "9d9b", "89ac", "8cad", "acb6", "52a7", "9da9", "a5cc"];
+        var t2 = ["c599", "d2a1", "1d6c", "79b4", "29c4", "5a2d", "b565", "ac27", "d859", "addc", "a9dd", "3109", "aacb", "a81c", "8daa", "ee85", "ec94", "a9ac", "87cd"];
+        var t3 = [10, 9, 7, 5, 3, 1, 1, 1, 1];
+        for (var i = 0; i < t3.length; i++) {
+            var rand = Math.floor(Math.random() * t1.length);
+            var rank = i + 1;
+            var wallet = "0x" + t1[rand] + "****" + t2[rand];
+            var insertText =
+                "<tr class=\"row-cols-3\"> \
+                    <td class=\"col\"><div class=\"text-truncate py-4\">"+ rank + "</div></td> \
+                    <td class=\"col\"><div class=\"text-truncate py-4\">"+ wallet + "</div></td> \
+                    <td class=\"col\"><div class=\"text-truncate py-4\">"+ t3[i] + "</div></td> \
+                </tr>";
+            if (type == "weekly") {
+                $("#Invitation-Weekly-leaderboard-list-value").append(insertText);
+            }
+            else {
+                $("#Invitation-Monthly-leaderboard-list-value").append(insertText);
+            }
+        }
+    }
+
+    function receiveInviterRhythmicAward() {
+        var v = Number.parseFloat($("#invitation-rhythmic-award-value").text());
+        if (isNaN(v) || v <= 0) {
+            $.message({
+                message: "You don't have enough award.",
+                type: 'warning'
+            });
+        } else {
+            invitationRhythmicHarvest(function (result) {
+                if (result == null) {
+                    resetInvitationData();
+                } else {
+                    if (result.code == 200) {
+                        $("#invitation-rhythmic-award-value").text("0");
+                        $("#invitation-rhythmic-award-value-mob").text("0");
+                        updateUserInfo();//更新一下顶部数据
+                        $.message('success!');
+                    }
+                    else {
+                        $.message({
+                            message: result.message,
+                            type: 'warning'
+                        });
+                    }
+                }
+            });
+        }
+    }
+
+    function copyTextRhythmic() {
+        var text = document.getElementById("Invitation-Rhythmic-URL-Value").innerText;
+        if (text == "") {
+            $.message({
+                message: "Sorry, you are not logged in.",
+                type: 'warning'
+            });
+        }
+        else {
+            var input = document.getElementById("Invitation-Rhythmic-URL-Input");
+            var input_mob = document.getElementById("Invitation-Rhythmic-URL-Input-Mob");
+            input.value = text; // 修改文本框的内容
+            input_mob.value = text; // 修改文本框的内容
+            input.select(); // 选中文本
+            input_mob.select(); // 选中文本
+            document.execCommand("copy"); // 执行浏览器复制命令
+            $.message('Copy success!');
+        }
+    }
+</script>
+<style type="text/css">
+    #Invitation-Rhythmic-URL-Input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -10;
+    }
+
+    #Invitation-Rhythmic-URL-Input-Mob {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -10;
+    }
+</style>
+<!-- <option>18岁以下</option>
+                                <option>18-28岁</option>
+                                <option>28-38岁</option>
+                                <option>38岁以上</option> -->
+<!-- <tr class="row-cols-3">
+    <td class="col">
+        <div class="text-truncate py-4">1</div>
+    </td>
+    <td class="col">
+        <div class="text-truncate py-4">0x1594***4534</div>
+    </td>
+    <td class="col">
+        <div class="text-truncate py-4"><small><img class="ps-2 bp-1" style="width: 26px;"
+                    src="images/bnb.svg"></small>10</div>
+    </td>
+</tr> -->
+<!-- <tr class="row-cols-3">
+    <td class="col">
+        <div class="text-truncate py-4">1</div>
+    </td>
+    <td class="col">
+        <div class="text-truncate py-4">0x1594564</div>
+    </td>
+    <td class="col">
+        <div class="text-truncate py-4"><small><img class="ps-2 bp-1" style="width: 26px;"
+                    src="images/bnb.svg"></small>10</div>
+    </td>
+</tr> -->

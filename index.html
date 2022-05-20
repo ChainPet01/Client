@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain Pet</title>
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/web3.min.js"></script>
+    <!-- <script src="js/libs/jquery.waypoints.min.js"></script> -->
+    <!-- <script src="js/libs/jquery.counterup.min.js"></script> -->
+    <script src="js/libs/count.js"></script>
+    <script src="js/libs/page/js/jquery.z-pager.js" charset="utf-8"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="js/libs/message/message.css" rel="stylesheet">
+
+    <script src="js/libs/message/message.min.js"></script>
+
+    <link href="css/style.css?v=202205111216" rel="stylesheet">
+
+    <script src="js/alanguage.js?v=202205111216"></script>
+    <script src="js/utils.js?v=202205111216"></script>
+    <script src="js/header.js?v=202205111216"></script>
+    <script src="js/shop.js?v=202205111216"></script>
+    <script src="js/auction.js?v=202205111216"></script>
+    <script src="js/user.js?v=202205111216"></script>
+    <script src="js/market.js?v=202205111216"></script>
+    <script src="js/chest.js?v=202205111216"></script>
+    <script src="js/tabs.js?v=202205111216"></script>
+    <script src="js/mining.js?v=202205111216"></script>
+    <script src="js/chain.js?v=202205111216"></script>
+
+</head>
+
+<body>
+    <!-- Loading -->
+    <div id="preloader">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+            <p class="text-center text-white">Loading...</p>
+        </div>
+    </div>
+
+    <!-- top-nav -->
+    <div id="page-header"></div>
+    <!-- left-nav -->
+    <div id="page-leftnav"></div>
+    <!-- home -->
+    <div id="page-index" class="page-content" style="display: none;" my-show-callback="showIndex()"
+        my-hide-callback="hideIndex()"></div>
+    <div id="page-recommendations" class="page-content" style="display: none;" my-show-callback="showRecommendations()"
+        my-hide-callback="hideRecommendations">
+    </div>
+    <!-- box-ordinary -->
+    <div id="page-box-ordinary" class="page-content" style="display: none;" my-show-callback="showBoxOrdinary()"
+        my-hide-callback="hideBoxOrdinary()"></div>
+    <!-- box-precious -->
+    <div id="page-box-precious" class="page-content" style="display: none;" my-show-callback="showBoxPrecious()"
+        my-hide-callback="hideBoxPrecious()"></div>
+    <!-- nft-market-elves -->
+    <div id="page-nft-market-elves" class="page-content" style="display: none;" my-show-callback="showMarketElves()"
+        my-hide-callback="hideMarketElves()"></div>
+    <!-- nft-market-gem -->
+    <div id="page-nft-market-gems" class="page-content" style="display: none;" my-show-callback="showMarketGems()"
+        my-hide-callback="hideMarketGems()"></div>
+    <!-- nft-auction -->
+    <div id="page-nft-auction" class="page-content" style="display: none;" my-show-callback="showAuction()"
+        my-hide-callback="hideAuction()"></div>
+    <!-- nft-mining -->
+    <div id="page-nft-mining" class="page-content" style="display: none;" my-show-callback="showMining()"
+        my-hide-callback="hideMining()"></div>
+    <!-- games-elves-world -->
+    <!-- <div id="page-games-elves-world" class="page-content" style="display: none;" my-show-callback="showIndex()"
+        my-hide-callback="hideIndex()"></div> -->
+    <!-- my-my-box -->
+    <div id="page-my-box" class="page-content" style="display: none;" my-show-callback="showMyBox()"
+        my-hide-callback="hideMyBox()"></div>
+    <!-- my-my-storage -->
+    <div id="page-my-storage" class="page-content" style="display: none;" my-show-callback="showStorage()"
+        my-hide-callback="hideStorage()"></div>
+    <div id="page-text-inviter-rhythmic"></div>
+    <div id="page-text-rule-subscription-elves"></div>
+    <div id="page-text-rule-subscription-debris"></div>
+    <!-- Nft市场规则 -->
+    <div id="page-text-rule-market"></div>
+    <!-- 上架销售弹框 -->
+    <div id="page-shelves"></div>
+    <div id="marketPage" class="pages d-flex px-5 justify-content-center"></div>
+    <div id="page-text-rule-auction"></div>
+    <div id="page-text-rule-mining"></div>
+    <div id="page-text-rule-synthesis"></div>
+    <div id="page-text-rule-inviter"></div>
+    <div id="page-minings"></div>
+    <!-- 开宝箱 -->
+    <div id="page-open"></div>
+
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.9.0/vconsole.min.js"></script>
+<script>
+    // init vConsole
+    var vConsole = new VConsole();
+    console.log('Hello world');
+</script> -->
+    <script>
+        document.ready = $(function () {
+            var inviter = getCookie("inviter");
+            if (inviter != null && inviter != undefined && inviter != "") {
+                addCookie("inviter", "", 0.1);
+                setTimeout(function () {
+                    $('#p-invite-rhythmic-dialog-looks').modal("show");
+                }, 800);
+            }
+        });
+        const KEY_HOME = "Home", VALUE_HOME = "page-index", VALUE_NAV_PC_HOME_ID = "id-nav-pc-home", VALUE_NAV_MOB_HOME_ID = "id-nav-mob-home";//, SHOW_HOME_FUNCTION = "showIndex", HIDE_HOME_FUNCTION = "hideIndex";
+        const KEY_RECOMMENDATIONS = "Recommendations", VALUE_RECOMMENDATIONS = "page-recommendations", VALUE_NAV_PC_RECOMMENDATIONS_ID = "id-nav-pc-recommendations", VALUE_NAV_MOB_RECOMMENDATIONS_ID = "id-nav-mob-recommendations";//, SHOW_ORDINARY_FUNCTION = showOrdinary(), HIDE_ORDINARY_FUNCTION = hideOrdinary();
+        const KEY_ORDINARY = "Ordinary", VALUE_ORDINARY = "page-box-ordinary", VALUE_NAV_PC_ORDINARY_ID = "id-nav-pc-ordinary", VALUE_NAV_MOB_ORDINARY_ID = "id-nav-mob-ordinary";//, SHOW_ORDINARY_FUNCTION = showOrdinary(), HIDE_ORDINARY_FUNCTION = hideOrdinary();
+        const KEY_PRECIOUS = "Precious", VALUE_PRECIOUS = "page-box-precious", VALUE_NAV_PC_PRECIOUS_ID = "id-nav-pc-precious", VALUE_NAV_MOB_PRECIOUS_ID = "id-nav-mob-precious";//, SHOW_PRECIOUS_FUNCTION = showPrecious, HIDE_PRECIOUS_FUNCTION = hidePrecious;
+        const KEY_ELVES = "Elves", VALUE_ELVES = "page-nft-market-elves", VALUE_NAV_PC_ELVES_ID = "id-nav-pc-elves", VALUE_NAV_MOB_ELVES_ID = "id-nav-mob-elves";//, SHOW_ELVES_FUNCTION = showElves, HIDE_ELVES_FUNCTION = hideElves;
+        const KEY_GEMS = "Gems", VALUE_GEMS = "page-nft-market-gems", VALUE_NAV_PC_GEMS_ID = "id-nav-pc-gems", VALUE_NAV_MOB_GEMS_ID = "id-nav-mob-gems";//, SHOW_GEMS_FUNCTION = showGems, HIDE_GEMS_FUNCTION = hideGems;
+        const KEY_AUCTION = "Auction", VALUE_AUCTION = "page-nft-auction", VALUE_NAV_PC_AUCTION_ID = "id-nav-pc-auction", VALUE_NAV_MOB_AUCTION_ID = "id-nav-mob-auction";//, SHOW_AUCTION_FUNCTION = showAuction, HIDE_AUCTION_FUNCTION = hideAuction;
+        const KEY_MINING = "Mining", VALUE_MINING = "page-nft-mining", VALUE_NAV_PC_MINING_ID = "id-nav-pc-mining", VALUE_NAV_MOB_MINING_ID = "id-nav-mob-mining";//, SHOW_MINING_FUNCTION = showMining, HIDE_MINING_FUNCTION = hideMining;
+        const KEY_MYBOX = "MyBox", VALUE_MYBOX = "page-my-box", VALUE_NAV_PC_MYBOX_ID = "id-nav-pc-my-box", VALUE_NAV_MOB_MYBOX_ID = "id-nav-mob-my-box";//, SHOW_MYBOX_FUNCTION = showMyBox, HIDE_MYBOX_FUNCTION = hideMyBox;
+        const KEY_STORAGE = "Storage", VALUE_STORAGE = "page-my-storage", VALUE_NAV_PC_STORAGE_ID = "id-nav-pc-storage", VALUE_NAV_MOB_STORAGE_ID = "id-nav-mob-storage";//, SHOW_STORAGE_FUNCTION = showStorage, HIDE_STORAGE_FUNCTION = hideStorage;
+
+        const PAGE_KEY = "page";
+        const PC_ID_KEY = "pc_id";
+        const MOB_ID_KEY = "mob_id";
+        const SHOW_KEY = "show";
+        const HIDE_KEY = "hide";
+
+        var curr_page = "";
+        var nav_map = new Map();
+        nav_map.set(KEY_HOME, { PAGE_KEY: VALUE_HOME, PC_ID_KEY: VALUE_NAV_PC_HOME_ID, MOB_ID_KEY: VALUE_NAV_MOB_HOME_ID/*, SHOW_KEY: SHOW_HOME_FUNCTION, HIDE_KEY: HIDE_HOME_FUNCTION*/ });
+        nav_map.set(KEY_RECOMMENDATIONS, { PAGE_KEY: VALUE_RECOMMENDATIONS, PC_ID_KEY: VALUE_NAV_PC_RECOMMENDATIONS_ID, MOB_ID_KEY: VALUE_NAV_MOB_RECOMMENDATIONS_ID/*, SHOW_KEY: SHOW_ORDINARY_FUNCTION, HIDE_KEY: HIDE_ORDINARY_FUNCTION*/ });
+        nav_map.set(KEY_ORDINARY, { PAGE_KEY: VALUE_ORDINARY, PC_ID_KEY: VALUE_NAV_PC_ORDINARY_ID, MOB_ID_KEY: VALUE_NAV_MOB_ORDINARY_ID/*, SHOW_KEY: SHOW_ORDINARY_FUNCTION, HIDE_KEY: HIDE_ORDINARY_FUNCTION*/ });
+        nav_map.set(KEY_PRECIOUS, { PAGE_KEY: VALUE_PRECIOUS, PC_ID_KEY: VALUE_NAV_PC_PRECIOUS_ID, MOB_ID_KEY: VALUE_NAV_MOB_PRECIOUS_ID/*, SHOW_KEY: SHOW_PRECIOUS_FUNCTION, HIDE_KEY: HIDE_PRECIOUS_FUNCTION*/ });
+        nav_map.set(KEY_ELVES, { PAGE_KEY: VALUE_ELVES, PC_ID_KEY: VALUE_NAV_PC_ELVES_ID, MOB_ID_KEY: VALUE_NAV_MOB_ELVES_ID/*, SHOW_KEY: SHOW_ELVES_FUNCTION, HIDE_KEY: HIDE_ELVES_FUNCTION*/ });
+        nav_map.set(KEY_GEMS, { PAGE_KEY: VALUE_GEMS, PC_ID_KEY: VALUE_NAV_PC_GEMS_ID, MOB_ID_KEY: VALUE_NAV_MOB_GEMS_ID/*, SHOW_KEY: SHOW_GEMS_FUNCTION, HIDE_KEY: HIDE_GEMS_FUNCTION*/ });
+        nav_map.set(KEY_AUCTION, { PAGE_KEY: VALUE_AUCTION, PC_ID_KEY: VALUE_NAV_PC_AUCTION_ID, MOB_ID_KEY: VALUE_NAV_MOB_AUCTION_ID/*, SHOW_KEY: SHOW_AUCTION_FUNCTION, HIDE_KEY: HIDE_AUCTION_FUNCTION*/ });
+        nav_map.set(KEY_MINING, { PAGE_KEY: VALUE_MINING, PC_ID_KEY: VALUE_NAV_PC_MINING_ID, MOB_ID_KEY: VALUE_NAV_MOB_MINING_ID/*, SHOW_KEY: SHOW_MINING_FUNCTION, HIDE_KEY: HIDE_MINING_FUNCTION*/ });
+        nav_map.set(KEY_MYBOX, { PAGE_KEY: VALUE_MYBOX, PC_ID_KEY: VALUE_NAV_PC_MYBOX_ID, MOB_ID_KEY: VALUE_NAV_MOB_MYBOX_ID/*, SHOW_KEY: SHOW_MYBOX_FUNCTION, HIDE_KEY: HIDE_MYBOX_FUNCTION*/ });
+        nav_map.set(KEY_STORAGE, { PAGE_KEY: VALUE_STORAGE, PC_ID_KEY: VALUE_NAV_PC_STORAGE_ID, MOB_ID_KEY: VALUE_NAV_MOB_STORAGE_ID/*, SHOW_KEY: SHOW_STORAGE_FUNCTION, HIDE_KEY: HIDE_STORAGE_FUNCTION*/ });
+
+        // spop({
+        //     template: '3 seconds autoclose',
+        // position  : 'top-left',
+        // style: 'success'
+        // })
+
+        var headerLoaded = false;
+
+        var key = '';
+        var urlParams = location.hash;
+        var strs = urlParams.split("#");
+        for (var i = 0; i < strs.length; i++) {
+            key = strs[i];
+        }
+        if (key == '') {
+            openpage(KEY_HOME);
+        }
+        else {
+            openpage(getMapKeyByValue(key));
+        }
+
+        nav_map.set(KEY_HOME, { PAGE_KEY: VALUE_HOME, PC_ID_KEY: VALUE_NAV_PC_HOME_ID, MOB_ID_KEY: VALUE_NAV_MOB_HOME_ID/*, SHOW_KEY: SHOW_HOME_FUNCTION, HIDE_KEY: HIDE_HOME_FUNCTION*/ });
+        nav_map.set(KEY_RECOMMENDATIONS, { PAGE_KEY: VALUE_RECOMMENDATIONS, PC_ID_KEY: VALUE_NAV_PC_RECOMMENDATIONS_ID, MOB_ID_KEY: VALUE_NAV_MOB_RECOMMENDATIONS_ID/*, SHOW_KEY: SHOW_ORDINARY_FUNCTION, HIDE_KEY: HIDE_ORDINARY_FUNCTION*/ });
+        nav_map.set(KEY_ORDINARY, { PAGE_KEY: VALUE_ORDINARY, PC_ID_KEY: VALUE_NAV_PC_ORDINARY_ID, MOB_ID_KEY: VALUE_NAV_MOB_ORDINARY_ID/*, SHOW_KEY: SHOW_ORDINARY_FUNCTION, HIDE_KEY: HIDE_ORDINARY_FUNCTION*/ });
+        nav_map.set(KEY_PRECIOUS, { PAGE_KEY: VALUE_PRECIOUS, PC_ID_KEY: VALUE_NAV_PC_PRECIOUS_ID, MOB_ID_KEY: VALUE_NAV_MOB_PRECIOUS_ID/*, SHOW_KEY: SHOW_PRECIOUS_FUNCTION, HIDE_KEY: HIDE_PRECIOUS_FUNCTION*/ });
+        nav_map.set(KEY_ELVES, { PAGE_KEY: VALUE_ELVES, PC_ID_KEY: VALUE_NAV_PC_ELVES_ID, MOB_ID_KEY: VALUE_NAV_MOB_ELVES_ID/*, SHOW_KEY: SHOW_ELVES_FUNCTION, HIDE_KEY: HIDE_ELVES_FUNCTION*/ });
+        nav_map.set(KEY_GEMS, { PAGE_KEY: VALUE_GEMS, PC_ID_KEY: VALUE_NAV_PC_GEMS_ID, MOB_ID_KEY: VALUE_NAV_MOB_GEMS_ID/*, SHOW_KEY: SHOW_GEMS_FUNCTION, HIDE_KEY: HIDE_GEMS_FUNCTION*/ });
+        nav_map.set(KEY_AUCTION, { PAGE_KEY: VALUE_AUCTION, PC_ID_KEY: VALUE_NAV_PC_AUCTION_ID, MOB_ID_KEY: VALUE_NAV_MOB_AUCTION_ID/*, SHOW_KEY: SHOW_AUCTION_FUNCTION, HIDE_KEY: HIDE_AUCTION_FUNCTION*/ });
+        nav_map.set(KEY_MINING, { PAGE_KEY: VALUE_MINING, PC_ID_KEY: VALUE_NAV_PC_MINING_ID, MOB_ID_KEY: VALUE_NAV_MOB_MINING_ID/*, SHOW_KEY: SHOW_MINING_FUNCTION, HIDE_KEY: HIDE_MINING_FUNCTION*/ });
+        nav_map.set(KEY_MYBOX, { PAGE_KEY: VALUE_MYBOX, PC_ID_KEY: VALUE_NAV_PC_MYBOX_ID, MOB_ID_KEY: VALUE_NAV_MOB_MYBOX_ID/*, SHOW_KEY: SHOW_MYBOX_FUNCTION, HIDE_KEY: HIDE_MYBOX_FUNCTION*/ });
+        nav_map.set(KEY_STORAGE, { PAGE_KEY: VALUE_STORAGE, PC_ID_KEY: VALUE_NAV_PC_STORAGE_ID, MOB_ID_KEY: VALUE_NAV_MOB_STORAGE_ID/*, SHOW_KEY: SHOW_STORAGE_FUNCTION, HIDE_KEY: HIDE_STORAGE_FUNCTION*/ });
+
+        function getMapKeyByValue(v) {
+            for (var m of nav_map.entries()) {
+                if (m[1].PAGE_KEY == v) {
+                    return m[0];
+                }
+            }
+        }
+        function openpage(t) {
+            if (curr_page != t) {
+                curr_page = t;
+                nav_map.forEach(function (item, index, arr) { //item表示数组中的每一项，index标识当前项的下标，arr表示当前数组
+                    var page = document.getElementById(item.PAGE_KEY);
+                    if (page != null && typeof page != "undefined") {
+                        if (page.style.display == "") {
+                            var call = page.getAttribute("my-hide-callback");
+                            eval(call);
+                        }
+                        page.style.display = "none";
+                    }
+                    var id = document.getElementById(item.PC_ID_KEY);
+                    if (id != null && typeof id != "undefined") {
+                        id.classList.remove("active");
+                    }
+                    var idMob = document.getElementById(item.MOB_ID_KEY);
+                    if (idMob != null && typeof idMob != "undefined") {
+                        idMob.classList.remove("active");
+                    }
+                });
+                var pageElement = document.getElementById(nav_map.get(t).PAGE_KEY);
+                pageElement.style.display = "";
+                var call = pageElement.getAttribute("my-show-callback");
+                eval(call);
+                if (headerLoaded)
+                    showHeader();
+
+                showNavActive(t);
+                showMobNavActive(t);
+            }
+        }
+        function showNavActive(t) {
+            var pcNavElement = document.getElementById(nav_map.get(t).PC_ID_KEY);
+            setTimeout(function () {
+                if (pcNavElement != null) {
+                    pcNavElement.classList.add("active");
+                }
+                else {
+                    showNavActive(t);
+                }
+            }, 300);
+        }
+        function showMobNavActive(t) {
+            var mobNavElement = document.getElementById(nav_map.get(t).MOB_ID_KEY);
+            setTimeout(function () {
+                if (mobNavElement != null) {
+                    mobNavElement.classList.add("active");
+                }
+                else {
+                    showMobNavActive(t)
+                }
+            }, 300);
+        }
+        function showIndex() {
+            setTimeout(function () {
+                if (typeof requestData != "undefined") {
+                    requestData();
+                }
+                else {
+                    showIndex();
+                }
+            }, 300);
+        }
+
+        function hideIndex() { }
+
+        function showRecommendations() {
+            setTimeout(function () {
+                if (typeof requestRecommendationsData != "undefined") {
+                    requestRecommendationsData();
+                }
+                else {
+                    showRecommendations();
+                }
+            }, 300);
+        }
+        function hideRecommendations() {
+            setTimeout(function () {
+                if (typeof resetRecommendationsData != "undefined") {
+                    resetRecommendationsData();
+                }
+                else {
+                    hideRecommendations();
+                }
+            }, 300);
+        }
+
+        function showBoxOrdinary() {
+            setTimeout(function () {
+                if (typeof requestOrdinaryData != "undefined") {
+                    requestOrdinaryData();
+                }
+                else {
+                    showBoxOrdinary();
+                }
+            }, 300);
+        }
+
+        function hideBoxOrdinary() { }
+
+        function showBoxPrecious() {
+            setTimeout(function () {
+                if (typeof requestPreciousData != "undefined") {
+                    requestPreciousData();
+                }
+                else {
+                    showBoxPrecious();
+                }
+            }, 300);
+        }
+
+        function hideBoxPrecious() { }
+
+        function showMarketElves() {
+            setTimeout(function () {
+                if (typeof onTableMarketList != "undefined") {
+                    onTableMarketList('elf', 1);
+                }
+                else {
+                    showMarketElves();
+                }
+            }, 300);
+        }
+
+        function hideMarketElves() {
+            $("#marketPage").text('')
+        }
+
+        function showMarketGems() {
+            setTimeout(function () {
+                if (typeof onTableGemsMarketList != "undefined") {
+                    onTableGemsMarketList('energy', 1);
+                }
+                else {
+                    showMarketGems();
+                }
+            }, 300);
+        }
+
+        function hideMarketGems() {
+            $("#marketPageGem").text('')
+        }
+
+        function showAuction() {
+            setTimeout(function () {
+                if (typeof basicInfo != "undefined") {
+                    basicInfo();
+                }
+                else {
+                    showAuction();
+                }
+            }, 300);
+        }
+
+        function hideAuction() {
+        }
+
+        var _miningTimer = null;
+        function showMining() {
+            setTimeout(function () {
+                if (typeof mining != "undefined") {
+                    mining();
+
+                    _miningTimer = setInterval(() => {
+                        mining();
+                    }, 60 * 60 * 1000);
+                }
+                else {
+                    showMining();
+                }
+            }, 300);
+        }
+
+        function hideMining() {
+            // console.log("hideMining")
+            if (_miningTimer != null) {
+                clearInterval(_miningTimer);
+                _miningTimer = null;
+            }
+        }
+
+        function showMyBox() {
+            setTimeout(function () {
+                if (typeof myChest != "undefined") {
+                    myChest("elf");
+                }
+                else {
+                    showMyBox();
+                }
+            }, 300);
+        }
+
+        function hideMyBox() {
+        }
+
+        function showStorage() {
+            setTimeout(function () {
+                if (typeof my != "undefined" && typeof invitation != "undefined") {
+                    my();
+                    invitation();
+                }
+                else {
+                    showStorage();
+                }
+            }, 300);
+        }
+
+        function hideStorage() {
+        }
+    </script>
+
+
+    <script src="js/libs/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+
+</html>

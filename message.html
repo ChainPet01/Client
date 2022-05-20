@@ -1,0 +1,47 @@
+<div style="width: 1000px; border: 2px #ff0000 solid; margin: 0px auto;">
+
+    <!-- 消息提框 -->
+    <div id="system-message" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>标题</strong> 这里是提醒框内容
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+
+
+    <a href="#system-message2" data-bs-toggle="modal" data-bs-target="#my-modal" id="message2">这里是链接文字</a>
+
+    <!-- 消息弹出框 -->
+    <div class="modal fade show" id="system-message2" tabindex="-1" aria-labelledby="systemtitle" style="display: none;"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content xsjl-d">
+
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-center text-white w-100" id="systemtitle">弹框消息标题
+                    </h5>
+                    <button type="button" class="btn-close text-warning" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body xdjl mx-3">
+                    <div class="container-fluid">
+                        <div class="row">
+                            这里是弹出框的内容部分
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="nav-right-buttom2 w-25 mt-0">
+                    <a style="color: #3D1600;" href="#">按钮确认</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none;" id="hidden-content">
+        <h2>提示</h2>
+        <p>内容</p>
+    </div>
+</div>

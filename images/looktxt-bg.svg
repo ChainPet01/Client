@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="46px" viewBox="0 0 400 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组</title>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#4256E2" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3F53E1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#4256E2" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3F53E1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="99.7782939%" y1="49.7782939%" x2="0.221706081%" y2="49.7782939%" id="linearGradient-3">
+            <stop stop-color="#3944C2" offset="0%"></stop>
+            <stop stop-color="#4B54C7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="NTF-市场-市场-精灵弹窗" transform="translate(-1000.000000, -505.000000)">
+            <g id="编组" transform="translate(1000.000000, 505.000000)">
+                <rect id="矩形" fill="url(#linearGradient-1)" opacity="0.5" x="0" y="14" width="400" height="32"></rect>
+                <rect id="矩形备份" fill="url(#linearGradient-2)" opacity="0.5" x="0" y="14" width="400" height="4"></rect>
+                <polygon id="矩形" fill="url(#linearGradient-3)" points="10 0 107 0 107 46 0 46 0 12"></polygon>
+                <path d="M101.5,5.5 L101.5,40.5 L5.5,40.5 L5.5,14.5932589 L14.2777174,5.5 L101.5,5.5 Z" id="矩形" stroke="#646EDD" opacity="0.4"></path>
+            </g>
+        </g>
+    </g>
+</svg>

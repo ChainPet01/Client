@@ -1,0 +1,786 @@
+<div class="modal fade show" id="look-mining" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content xsjl-d">
+
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close text-warning" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-0 p-md-2">
+                <div class="row row-cols-1 row-cols-lg-2 s-market-upload m-0">
+                    <div class="col text-center auction-left pt-0 pt-lg-5">
+                        <img class="img-fluid w-75" src="images/big-elf.svg" alt="" id="miningElvesDialogImg">
+                    </div>
+                    <div class="col auction-right">
+                        <h4 class="mb-4"><i>&nbsp;</i><span id="miningElvesDialogName"></span></h4>
+                        <div class="prize-shu mb-4">
+                            <li class="text-truncate pe-2"><span><s langtest="Owner">Owner</s> </span><s
+                                    id="miningElvesDialogAuthor"></s></li>
+                            <li class="text-truncate pe-2"><span><s langtest="Contract Address">Contract Address</s>
+                                </span>
+                                <s id="miningElvesDialogAddress"></s>
+                            </li>
+                            <li class="border-0 text-truncate pe-2"><span><s langtest="Token ID">Token ID</s>
+                                </span><s id="miningElvesDialogTokenId"></s>
+                            </li>
+                        </div>
+                        <div class="looktxt-bg">
+                            <s langtest="Introduce">Introduce</s>
+                        </div>
+                        <div class="looktxt" id="miningElvesDialogIntroduce">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer text-white border-0 d-f">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-3 button-yellow py-2 py-lg-3 text-center text-uppercase">
+                            <a href="javascript:;" onclick="redeem()" data-bs-dismiss="modal" aria-label="Close"><s
+                                    langtest="Redeem">Redeem</s></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-lg-fluid mx-4">
+    <div class="base-map base-map-border p-3 rounded-1 rounded-md-3 ">
+        <p><a style="color: #9895C0;" href="#" data-bs-toggle="modal" data-bs-target="#text-rule-mining"><s
+                    langtest="Mining-Rule">Mining rules>></s></a></p>
+        <div class="row g-5 row-cols-3 text-white py-5 px-2 mb-4">
+            <div class="col-12 text-purple text-center mb-4">
+                <h1><s langtest="Mining-Version">Mining Pool 1.0</s></h1>
+                <h1 class="display-4 text-yellow fw-bold counter" id="currPoolNumber"><s>0</s></h1>
+                <!-- <small>Remaining prize pool(XXX) ≈ $3,730,280</small> -->
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="row row-cols-2 p-3 base-map2 rounded-2">
+                    <div class="col fs-4 fw-bold counter" id="totalPowerNumber"><s>0</s></div>
+                    <div class="col fs-4 fw-bold counter" id="myPowerNumber"><s>0</s></div>
+
+                    <div class="col small text-white-50"><s langtest="Mining-Total-Mining-Power">Total Mining Power</s>
+                    </div>
+                    <div class="col small text-white-50"><s langtest="Mining-My-Mining-Power">My Mining Power</s></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="row row-cols-2 p-3 base-map3 rounded-2">
+                    <div class="col fs-4 fw-bold counter" id="totalAmountNumber"><s>0</s></div>
+                    <div class="col fs-4 fw-bold counter" id="myAmountNumber"><s>0</s></div>
+
+                    <div class="col small text-white-50"><s langtest="Mining-Total-Staked-Amount">Total Staked
+                            Amount</s></div>
+                    <div class="col small text-white-50"><s langtest="Mining-My-Staked-Amount">My Staked Amount</s>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="row row-cols-2 p-3 base-map4 rounded-2">
+                    <div class="col fs-4 fw-bold counter" id="totalTokensNumber"><s>0</s>
+                    </div>
+                    <div class="col fs-4 fw-bold"></div>
+
+                    <div class="col small text-white-50"><s langtest="Mining-Total-Staked-Tokens">Total Staked
+                            Tokens</s></div>
+                    <!-- <div class="col small text-white-50"><s langtest>My Mining Power</s></div> -->
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="row row-cols-2 p-3 base-map5 rounded-2">
+                    <div class="col fs-4 fw-bold counter" id="myInterestsNumber"><s>0</s></div>
+                    <!-- <div class="col fs-4 fw-bold"></div> -->
+                    <div class="col button-green text-center align-self-center py-1">
+                        <a class="text-white-50" href="javascript:;" onclick="harvest()"><s
+                                langtest="harvest">harvest</s></a>
+                    </div>
+
+                    <div class="col small text-white-50"><s langtest="Mining-My-Staked-Tokens">My Staked Tokens</s>
+                    </div>
+                    <div class="col small text-white-50"><s>(CPET)</s></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="row row-cols-2 p-3 base-map6 rounded-2">
+                    <div class="col fs-4 fw-bold counter" id="totalPoolNumber"><s>0</s></div>
+                    <div class="col fs-4 fw-bold"></div>
+
+                    <div class="col small text-white-50"><s langtest="Mining-Total-Mining-Pool">Total Mining Pool</s>
+                    </div>
+                    <!-- <div class="col small text-white-50"><s langtest>My Mining Power</s></div> -->
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="row row-cols-2 p-3 base-map7 rounded-2">
+                    <div class="col fs-4 fw-bold counter" id="myTokenNumber"><s>0</s></div>
+                    <div class="col fs-4 fw-bold"></div>
+
+                    <div class="col small text-white-50"><s langtest="Mining-My-Tokens">My Tokens</s></div>
+                    <!-- <div class="col small text-white-50"><s langtest>My Mining Power</s></div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 弹框 -->
+
+        <div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 text-white text-center">
+            <!-- 循环开始 -->
+            <div class="col mb-5">
+                <div class="base-map-border rounded-1">
+                    <div class="pt-2"><s langtest="Mining-Position-1">Position 1</s></div>
+                    <a class="d-block" href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining">
+                        <img class="w-75 py-4" src="images/plus.png" alt="" id="stake0BtnListener" onclick="put(event)">
+                    </a>
+                    <!-- <div class="pb-2">Unlocked</div> -->
+                </div>
+                <div class="row w-75 mx-auto row-cols-1 justify-content-center mt-4">
+                    <div class="col button-blue py-2 py-lg-2 text-center mb-3">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining"
+                            id="stake0BtnListenerDown" onclick="put(event)"><s langtest="stake">stake</s></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 结束 -->
+            <!-- 循环开始 -->
+            <div class="col mb-5">
+                <div class="base-map-border rounded-1">
+                    <div class="pt-2"><s langtest="Mining-Position-1">Position 1</s></div>
+                    <a class="d-block" href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining">
+                        <img class="w-75 py-4" src="images/plus.png" alt="" id="stake1BtnListener" onclick="put(event)">
+                    </a>
+                    <!-- <div class="pb-2">Unlocked</div> -->
+                </div>
+                <div class="row w-75 mx-auto row-cols-1 justify-content-center mt-4">
+                    <div class="col button-blue py-2 py-lg-2 text-center mb-3">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining"
+                            id="stake1BtnListenerDown" onclick="put(event)"><s langtest="stake">stake</s></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 结束 -->
+            <!-- 循环开始 -->
+            <div class="col mb-5">
+                <div class="base-map-border rounded-1">
+                    <div class="pt-2"><s langtest="Mining-Position-1">Position 1</s></div>
+                    <a class="d-block" href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining">
+                        <img class="w-75 py-4" src="images/plus.png" alt="" id="stake2BtnListener" onclick="put(event)">
+                    </a>
+                    <!-- <div class="pb-2">Unlocked</div> -->
+                </div>
+                <div class="row w-75 mx-auto row-cols-1 justify-content-center mt-4">
+                    <div class="col button-blue py-2 py-lg-2 text-center mb-3">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining"
+                            id="stake2BtnListenerDown" onclick="put(event)"><s langtest="stake">stake</s></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 结束 -->
+            <!-- 循环开始 -->
+            <div class="col mb-5">
+                <div class="base-map-border rounded-1">
+                    <div class="pt-2"><s langtest="Mining-Position-1">Position 1</s></div>
+                    <a class="d-block" href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining">
+                        <img class="w-75 py-4" src="images/plus.png" alt="" id="stake3BtnListener" onclick="put(event)">
+                    </a>
+                    <!-- <div class="pb-2">Unlocked</div> -->
+                </div>
+                <div class="row w-75 mx-auto row-cols-1 justify-content-center mt-4">
+                    <div class="col button-blue py-2 py-lg-2 text-center mb-3">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining"
+                            id="stake3BtnListenerDown" onclick="put(event)"><s langtest="stake">stake</s></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 结束 -->
+            <!-- 循环开始 -->
+            <div class="col mb-5">
+                <div class="base-map-border rounded-1">
+                    <div class="pt-2"><s langtest="Mining-Position-1">Position 1</s></div>
+                    <a class="d-block" href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining">
+                        <img class="w-75 py-4" src="images/plus.png" alt="" id="stake4BtnListener" onclick="put(event)">
+                    </a>
+                    <!-- <div class="pb-2">Unlocked</div> -->
+                </div>
+                <div class="row w-75 mx-auto row-cols-1 justify-content-center mt-4">
+                    <div class="col button-blue py-2 py-lg-2 text-center mb-3">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining"
+                            id="stake4BtnListenerDown" onclick="put(event)"><s langtest="stake">stake</s></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 结束 -->
+            <!-- 循环开始 -->
+            <div class="col mb-5">
+                <div class="base-map-border rounded-1">
+                    <div class="pt-2"><s langtest="Mining-Position-1">Position 1</s></div>
+                    <a class="d-block" href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining">
+                        <img class="w-75 py-4" src="images/plus.png" alt="" id="stake5BtnListener" onclick="put(event)">
+                    </a>
+                    <!-- <div class="pb-2">Unlocked</div> -->
+                </div>
+                <div class="row w-75 mx-auto row-cols-1 justify-content-center mt-4">
+                    <div class="col button-blue py-2 py-lg-2 text-center mb-3">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining"
+                            id="stake5BtnListenerDown" onclick="put(event)"><s langtest="stake">stake</s></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 结束 -->
+            <!-- 循环开始 -->
+            <div class="col mb-5">
+                <div class="base-map-border rounded-1">
+                    <div class="pt-2"><s langtest="Mining-Position-1">Position 1</s></div>
+                    <a class="d-block" href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining">
+                        <img class="w-75 py-4" src="images/plus.png" alt="" id="stake6BtnListener" onclick="put(event)">
+                    </a>
+                    <!-- <div class="pb-2">Unlocked</div> -->
+                </div>
+                <div class="row w-75 mx-auto row-cols-1 justify-content-center mt-4">
+                    <div class="col button-blue py-2 py-lg-2 text-center mb-3">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining"
+                            id="stake6BtnListenerDown" onclick="put(event)"><s langtest="stake">stake</s></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 结束 -->
+            <!-- 循环开始 -->
+            <div class="col mb-5">
+                <div class="base-map-border rounded-1">
+                    <div class="pt-2"><s langtest="Mining-Position-1">Position 1</s></div>
+                    <a class="d-block" href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining">
+                        <img class="w-75 py-4" src="images/plus.png" alt="" id="stake7BtnListener" onclick="put(event)">
+                    </a>
+                    <!-- <div class="pb-2">Unlocked</div> -->
+                </div>
+                <div class="row w-75 mx-auto row-cols-1 justify-content-center mt-4">
+                    <div class="col button-blue py-2 py-lg-2 text-center mb-3">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining"
+                            id="stake7BtnListenerDown" onclick="put(event)"><s langtest="stake">stake</s></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 结束 -->
+            <!-- 循环开始 -->
+            <div class="col mb-5">
+                <div class="base-map-border rounded-1">
+                    <div class="pt-2"><s langtest="Mining-Position-1">Position 1</s></div>
+                    <a class="d-block" href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining">
+                        <img class="w-75 py-4" src="images/plus.png" alt="" id="stake8BtnListener" onclick="put(event)">
+                    </a>
+                    <!-- <div class="pb-2">Unlocked</div> -->
+                </div>
+                <div class="row w-75 mx-auto row-cols-1 justify-content-center mt-4">
+                    <div class="col button-blue py-2 py-lg-2 text-center mb-3">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining"
+                            id="stake8BtnListenerDown" onclick="put(event)"><s langtest="stake">stake</s></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 结束 -->
+            <!-- 循环开始 -->
+            <div class="col mb-5">
+                <div class="base-map-border rounded-1">
+                    <div class="pt-2"><s langtest="Mining-Position-1">Position 1</s></div>
+                    <a class="d-block" href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining">
+                        <img class="w-75 py-4" src="images/plus.png" alt="" id="stake9BtnListener" onclick="put(event)">
+                    </a>
+                    <!-- <div class="pb-2">Unlocked</div> -->
+                </div>
+                <div class="row w-75 mx-auto row-cols-1 justify-content-center mt-4">
+                    <div class="col button-blue py-2 py-lg-2 text-center mb-3">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#mining"
+                            id="stake9BtnListenerDown" onclick="put(event)"><s langtest="stake">stake</s></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 结束 -->
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    // $("#currPoolNumber").text(0);
+    // $("#totalPoolNumber").text(0);
+    // $("#totalAmountNumber").text(0);
+    // $("#totalPowerNumber").text(0);
+    // $("#totalTokensNumber").text(0);
+    // $("#myAmountNumber").text(0);
+    // $("#myTokenNumber").text(0);
+    // $("#myPowerNumber").text(0);
+    // $("#myInterestsNumber").text(0);
+    function mining() {
+        var isLoaded = false;
+        setTimeout(function () {
+            if (!isLoaded) {
+                resetMiningData();
+            }
+        }, 1000);
+        miningData(function (result) {
+            isLoaded = true;
+            if (result.code == 200) {
+                updateMiningData(result.data);
+            } else {
+                // cocoMessage.warning(result.message, 0);
+                $.message({
+                    message: result.message,
+                    type: 'warning'
+                });
+            }
+        });
+    }
+
+    function balance(callback) {
+        balanceData(function (result) {
+            if (result == null) {
+            } else {
+                if (result.code == 200) {
+                    $("#myTokenNumber").text(result.data);
+                }
+            }
+        })
+    }
+    var walletAddress = "";
+    function put(event) {
+        // if ($(event.delegateTarget).attr('data-bs-toggle') == 'modal') {//
+        if ($(event.delegateTarget).attr('data-bs-target') == '#mining') {
+            putData(function (result) {
+                if (result == null) {
+                    // resetMiningData();
+                    // window.location.reload();
+                } else {
+                    if (result.code == 200) {
+                        walletAddress = result.data.toAddress;
+                        $("#miningPoolCardSlot").children().remove();
+                        var list = result.data.putList;
+                        if (list != undefined && list != null) {
+                            for (let i = 0; i < list.length; i++) {
+                                var look_color = '';
+                                switch (list[i].level) {
+                                    case 1:
+                                        look_color = 'look-white-2';
+                                        break;
+                                    case 2:
+                                        look_color = 'look-green-2';
+                                        break;
+                                    case 3:
+                                        look_color = 'look-pepur-2';
+                                        break;
+                                    case 4:
+                                        look_color = 'look-orange-2';
+                                        break;
+                                    case 5:
+                                        look_color = 'look-red-2';
+                                        break;
+                                    case 6:
+                                        look_color = 'look-black-2';
+                                        break;
+                                }
+                                var insertText = " \
+                                <div class=\"col di text-center mt-2 mb-5 mining-link\">\
+                                    <div id=\"miningPoolSelect"+ i + "\">\
+                                    <a class=\"\" href=\"javaScript:\" onclick='selectElves(" + list[i].id + "," + list[i].hash + "," + i + "," + list.length + ")'>\
+                                        <div class=\"zi text-truncate w-100\">" + list[i].name + "</div>\
+                                        <div class=\"tu "+ look_color + "\"><img class=\"img-fluid\" src=\"images/elves/" + list[i].name + ".gif\" alt=\"\"></div>\
+                                        <img src=\"images/xsjl-bg.svg\" alt=\"\">\
+                                    </a>\
+                                    </div>\
+                                </div>";
+                                $("#miningPoolCardSlot").append(insertText);
+                            }
+                        }
+                    } else {
+                        // cocoMessage.warning(result.message, 0);
+                        $.message({
+                            message: result.message,
+                            type: 'warning'
+                        });
+                    }
+                }
+            })
+        } else {
+            var name = $(event.delegateTarget).attr('goodsName');
+            var author = $(event.delegateTarget).attr('goodsAuthor');
+            var contractAddress = $(event.delegateTarget).attr('goodsContractAddress');
+            var tokenId = $(event.delegateTarget).attr('goodsTokenId');
+            var introduce = $(event.delegateTarget).attr('goodsIntroduce');
+            // console.log(name)
+            // console.log(author)
+            // console.log(contractAddress)
+            // console.log(tokenId)
+            // console.log(introduce)
+            $("#miningElvesDialogImg").attr("src", "images/elves/" + name + ".gif");
+            $("#miningElvesDialogName").text(name);
+            $("#miningElvesDialogAuthor").text(author);
+            $("#miningElvesDialogAddress").text(contractAddress);
+            $("#miningElvesDialogTokenId").text("#" + tokenId);
+            $("#miningElvesDialogIntroduce").text(introduce);
+            selectTokenId = tokenId;
+        }
+    }
+    var selectTokenId = 0;
+
+    function redeem() {
+        loading();
+        isOnline(function (online) { //必须要验证线上是否在线
+            var data = getCookie();
+            if (online.data && data != "") { //在线 进行赎回操作
+                if (selectTokenId > 0) {
+                    redeemData(selectTokenId, function (res) {
+                        selectTokenId = 0;
+                        loaded();
+                        if (res.code == 200) {
+                            $.message("Redeem Succeed!");
+                            updateMiningData(res.data);
+                            updateUserInfo();
+                        } else {
+                            // cocoMessage.warning(res.message, 0);
+                            $.message({
+                                message: res.message,
+                                type: 'warning'
+                            });
+                        }
+                    });
+                } else {
+                    loaded();
+                    // cocoMessage.warning("Wrong elves selection", 0);
+                    $.message({
+                        message: "Wrong elves selection",
+                        type: 'warning'
+                    });
+                }
+            } else {
+                $.message({
+                    message: "User not login,Please wait.",
+                    type: 'info'
+                });
+                setTimeout(function () {
+                    loginEthereum();
+                }, 1000);
+            }
+        });
+    }
+
+    var submitHarvest = false;
+
+    function harvest() {
+        if (submitHarvest) { //检测连点
+            // cocoMessage.warning("Too soon!", 0);
+            $.message({
+                message: "Too soon!",
+                type: 'warning'
+            });
+            return true;
+        }
+        submitHarvest = true;
+        setTimeout(function () {
+            submitHarvest = false;
+        }, 2000);
+        //正式开始
+
+        isOnline(function (online) { //必须要验证线上是否在线
+            var data = getCookie();
+            if (online.data && data != "") { //在线 进行赎回操作
+                if ($("#myInterestsNumber").text() == '0') {
+                    // cocoMessage.warning("There is no quantity that can be extracted", 0)
+                    $.message({
+                        message: "There is no quantity that can be extracted",
+                        type: 'warning'
+                    });
+                    return;
+                }
+                loading();
+                harvestData(function (result) {
+                    if (result == null) { } else {
+                        loaded();
+                        if (result.code == 200) {
+                            updateMiningData(result.data);
+                        } else {
+                            // cocoMessage.warning(result.message, 0);
+                            $.message({
+                                message: result.message,
+                                type: 'warning'
+                            });
+                        }
+                    }
+                })
+            } else {
+                $.message({
+                    message: "User not login,Please wait.",
+                    type: 'info'
+                });
+                setTimeout(function () {
+                    loginEthereum();
+                }, 1000);
+            }
+        });
+    }
+    var selectIdValue = 0;
+    var selectTokenIdValue = "";
+
+    function selectElves(elfId, elfHash, i, total) {
+        selectIdValue = elfId;
+        selectTokenIdValue = elfHash;
+        for (let i = 0; i < total; i++) {
+            var id = "#miningPoolSelect" + i;
+            $(id).removeClass('select-active');
+        }
+        var id = "#miningPoolSelect" + i;
+        $(id).addClass('select-active');
+        console.log(i)
+    }
+
+    function onSelect() {
+        if (selectIdValue != 0) {
+            if (walletAddress.length != 0) {
+                loading();
+                isOnline(function (online) { //必须要验证线上是否在线
+                    var data = getCookie();
+                    if (online.data && data != "") {
+                        transferNFT(walletAddress, Number(selectTokenIdValue), selectIdValue, function (res, id, tokenId) {
+                            loaded();
+                            if (res == null) {
+                            }
+                            else {
+                                loading();
+                                stakeData(id, res.transactionHash, function (result) {
+                                    loaded();
+                                    if (result == null) { } else {
+                                        if (result.code == 200) {
+                                            $.message("Stake Succeed!");
+                                            updateMiningData(result.data);
+                                            updateUserInfo();
+                                        } else {
+                                            $.message({
+                                                message: result.message,
+                                                type: 'warning'
+                                            });
+                                        }
+                                    }
+                                })
+                            }
+                        });
+                        selectIdValue = 0;
+                        selectTokenIdValue = "";
+                    } else {
+                        $.message({
+                            message: "User not login,Please wait.",
+                            type: 'info'
+                        });
+                        setTimeout(function () {
+                            loginEthereum();
+                        }, 1000);
+                    }
+                });
+            } else {
+                // cocoMessage.warning("wallet address exception", 0);
+                $.message({
+                    message: "wallet address exception",
+                    type: 'warning'
+                });
+            }
+        }
+    }
+
+    function resetMiningData() {
+        $("#currPoolNumber").html("<img style='width: 35px;' src='images/load.gif'>");//text(0);
+        $("#totalPoolNumber").html("<img style='width: 15px;' src='images/load.gif'>");//.text(0);
+        $("#totalAmountNumber").html("<img style='width: 15px;' src='images/load.gif'>");//.text(0);
+        $("#totalPowerNumber").html("<img style='width: 15px;' src='images/load.gif'>");//.text(0);
+        $("#totalTokensNumber").html("<img style='width: 15px;' src='images/load.gif'>");//.text(0);
+        $("#myAmountNumber").html("<img style='width: 15px;' src='images/load.gif'>");//.text(0);
+        $("#myTokenNumber").html("<img style='width: 15px;' src='images/load.gif'>");//.text(0);
+        $("#myPowerNumber").html("<img style='width: 15px;' src='images/load.gif'>");//.text(0);
+        $("#myInterestsNumber").html("<img style='width: 15px;' src='images/load.gif'>");//.text(0);
+
+        for (let i = 0; i < 10; i++) {
+            var id = "#stake" + i + "BtnListener"
+            var idBtn = "#stake" + i + "BtnListenerDown";
+
+            $(id).attr('src', "images/plus.png");
+            $(id).parent().attr('data-bs-toggle', 'modal'); //#sell
+            $(id).parent().attr('data-bs-target', '#mining');
+            $(id).parent().attr('goodsName', '');
+            $(id).parent().attr('goodsAuthor', '');
+            $(id).parent().attr('goodsContractAddress', '');
+            $(id).parent().attr('goodsTokenId', '');
+            $(id).parent().attr('goodsIntroduce', '');
+
+            // $(idBtn).parent().css("display", "")
+            $(idBtn).parent().css("visibility", "")
+        }
+    }
+
+    function updateMiningData(data) {
+        resetMiningData();
+        // var ids = [];
+        if ($("#currPoolNumber").text() != toThousands(data.currPool)) {
+            var currPoolNumber = data.currPool;
+            $("#currPoolNumber").text(toThousands(currPoolNumber));
+            // ids.push("#currPoolNumber");
+            new CountUp('currPoolNumber', 0, currPoolNumber, 0, 0.3, {
+                useEasing: true,//效果
+                separator: ''//数字分隔符
+            }).start();
+        }
+        if ($("#totalPoolNumber").text() != toThousands(data.totalPool)) {
+            var totalPoolNumber = data.totalPool;
+            $("#totalPoolNumber").text(toThousands(totalPoolNumber));
+            // ids.push("#totalPoolNumber");
+            new CountUp('totalPoolNumber', 0, totalPoolNumber, 0, 0.3, {
+                useEasing: true,//效果
+                separator: ''//数字分隔符
+            }).start();
+        }
+        if ($("#totalAmountNumber").text() != toThousands(data.totalAmount)) {
+            var totalAmountNumber = data.totalAmount;
+            $("#totalAmountNumber").text(toThousands(totalAmountNumber));
+            // ids.push("#totalAmountNumber");
+            new CountUp('totalAmountNumber', 0, totalAmountNumber, 0, 0.3, {
+                useEasing: true,//效果
+                separator: ''//数字分隔符
+            }).start();
+        }
+        if ($("#totalPowerNumber").text() != toThousands(data.totalPower)) {
+            var totalPowerNumber = data.totalPower;
+            $("#totalPowerNumber").text(toThousands(totalPowerNumber));
+            // ids.push("#totalPowerNumber");
+            new CountUp('totalPowerNumber', 0, totalPowerNumber, 0, 0.3, {
+                useEasing: true,//效果
+                separator: ''//数字分隔符
+            }).start();
+        }
+        if ($("#totalTokensNumber").text() != toThousands(data.totalTokens)) {
+            var totalTokensNumber = data.totalTokens;
+            $("#totalTokensNumber").text(toThousands(totalTokensNumber));
+            // ids.push("#totalTokensNumber");
+            new CountUp('totalTokensNumber', 0, totalTokensNumber, 0, 0.3, {
+                useEasing: true,//效果
+                separator: ''//数字分隔符
+            }).start();
+        }
+        if ($("#myAmountNumber").text() != toThousands(data.myAmount)) {
+            var myAmountNumber = data.myAmount;
+            $("#myAmountNumber").text(toThousands(myAmountNumber));
+            // ids.push("#myAmountNumber");
+            new CountUp('myAmountNumber', 0, myAmountNumber, 0, 0.3, {
+                useEasing: true,//效果
+                separator: ''//数字分隔符
+            }).start();
+        }
+
+        $("#myTokenNumber").text(0);
+        setTimeout(function () {
+            balance();
+        }, 1000)
+        // if ($("#myTokenNumber").text() != toThousands(data.myToken)) {
+        //     var myTokenNumber = data.myToken;
+        //     $("#myTokenNumber").text(toThousands(myTokenNumber));
+        //     ids.push("#myTokenNumber");
+        // }
+        if ($("#myPowerNumber").text() != toThousands(data.myPower)) {
+            var myPowerNumber = data.myPower;
+            $("#myPowerNumber").text(toThousands(myPowerNumber));
+            // ids.push("#myPowerNumber");
+            new CountUp('myPowerNumber', 0, myPowerNumber, 0, 0.3, {
+                useEasing: true,//效果
+                separator: ''//数字分隔符
+            }).start();
+        }
+        if ($("#myInterestsNumber").text() != toThousands(data.myInterests)) {
+            var myInterestsNumber = data.myInterests;
+            $("#myInterestsNumber").text(toThousands(myInterestsNumber));
+            // ids.push("#myInterestsNumber");
+            new CountUp('myInterestsNumber', 0, myInterestsNumber, 0, 0.3, {
+                useEasing: true,//效果
+                separator: ''//数字分隔符
+            }).start();
+        }
+        // for (let i = 0; i < ids.length; i++) {
+        //     $(ids[i]).counterUp({
+        //         delay: 5, //每个数字动画的延迟时间，单位毫秒。
+        //         time: 300 //计数动画总的持续时间。
+        //     });
+
+        // }
+        var list = data.list;
+        if (list != undefined && list != null) {
+            for (let i = 0; i < list.length && i < 10; i++) {
+                var id = "#stake" + i + "BtnListener"
+                var idBtn = "#stake" + i + "BtnListenerDown";
+                if (i <= list.length) {
+                    $(id).attr('src', "images/elves/" + list[i].elfName + ".gif");
+                    var look_color = '';
+                    switch (list[i].level) {
+                        case 1: look_color = 'look-white-2'; break;
+                        case 2: look_color = 'look-green-2'; break;
+                        case 3: look_color = 'look-pepur-2'; break;
+                        case 4: look_color = 'look-orange-2'; break;
+                        case 5: look_color = 'look-red-2'; break;
+                        case 6: look_color = 'look-black-2'; break;
+                    }
+                    $(id).addClass(look_color);
+                    // $(id).parent().removeAttr('data-bs-target');
+                    // $(id).parent().removeAttr('data-bs-toggle');
+
+                    // $(idBtn).removeAttr('data-bs-target');
+                    // $(idBtn).removeAttr('data-bs-toggle');
+                    $(id).parent().attr('data-bs-toggle', 'modal'); //#
+                    $(id).parent().attr('data-bs-target', '#look-mining');
+                    $(id).parent().attr('goodsName', list[i].elfName);
+                    $(id).parent().attr('goodsAuthor', list[i].owner);
+                    $(id).parent().attr('goodsContractAddress', list[i].contractAddress);
+                    $(id).parent().attr('goodsTokenId', list[i].tokenId);
+                    $(id).parent().attr('goodsIntroduce', list[i].introduce);
+
+                    // $(idBtn).attr('data-bs-toggle', 'modal');
+                    // $(idBtn).attr('data-bs-target', '#look');
+                    // $(idBtn).parent().css("display", "none")
+                    $(idBtn).parent().css("visibility", "hidden")
+                } else {
+                    $(id).attr('src', "images/plus.png");
+                    $(id).parent().attr('data-bs-toggle', 'modal'); //#sell
+                    $(id).parent().attr('data-bs-target', '#mining');
+                    $(id).parent().attr('goodsName', '');
+                    $(id).parent().attr('goodsAuthor', '');
+                    $(id).parent().attr('goodsContractAddress', '');
+                    $(id).parent().attr('goodsTokenId', '');
+                    $(id).parent().attr('goodsIntroduce', '');
+
+                    // $(idBtn).parent().css("display", "")
+                    $(idBtn).parent().css("visibility", "")
+                }
+            }
+        }
+    }
+</script>
